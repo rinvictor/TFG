@@ -4,12 +4,12 @@ from datetime import datetime
 from pymongo import MongoClient
 import db_credentials
 
-nreadingsDHT = 2  # veces que quiero que se ejecuten las lecturas
+nreadingsDHT = 2
 nreadingsGH = 3
 
 client = MongoClient(db_credentials.url, db_credentials.port)
 
-db = client["greenhouseDB"]  # Si la base de datos no existe la crea
+db = client["greenhouseDB"]
 collection = db['sensors_data']
 
 
