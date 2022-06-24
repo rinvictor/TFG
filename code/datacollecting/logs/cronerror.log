@@ -1,0 +1,4 @@
+/home/pi/.local/lib/python3.8/site-packages/pyfirmata2/pyfirmata2.py:576: UserWarning: Use a callback handler for pin Analog pin 0
+  warnings.warn("Use a callback handler for pin {0}".format(self.__str__()))
+/home/pi/.local/lib/python3.8/site-packages/pyfirmata2/pyfirmata2.py:576: UserWarning: Use a callback handler for pin Analog pin 1
+  warnings.warn("Use a callback handler for pin {0}".format(self.__str__()))

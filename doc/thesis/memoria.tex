@@ -1,0 +1,1542 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Plantilla de memoria en LaTeX para la ETSIT - Universidad Rey Juan Carlos
+%%
+%% Por Gregorio Robles <grex arroba gsyc.urjc.es>
+%%     Grupo de Sistemas y Comunicaciones
+%%     Escuela Técnica Superior de Ingenieros de Telecomunicación
+%%     Universidad Rey Juan Carlos
+%% (muchas ideas tomadas de Internet, colegas del GSyC, antiguos alumnos...
+%%  etc. Muchas gracias a todos)
+%%
+%% La última versión de esta plantilla está siempre disponible en:
+%%     https://github.com/gregoriorobles/plantilla-memoria
+%%
+%% Para obtener PDF, ejecuta en la shell:
+%%   make
+%% (las imágenes deben ir en PNG o JPG)
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[a4paper, 12pt, oneside]{book}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead[LE,RO]{}
+%\usepackage[T1]{fontenc}
+
+\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{times}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage{url}
+%\usepackage[dvipdfm]{graphicx}
+\usepackage{graphicx}
+\usepackage{float}  %% H para posicionar figuras
+\usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
+\usepackage{latexsym}  %% Logo LaTeX
+
+\usepackage{listings}
+\usepackage{color}
+
+% Para mostrar código
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\lstset{frame=tb,
+  language=XML,
+  aboveskip=3mm,
+  belowskip=3mm,
+  showstringspaces=false,
+  columns=flexible,
+  basicstyle={\tiny\ttfamily},
+  numbers=none,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue},
+  commentstyle=\color{dkgreen},
+  stringstyle=\color{mauve},
+  breaklines=true,
+  breakatwhitespace=true,
+  tabsize=3
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Memoria del Proyecto}
+\author{Víctor Manuel Rincón Yepes}
+
+\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
+\begin{document}
+
+\renewcommand{\refname}{Bibliografía}  %% Renombrando
+\renewcommand{\appendixname}{Apéndice}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+
+\begin{titlepage}
+\begin{center}
+\includegraphics[scale=0.8]{img/URJ_logo_Color_POS.png}
+
+\vspace{1.75cm}
+
+\Large
+GRADO EN INGENIERÍA EN TELEMÁTICA
+
+\vspace{0.4cm}
+
+\large
+Curso Académico 2021/2022
+
+\vspace{0.8cm}
+
+Trabajo Fin de Grado
+
+\vspace{2.5cm}
+
+\LARGE
+DESARROLLO DE UN SISTEMA DE AUTOMATIZACIÓN Y MONITORIZACIÓN DE UN INVERNADERO
+
+\vspace{4cm}
+
+\large
+Autor : Víctor Manuel Rincón Yepes \\
+Tutor : David Roldán Álvarez \\
+\end{center}
+\end{titlepage}
+
+\newpage
+\mbox{}
+\thispagestyle{empty} % para que no se numere esta pagina
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Para firmar
+\clearpage
+\pagenumbering{gobble}
+\chapter*{}
+
+\vspace{-4cm}
+\begin{center}
+\LARGE
+\textbf{Trabajo Fin de Grado}
+
+\vspace{1cm}
+\large
+Desarrollo de un sistema de automatización y monitorización de un invernadero
+
+\vspace{1cm}
+\large
+\textbf{Autor :} Víctor Manuel Rincón Yepes \\
+\textbf{Tutor :} David Roldán Álvarez
+
+\end{center}
+
+\vspace{1cm}
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 202X, siendo calificada por el siguiente tribunal:
+
+
+\vspace{0.5cm}
+\textbf{Presidente:}
+
+\vspace{1.2cm}
+\textbf{Secretario:}
+
+\vspace{1.2cm}
+\textbf{Vocal:}
+
+
+\vspace{1.2cm}
+y habiendo obtenido la siguiente calificación:
+
+\vspace{1cm}
+\textbf{Calificación:}
+
+
+\vspace{1cm}
+\begin{flushright}
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 202X
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Dedicatoria
+
+\chapter*{}
+\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+\begin{flushright}
+\textit{Dedicado a \\
+mi familia}
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Agradecimientos
+
+\chapter*{Agradecimientos}
+%\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
+\markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
+
+Aquí vienen los agradecientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
+Además, la pareja quizás no sea para siempre, pero tu madre sí.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Resumen
+
+\chapter*{Resumen}
+%\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
+\markboth{RESUMEN}{RESUMEN} % encabezado
+
+
+Un resumen
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Resumen en inglés
+
+\chapter*{Summary}
+\addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
+\markboth{SUMMARY}{SUMMARY} % encabezado
+
+Un resumen en ingés
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ÍNDICES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Las buenas noticias es que los índices se generan automáticamente.
+% Lo único que tienes que hacer es elegir cuáles quieren que se generen,
+% y comentar/descomentar esa instrucción de LaTeX.
+
+%%%% Índice de contenidos
+\tableofcontents 
+%%%% Índice de figuras
+\cleardoublepage
+%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+\listoffigures % indice de figuras
+%%%% Índice de tablas
+%\cleardoublepage
+%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
+%\listoftables % indice de tablas
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% INTRODUCCIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Introducción}
+\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
+\pagenumbering{arabic} % para empezar la numeración de página con números
+
+Una introduccion
+
+\section{Internet de las Cosas}
+\label{sec: Internet de las Cosas}
+El Internet de las cosas, \textit{Internet Of Things} (IoT), en inglés es un concepto que se refiere a la conexión vía Internet de elementos y objetos físicos de la vida cotidiana de manera que se permita el envío y la recepción de diferentes datos.
+
+Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París.
+
+Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT, Turing afirmaba que existiía una necesidad de aportar capacidades de comunicación a sensores.
+
+Otro de los puntos históricos claves para la llegada del IoT es el nacimiento de Internet. En el año 1969 nacería ARPANET, como continuación del proyecto ARPA (Advanced Research Projects Agency), que nacería en 1957 y  pretendía proponer avances tecnológicos y militares. ARPA conseguió múltiples avances como un sistema de comunicaciones en el que si una máquina caía, el resto podía seguir conectadas. 
+En 1965 se consiguió comunicar en Estados Unidos un ordenador TX2 en Massachusetts con un Q-32 Wn California mediante una línea telefónica conmutada.
+El proyecto ARPA sigió investigando en esta línea hasta que en 1969 con la incorporación del investigador Michel Elie a UCLA (University of California, Los Angeles) y a ARPA se consiguió conectar dos máquinas, una de la UCLA con otra del SRI (Stanford Research Institute), poco después serían cuatro ordenadores distribuidos en diferentes universidades de Estados Unidos, en una red que sería denominada ARPANET.
+En 1972 eran 50 las universidades y centros de investigación que estaban conectados a ARPANET.
+Cuando el Departamento de Defensa de Estados Unidos decidió 1983 usar los protocolos TCP/IP nacería ARPA Internet, que más tarde pasó a conocerse como Internet. En 1991, un año después de que Tim Berners Lee desarrollara HTML y HTTP, el Internet que conocemos hoy en día nació en el CERN (European Organization for Nuclear Research). En agosto de 1991, cualquiera podría acceder a esta red.
+
+No es hasta el año 2009 que, de la mano del profesor del MIT (Massachusetts Institute of Technology) Kevon Ashton surge el término \textit{Internet de las Cosas}.
+
+Con el paso de los años y la combinación de distintas tecnologías y campos de estudio como el Big Data, el Machine Learning o la Inteligencia Artificial el IoT se ha ido asentando y creciendo dando lugar incluso a nuevos conceptos como las Smart Cities o Ciudades inteligentes, una aplicación del IoT junto a estas tecnologías.
+
+El IoT está en continuo crecimiento, según Cisco Internet Solutions Group (IBSG) entre los años 2008 y 2009 ya eran más los objectos conectados a Internet que las personas y se estima que para el año 2025 habrá unos 75 mil millones de objetos conectados a Internet. Como se ha comentado anteriormente, la tendencia actual del IoT, es la del tratado masivo de datos, la automatización de procesos y la toma de decisiones en función de los múltiples datos recolectados.
+
+En este TFG se ha implementado un invernadero autónomo haciendo uso de esta tecnología, aplicando soluciones IoT. 
+En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura. La toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura es la tendencia actual, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
+Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura(FAO), el sector agrícola debería producir un 50\% más para poder cubrir la demanda para el año 2050, la falta de inversión y digitalización de este sector podría poner en riesgo nuestro sistema de alimentación. La inversión y la investigación en IoT puede aportar una mejora importante en la digitalización y ayudar así a combatir este problema. 
+
+
+%de aquí he sacado lo de los 10.000 milln¡ones de dolares:
+%https://hellofuture.orange.com/en/connected-greenhouses-how-the-internet-of-things-can-feed-the-planet/
+
+\section{Tecnologías web}
+\label{tecnologías web}
+\section{Jardines autónomos}
+\label{sec:jardines autonomos}
+
+\section{Estructura de la memoria}
+\label{sec:estructura}
+
+%En esta sección se debería introducir la esctura de la memoria. 
+%
+%Así:
+%
+%\begin{itemize}
+%  \item En el primer capítulo se hace una intro al proyecto.
+%  
+%  \item En el capítulo~\ref{chap:objetivos} (ojo, otra referencia automática) se muestran los objetivos del proyecto.
+%  
+%  \item A continuación se presenta el estado del arte en el capítulo~\ref{chap:estado}.
+%  
+%  \item \ldots
+%\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% OBJETIVOS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\cleardoublepage % empezamos en página impar
+\chapter{Objetivos} % título del capítulo (se muestra)
+\label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
+
+\section{Objetivo general} % título de sección (se muestra)
+\label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
+
+Aquí vendría el objetivo general en una frase:
+Mi trabajo fin de grado consiste en crear de una herramienta de análisis de los comentarios jocosos en repositorios de software libre alojados en la plataforma GitHub.
+
+Recuerda que los objetivos siempre vienen en infinitivo.
+
+
+\section{Objetivos específicos}
+\label{sec:objetivos-especificos}
+
+Los objetivos específicos se pueden entender como las tareas en las que se ha desglosado el objetivo general.
+Y, sí, también vienen en infinitivo.
+
+
+\section{Planificación temporal}
+\label{sec:planificacion-temporal}
+
+A mí me gusta que aquí pongáis una descripción de lo que os ha llevado realizar el trabajo.
+Hay gente que añade un diagrama de GANTT.
+Lo importante es que quede claro cuánto tiempo llevas (tiempo natural, p.ej., 6 meses) y a qué nivel de esfuerzo (p.ej., principalmente los fines de semana).
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% HERRAMIENTAS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage % empezamos en página impar
+\chapter{Herramientas} 
+\label{chap:herramientas}
+
+En este capítulo se  describen de las distintas herramientas utilizadas para este TFG. Las diferentes tecnologías que se mostrarán en este capítulo se pueden dividir en hardware, incluyendo tanto los sensores y actuadores como la Raspberry pi y el Arduino, y software, en este último se concretarán las herramientas principales de desarrollo así como las utilizadas para el almacenamiento de los datos recogidos por los sensores.
+
+
+\section{Hardware}
+\label{sec:hardware}
+
+A continuación se presenta el hardware utilizado, todas estas tecnologías utilizadas son de bajo coste, y entre las mútiples posibilidades existentes en el mercado se han elegido las siguientes para abaratar el presupuesto necesario para realizar este TFG.
+
+\subsection{Raspberry Pi}
+\label{subsec:raspberry pi}
+
+Para el desarrollo del TFG se ha utilizado una Raspberry Pi modelo 3B+. Se trata de un ordenador de placa única concebido por la fundación británica Raspberry Pi Foundation y cuyo primer modelo fue lanzado el 29 de febrero de 2012. En primera instancia, este microcomputador fue desarrollado para acercar la programación y la informática al ámbito educativo. Rápidamente alcanzó una gran popularidad y gracias a la buena acogida está altamente extendido para múltiples proyectos de diferente índole, entre estos proyectos destacan diferentes campos como pueden ser el de la robótica, IoT o la domótica.
+
+Algunas de las principales características de la Raspberry Pi 3 Model B+ son:
+
+\begin{itemize}
+	\item Procesador BroadcomBCM2837B0, Cortex-A53(ARMv8) 64-bit SoC
+	
+	\item Frecuencia de reloj de 1,4 GHz.
+	
+	\item Memoria RAM de 1 GB LPDDR2 SDRAM.
+	
+	\item Bluetooth 4.2 BLE
+
+	\item Wi-Fi Dual Band b/g/n/ac
+	
+	\item Gigabit Ethernet
+	
+	\item Header GPIO 40 pines.
+	
+	\item Cuatro puertos USB 2.0, puerto de cámara CSI, puerto de visualización DSI y puerto HDMI
+\end{itemize}
+
+Estas características, junto a su ajustado precio, han sido motivo para elegir este modelo.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/Raspberry}
+    \caption{Raspberry Pi 3B+.}
+    \label{figura:raspberry}
+\end{figure}
+
+\subsection{Arduino}
+\label{subsec:arduino}
+
+Arduino es un proyecto de software libre que, así como el de Raspberry Pi, también fue desarrollado con fines educativos. Está basado en diferentes placas con un microcontrolador. Para trabajar con Arduino se suele trabajar utilizar un entorno de programación específico para dichas placas. El lenguaje de programación que se suele utilizar es una adaptación de C++, un lenguaje orientado a objetos, de alto nivel y multiparadigma, pero en este caso se ha utilizado la librería Pyfirmata2, que implementa el protocolo para microcontroladores Firmata. Dicha librería permite interactuar con la placa Arduino usando Python, lenguaje de programación con el que se ha desarrollado la mayoría de este TFG y que se indica en la sección software.
+
+Se ha utilizado la placa Arduino UNO rev3, cuyas principales características son:
+
+\begin{itemize}
+	\item Microcontrolador ATmega328P.
+	
+	\item Funcionamiento a 5V.
+	
+	\item Voltaje de entrada de 6 a 20V.
+	
+	\item 14 pines digitales, 6 de ellos con salida PWM.
+
+	\item 6 pines de entrada analógica.
+\end{itemize}
+
+De nuevo su precio ha sido motivo para la elección de este modelo de microcontrolador.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/arduino}
+    \caption{Arduino UNO rev3.}
+    \label{figura:arduino}
+\end{figure}
+
+\subsection{Sensores}
+\label{subsec:sensores}
+
+Se han usado diferentes tipos de sensores para medir las principales magnitudes que afectarán al cuidado y a la monitorización de las plantas del invernadero. Estas magnitudes son temperatura y humedad ambiente, que se ha medido tanto en el interior como en el exterior del invernadero, para esto se ha utilizado el módulo DHT22, temperatura de la tierra para la que se ha usado una sonda de temperatura DS18B20 y humedad de la tierra, que se ha medido con un módulo YL-69.
+
+En sus fichas técnicas podemos destacar diferentes características que nos son especialmente relevantes para cada uno de los sensores mencionados anteriormente:
+
+\begin{itemize}
+	\item Sensor DHT22:
+	\begin{itemize}
+		\item 3-5V de entrada/salida.
+		\item Rango de temperaturas de -40 a 80 ºC. Con una precisión de ±0.5 ºC
+		\item Lectura de humedad en un rango de 0-100\%. Con una precisión de ±5 puntos porcentuales.
+		\item Tasa de muestreo de 0.5 Hz.
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Sensor DS18B20:
+	\begin{itemize}
+		\item 3-5.5V de entrada/salida.
+		\item Rango de temperaturas de -55 a 125 ºC. Con una precisión de ±0.5 ºC
+		\item Tasa de muestreo de 1.3 Hz.
+	\end{itemize}
+\end{itemize}
+
+\begin{itemize}
+	\item Sensor YL-69:
+	\begin{itemize}
+		\item 2-6V de entrada/salida.
+		\item Lectura de humedad analógica. Con una precisión del 5-10\%.
+		\item Tasa de muestreo de 0,5 Hz.
+	\end{itemize}
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/dht22}
+    \caption{Módulo DHT22.}
+    \label{figura:modulo_dht22}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/ds18b20}
+    \caption{Sonda DS18B20.}
+    \label{figura:sonda_ds18b20}
+  \end{minipage}
+  \hfill
+    \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/yl-69}
+    \caption{Módulo YL-69.}
+    \label{figura:yl_69}
+  \end{minipage}
+\end{figure}
+
+\subsection{Actuadores}
+\label{subsec:actuadores}
+
+Los actuadores son útiles en cualquier proyecto de IoT, pues utilizando la información obtenida por los sensores, permiten desarrollar sistemas complejos basados en toma de decisiones e interactuar con el medio. 
+En este TFG se ha implementado un sistema de riego automático basado en la humedad de la tierra. Tal y como se indica en la sección de PROYECTOS FUTUROS se podría usar esta información proporcionada por los sensores para incluir nuevas funcionalidades en el sistema y automatizar diferentes tareas.
+
+Para el funcionamiento del sistema de riego se ha usado una bomba de agua modelo CESFONJER, funciona a 12V DC, tiene una potencia de levantamiento de agua de hasta 3 metros y un caudal de 250L/h.
+
+Se ha añadido al sistema electrónico un módulo de 8 relés, cuyo propósito es el de poder controlar la bomba, que funciona a 12V y está conectada a la corriente eléctrica. En la sección de MONTAJE se indica el uso de esta placa.
+
+El tener un módulo de 8 relés proporciona la posibilidad de añadir diferentes actuadores para trabajos futuros como motores, bombas de agua o luces.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/bomba_cesfonjer}
+    \caption{Bomba de agua modelo CESFONJER.}
+    \label{figura:bomba_cesfonjer}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/reles}
+    \caption{Módulo de relés.}
+    \label{figura:reles}
+  \end{minipage}
+\end{figure}
+ 
+
+\section{Software}
+\label{software}
+En esta sección se presentan las diferentes herramientas software utilizadas para el desarrollo del proyecto. Todas las herramientas utilizadas son gratuitas.
+
+\subsection{Raspbian}
+\label{subsec:raspbian}
+Raspberry Pi OS, popularmente conocido como Raspbian, es una distribución de GNU/Linux, y es el sistema operativo típicamente utilizado en cualquier modelo de Raspberry. Desde 2015 se proporciona de forma oficial como el sistema operativo por defecto para estas placas.
+Se trata de un SO libre y tiene, tal y como cualquier distribución GNU/Linux, multitud de posibilidades.
+Toda la funcionalidad de la Raspberry para este TFG se ha implementado sobre Raspbian.
+
+\subsection{Python}
+\label{subsec:python}
+Python es un lenguaje de programación de alto nivel, interpretado, mutiplataforma, de código abierto y de propósito general. Una de sus grandes ventajas es la sencillez y la legibilidad a la hora de desarrollar aplicaciones usando este lenguaje, además, de la multitud de librerías y frameworks disponibles. Soporta no solo la programación orientada a objetos sino también la programación imperativa y la funcional.
+Fue desarrollado a finales de la década de los 80 por Guido Van Rossum, investigador del centro holandés Centrum Wiskunde \& Informatica.
+Su uso está hoy en día ampliamente extendido. Es muy común en diferentes areas de la ciencia y la ingeniería y es uno de los lenguajes de programación más solicitados en el mercado.
+En este TFG se han usado dos versiones diferentes de Python, la Python 3.8 y la 3.5, debido al soporte de las diferentes librerías.
+Los principales módulos utilizados se irán referenciando a lo largo de la siguiente sección.
+
+Respecto al estilo del código se ha seguido la guía de estilo PEP 8. Estas guías no son de obligado cumplimiento, sin embargo, en general, es de agradecer una unanimidad en dicho estilo. PEP 8 está muy extendida entre la comunidad que desarrolla en Python y ayuda a legibilidad del código.
+
+\subsection{Bash}
+\label{subsec:bash}
+GNU Bash (Bourne-again shell), popularmente conocido como Bash es un intérprete de comandos propio de GNU/Linux.
+Bash scripting consiste en utilizar Bash como un lenguaje de programación usando las instrucciones propias de este intérprete. Cuando se habla de Bash scripting se habla de un tipo de Shell Scripting propio de los sistemas GNU/Linux, existen muchos otros, no solo para Linux, sino para cualquier sistema operativo como pueden ser Cmd.exe, Csh, AppleScript, COMMAND.COM, ect.
+
+\subsection{Dash}
+\label{subsec:dash}
+
+Dash es un framework de código abierto utilizado para desarrollar aplicaciones de visualización de datos interactivas usando Python, R, Julia o F\#. Está escrito sobre Plotly.js y React.js. Las aplicaciones web creadas con Dash son servidores web Flask, un framework escrito en Python para crear aplicaciones web, que se comunican usando JSON, un formato ligrero para intercambiar datos, sobre HTTP (Hypertext Transfer Protocol).
+El front-end Dash está implementado con React.js, una librería de JavaScript para la interfaz de usuario escrita y mantenida por Facebook. Dash además de las diferentes tecnologías citadas anteriormente tiene embebidos HTML y CSS. En este TFG se ha usado, además, Bootstrap, que se explica a continuación y Plotly, una librería de Python utilizada para crear gráficos interactivos.
+
+\subsubsection{HTML en Dash}
+\label{subsubsec:html}
+HTML (HyperText Markup Language), es un lenguaje de marcado para la elaboración de páginas web. Actualmente es un estándar en Internet a cargo de W3C (World Wide Web Consortium).
+El origen de HTML data de principios de la década de los 80, fue creado por Tim-Berners Lee, físico en el CERN (European Organization for Nuclear Research), como un sistema para poder compartir documentos de manera más sencilla a la utilizada hasta el momento. A lo largo de los años se ha ido actualizando e incluyendo multitud de mejoras, actualmente se utiliza HTML5, lanzado en el año 2005.
+El uso de HTML en Dash se realiza mediante la librería Dash.html, que incluye todos los elementos de HTML, a continuación podemos ver un breve ejemplo de uso extraído de su documentación oficial y de su equivalencia en HTML clásico:
+
+\begin{lstlisting}[language=Python]
+from dash import html
+
+html.Div([
+    html.H1('Hello Dash'),
+    html.Div([
+        html.P('Dash converts Python classes into HTML'),
+        html.P("This conversion happens behind the scenes by Dash's JavaScript front-end")
+    ])
+])
+\end{lstlisting}
+
+\begin{lstlisting}[language=HTML]
+<div>
+    <h1>Hello Dash</h1>
+    <div>
+        <p>Dash converts Python classes into HTML</p>
+        <p>This conversion happens behind the scenes by Dash's JavaScript front-end</p>
+    </div>
+</div>
+\end{lstlisting}
+
+
+\subsubsection{CSS en Dash}
+\label{subsubsec:css}
+Las hojas de estilo en cascada, CSS(Cascading Style Sheets), son empleadas para dar estilo a un documento escrito con un lenguaje de marcado como puede ser HTML, fue desarrollado por W3C en 1996. Hoy en día la relación entre CSS y HTML es muy alta, de hecho, CSS es también un estándar en Internet y en el diseño web. En Dash también existe la posibilidad de dar estilo usando CSS, para el desarrollo de esta aplicación se ha utilizado Bootstrap 5.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/w3c_sin_css}
+    \caption{Página de ejemplo sin estilo.}
+    \label{figura:w3c_sin_css}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/w3c_con_css}
+    \caption{Página de ejemplo con estilo CSS.}
+    \label{figura:w3c_con_css}
+  \end{minipage}
+\end{figure}
+
+\subsubsection{Bootstrap en Dash}
+\label{subsubsec:boostrap}
+Este framework de software libre, muy utilizado en programación web se utiliza como una abstracción de HTML, CSS y JavaScript cuyo propósito es facilitar la creación de sitios web para múltiples dispositivos (\textit{responsive design}). Fue desarrollado inicialmente en el año 2011 por ingenieros de la compañía estadounidense Twitter, Inc. Su versión más reciente es Bootstrap 5, lanzada en el año 2021, cuya principal diferencia respecto a sus anteriores versiones es que utiliza Vanilla JavaScript (JavaScript puro), en lugar de JQuery, una librería de JavaScript muy utilizada para agregar interactividad a los sitios web.
+Como se ha mencionado anteriormente, se ha utilizado una plantilla libre de Bootstrap 5 a la que se le han hecho ligeras modificaciones de estilo, se puede usar este framework en Dash usando la libería Dash\_bootstrap\_components.
+
+\subsection{API de telegram}
+\label{subsec:api telegram}
+
+Una API (Application Programming Interfaces) o interfaz de programación de aplicaciones en español, es un conjunto de protocolos y definiciones que se utilizan para desarrollar software y que permite la comunicación entre dos aplicaciones. Telegram es una aplicación de mensajería instántanea desarrollada por los hermanos Nikilái y Pável Dúrov, lanzada el 14 de agosto de 2013. Telegram permite multitud de servicios, entre ellos la posibilidad de utilizar bots. Los bots de telegram tienen una gran popularidad y muy diferentes usos, con ellos se puede desde obtener información hasta realizar descargas o traducir textos.
+
+Telegram ofrece una API para el desarrollo de bots, que es la que se ha utilizado en este TFG junto a la librería Ttelepot para Python.
+
+\subsection{MongoDB}
+\label{subsec:mongodb}
+
+MongoDB es un sistema de bases de datos de código abierto, no relacional y orientado a documentos. Utliza estructuras BSON (Binary JSON) para guardar los datos. Una de las principales ventajas de MongoDB es su velocidad y aprovechamiento de los recursos.
+
+Las bases de datos no relacionales son muy utilizadas en proyectos de IoT y, en general, en proyectos para los que no sea necesario guardar relaciones entre tablas al estilo SQL (Structured Query Language). MongoDB permite acceder a una gran cantidad de datos en poco tiempo, permite realizar multitud de consultas, expresiones regulares, etc.
+
+Es habitual trabajar con Python y MongoDB, para ello se ha utilizado la librería Pymongo, es una de las más extendidas para este propósito y está en continuo desarrollo.
+
+\subsection{Cron}
+\label{subsec: cron}
+Se ha usado Cron para administrar diferentes tareas, Cron es un demonio (administrador regular de procesos en segundo plano) de UNIX. Permite ejecutar procesos y tareas basados en tiempo.
+En este TFG se ha usado Cron para lanzar periódicamente scripts para la realización de diferentes tareas como la recolección automática de los datos de los sensores.
+ 
+\subsection{Docker}
+\label{subsec: docker}
+
+Docker es un sistema basado en el funcionamiento de virtualización ofrecida por el núcleo de Linux.
+Este prepara máquinas virtuales de proceso y usa diferentes tecnologías como Cgroups, que permite aislar y limitar los recursos consumidos por un grupo de procesos o el espacio de nombrado de Linux (Linux kernel namespaces), que permite aislar los PID, interfaces de red, tablas de encaminamiento, puntos de montaje, etc. Docker es un sistema muy extendido y de código abierto mantenido por Docker Inc. Algunos de los principales organismos contribuyentes a este proyecto son Google, Cisco, Microsoft, RedHat, entre otras importantes compañías, además de la comunidad.
+En este caso se ha utilizado Docker para realizar el despligue de la base de datos de MongoDB en una máquina de los laboratorios de la ETSIT de la Universidad Rey Juan Carlos.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/docker}
+    \caption{Diagrama simplificado del funcionamiento de la virtualización por contenedores.}
+    \label{figura:esquema_docker}
+\end{figure}
+
+\subsection{Heroku}
+\label{subsec: heroku}
+Heroku, fundada en 2007 por Orion Henry, James Lindenbaum y Adam Wigginses y desde 2010 mantenida por Salesforce Inc. , es una pataforma de servicios en la nube o PaaS (Platform as a Service), en inglés, que permite manejar la administración y configuración de los servidores.
+Las principales características de esta popular herramienta son:
+\begin{itemize}
+	\item Soporta diferentes lenguajes de programación (Ruby, PHP, Python, etc).
+	\item Ofrece diferentes características de seguridad como certificación SSL y autenticación.
+	\item Tiene una versión gratuita de manejo sencillo.
+\end{itemize}
+
+Para este proyecto se ha utilizado su versión más sencilla para desplegar la aplicación web de visualización de datos desarrollada usando Dash. Existen otras alternativas pero gracias a su facilidad de uso ha sido elegida sobre el resto.
+
+
+\subsection{Control de versiones}
+\label{subsec:control versiones}
+
+El control de versiones es esencial en cualquier proyecto de desarrollo de software, se ha utlizado Git y Github para este propósito.
+
+Git es el sistema de control de versiones más extendido actualmente, se trata de un proyecto de software libre en continuo crecimiento. Desarrollado por Linus Torvalds en el año 2005. Git es un sistema de control de versiones distribuido, de tal manera que cada copia del trabajo es también un repositorio que alberga todo el historial de cambios.
+
+Una de las principales ventajas del uso de Git es su rendimiento, y es que gracias a su popularidad, que lo ha convertido prácticamente en un estándar, las bases de sus características son muy sólidas y sus principales funciones están muy optimizadas. Otro aspecto a resaltar de este software es la seguridad, utiliza SHA1, un algoritmo criptogáficamente seguro. Todo esto ha llevado a Git a ser el sistema de control de versiones más usado.
+Github es una plataforma diseñada para alojar código, comprada por Microsoft en el año 2018, permite gestionar proyectos usando Git. Es también muy utilizado y permite alojar proyectos tanto de forma pública como privada.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/git}
+    \caption{Esquema de concepto básico de Git.}
+    \label{figura:esquema_git}
+\end{figure}
+
+
+%ctrl + t para comentar, ctrl + u para descomentar
+%\subsection{Entornos virtuales}
+%\label{subsec: software}
+%En general, y en el caso particular de Python, las aplicaciones hacen uso de diferentes paquetes y módulos, en muchas ocasiones se necesita una versión concreta de estas, para poder cumplir con estos requerimientos en todas las aplicaciones es común el uso de entornos virtuales, es decir, se crea un directorio con todos los requisitos de la aplicación. Esta manera de trabajar permite evitar conflictos entre distintos proyectos.
+%
+%Es muy sencillo crear entornos virtuales y existen diferentes métodos, para este TFG se ha usado \textit{virtualenv}, una de las herramientas más recomendadas para trabajar con entornos virtuales en Python.
+%
+%
+%\subsection{Herramientas de desarrollo}
+%\label{subsec: software}
+%
+%Se ha usado, principalmente, \textit{Pycharm}, en concreto su versión \textit{Pycharm Community Edition} como herramienta para escribir el código, se trata de un entorno de desarrollo integrado, popularmente conocido por sus siglas en inglés IDE, (\textit{Integrated Development Environment}). Pycharm está orientado al desarrollo de aplicaciones en Python, desarrollado por la compañía checa \textit{JetBrains S.R.O} proporciona múltiples ventajas como su \textit{debugger}, su autocompletado, su facilidad para la refactorización, su navegación inteligente, su sistema de entornos virtuales integrado...
+%Trabajar con un IDE facilita el desarrollo tanto en Python como en cualquier otro lenguaje de programación.
+%En menor medida se ha utilizado también \textit{Nano}, un editor de texto en línea de comandos, se ha usado para hacer modificaciones breves en la propia Raspberry Pi. 
+%
+%\subsection{Latex}
+%\label{subsec: software}
+%Esta memoria se ha escrito usando \textit{Latex}, un sistema de composición de textos basado en instrucciones y de software libre, está basado en una serie de macros pertenecientes a \textit{TeX}, otro sistema de composición de textos anterior.
+%Latex fue desarrollado por \textit{Leslie Lamport} en 1984 para facilitar la creación de textos de alta calidad tipográfica, actualmente, está muy extendido en el ámbito académico.
+%Para usar Latex, se ha usado la herramienta \textit{Texmaker}, un editor de software libre para Latex. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DISEÑO E IMPLEMENTACIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Diseño e implementación}
+\label{chap:diseño e implementación}
+En este capítulo se expone la implementación del sistema que se ha llevado a cabo en este TFG. Se detalla cada una de las herramientas que se han desarrollado tanto desde el punto vista de hardware como desde el de software.
+
+\section{Montaje físico del invernadero}
+\label{sec: montaje físico del invernadero}
+En esta sección se explica el montaje físico del invernadero y se detalla su arquitectura.
+El invernadero ha diseñado para ser de de bajo coste. Ha sido fabricado en plástico, mide 2.5x1.25x0.75 metros y en su interior se han introducido sacos de cultivo para plantar. Se ha elegido este invernadero ya que se considera adecuado para su localización actual, teniendo en cuenta el espacio disponible para su ubicación, no obstante sería posible utilizar cualquier tipo de invernadero y tamaño de este según la conveniencia.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/invernadero}
+    \caption{Implementación física del invernadero.}
+    \label{figura:invernadero}
+\end{figure}
+
+En este montaje se ha incluido un depósito de agua. El depósito cuenta con una capacidad de 40 litros, capacidad que permite realizar las pruebas del sistema.  
+El propósito de este proyecto es el de poder monitorizar y automatizar un invernadero en cualquier lugar. Se podría haber utilizado una toma de agua corriente para el riego. Si existe un acceso constante al agua corriente se puede usar para rellenar el depósito, en caso contrario se debería utilizar otra vía para rellenarlo, pero no limitaría el uso del sistema. Otra opción viable y que no implicaría nigún cambio sería, por ejemplo, un pozo u otro depósito de mayor capacidad. Para poder llevar el agua hasta las plantas se ha usado una tubería de riego con puntos de salida de agua regulables tipo araña.
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/bomba_agua}
+    \caption{Bomba de agua en el depósito.}
+    \label{figura:bomba_agua}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/caja_registro_cerrada}
+    \caption{Aquí va una imagen de las salidas de agua.}
+    \label{figura:salidas_agua}
+  \end{minipage}
+\end{figure}
+    
+Se ha utilizado una caja de registro hermética para proteger toda la electrónica como se muestra en las figuras a continuación. Esta caja está situada dentro del invernadero y contiene todos los elementos que se han expuesto en la sección~\ref{sec:hardware}.
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/caja_registro_abierta}
+    \caption{Caja de registro abierta.}
+    \label{figura:bomba_cesfonjer}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/caja_registro_cerrada}
+    \caption{Caja de registro cerrada.}
+    \label{figura:reles}
+  \end{minipage}
+\end{figure}
+
+Los sensores que miden humedad y temperatura ambiente se han colocado por parejas de manera que uno de ellos se encuentra fuera del invernadero y otro en su interior. Esto permite realizar comparativas entre la temperatura y la humedad externa y la interna. Los sensores de humedad y temperatura de la tierra se han colocado cercanos entre sí para poder realizar las pruebas del sistema.    
+
+\section{Arquitectura e implementación hardware}
+\label{Arquitectura e implementación hardware}
+El montaje de la electrónica que se presenta en este apartado incluye, como se especifica en el apartado~\ref{sec:hardware}, un microcomputador Raspberry Pi Model 3B+, conectado por su puerto USB a una placa Arduino y varios sensores y actuadores conectados a ambos dispositivos.
+
+La Raspberry Pi posee una serie de entradas y salidas, como se muestra en la figura~\ref{figura:conexiones_raspberry}. A lo largo del desarrollo de la memoria se utiliza la nomenclatura BCM que es la utilizada por el procesador de la Raspberry (ver figura~\ref{figura:pines_raspberry}). Como se puede apreciar, la placa tiene un total de 40 pines GPIO con diferentes propósitos entre los que destacan pines con entradas de 3,3 y 5V, pines a tierra y pines de propósito de general (GPIO).
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/conexiones_raspberry}
+    \caption{Diagrama de conexiones de Raspberry Pi Model 3B+.}
+    \label{figura:conexiones_raspberry}
+\end{figure}
+
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/pines_raspberry}
+    \caption{Diagrama de pines de Raspberry Pi Model 3B+.}
+    \label{figura:pines_raspberry}
+\end{figure}
+
+%Existen diferentes maneras de referir a los pines GPIO, a lo largo del desarrollo de la memoria se va a utilizar la nomenclatura utlizada por el BCM2837BO, el SoC (System on Chip) de Broadcom utilizado por este modelo de Raspberry, es decir, el procesador que utiliza este microcomputador. Esta nomenclatura es la que se muestra en la figura ~\ref{figura:pines_raspberry}, GPIO 01, GPIO 02, etc. Popularmente es simplemente conocida como BCM.%
+
+La Raspberry Pi está conectada al Arduino usando los puertos USB de ambos dispositivos.
+Al igual que para la Raspberry Pi, el Arduino también cuenta con una serie de conexiones que son especialmente relevantes para la implementación que se ha llevado a cabo en este TFG:
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/conexiones_arduino}
+    \caption{Diagrama de conexiones y pines de Arduino UNO rev3.}
+    \label{figura:conexiones_arduino}
+\end{figure}
+
+La placa Arduino cuenta con pines analógicos, que no se encunetran en la Raspberry Pi. Estos pines permiten utlizar sensores analógicos que abaratan significativamente los costes del proyecto.Un ejemplo de este tipo de sensor son los higrómetros que han sido utilizados en este TFG. Una solución alternativa a este problema sería utilizar un conversor analógico-digital, aunque el coste total ascendería. La elección de la primera opción se debe principalmente a dos motivos, primero, como se ha mencionado anteriormente, es más barato un Arduino que un conversor de este tipo y segundo, nos proporciona una mayor cantidad de pines analógicos, digitales y de salida de voltaje para poder extender el modelo implementado o añadir nuevos sensores en proyectos futuros.
+
+Se han incluido los tres tipos de sensores ya mencionados en el apartado~\ref{subsec:sensores}, para cada uno de los sensores existen tres entradas diferentes, la entrada de voltaje (Vcc), la tierra (GND) y la entrada de datos, los dos primeros conectados a una protoboard como se indica más adelante en este apartado.
+Las conexiones de datos de los sensores se han montado siguiendo el siguiente esquema:
+
+\begin{itemize}
+	\item El primer módulo con sensor DHT22 al GPIO 17 de la Raspberry.
+	\item El segundo módulo con sensor DHT22 al GPIO 27 de la Raspberry.
+	\item El primer módulo YL-69 al pin A0 del Arduino.
+	\item El segundo módulo YL-69 al pin A1 del Arduino.
+	\item La primera sonda DS18B20 al GPIO 04
+	\item La segunda sonda DS18B20 al GPIO 04
+\end{itemize}
+
+El caso de las sondas DS18B20 tienen una particularidad que consiste en aprovechar la posibilidad de realizar lecturas en serie de varios dispositivos. Este tipo de sensores utiliza el protocolo \textit{1-Wire} y permite conectar más de un sensor en el mismo bus para realizar la comunicación. Esto permite ahorrar entradas para poder extender el sistema en trabajos futuros sin problema. 
+
+Todas las conexiones se han realizado usando cables Dupont, macho-hembra, macho-macho o hembra-hembra según procediese.
+Tanto los sensores como los actuadores necesitan además de la entrada/salida de datos, una conexión para su alimentación y una conexión a tierra, es por este motivo que para facilitar el mantenimiento y realizar el prototipado de la electrónica se ha usado una Protoboard, de tal manera que haciendo uso de las conexiones internas de esta como se muestra en la figura~\ref{figura:conexiones_protoborad} ha sido alimentada con el pin de 5V de Arduino y con el GND del Arduino.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/protoboard-conexiones-internas}
+    \caption{Conexiones internas Protoboard.}
+    \label{figura:conexiones_protoborad}
+\end{figure}
+
+El conexionado de de todos los sensores es equivalente, quedaría como se muestra en el siguiente diagrama:
+AQUI VA UNA FIGURA ESQUEMATICA DE LA CONEXION DE LOS SENSORES
+
+Como se indica en el apartado~\ref{subsec:actuadores}, se ha añadido un módulo de relés, conectado a la Raspberry PI que permite controlar los actuadores desde la aplicación. La bomba de agua funciona a la corriente eléctrica doméstica (240 V), por lo que no se puede alimentar directamente con el voltaje proporcionado por la Raspberry o el Arduino. Para poder apagar o encender los actuadores, se ha colocado el relé en serie a modo de interruptor entre dos de los bornes del actuador, que estará conectado a la corriente eléctrica.
+El siguiente diagrama muestra como se realiza dicho circuito:
+
+AQUI VA UNA FIGURA DEL CIRCUITO
+
+A su vez, cada uno de los actuadores está asociado a un pin GPIO de la Raspberry, en concreto, la bomba CESFONJER está asociada al GPIO 24. Físicamente esta conexión se realiza mediante un cable dupont desde el módulo de relés a la Raspberry.
+
+El motivo de utilizar un módulo de relés en lugar de utilizar uno solo es, de nuevo, abrir la posibilidad de poder añadir nuevos actuadores de una manera sencilla.
+
+	
+\section{Arquitectura e implementación software}
+\label{Arquitectura e implementación software}
+
+\subsection{Arquitectura general}
+\label{Arquitectura general}
+El código desarrollado en este TFG está disponible en Github \footnote{\url{https://github.com/rinvictor/TFG}}. El repositorio se divide en \textit{code/}, donde se puede encontrar todo el codigo desarrollado, y en \textit{doc/}, con la documentación sobre el mismo.
+En code/ podemos encontrar otras cinco subcarpetas:
+\begin{itemize}
+\item \textit{apps}, código para el desarrollo de las aplicaciones que se han realizado.
+\item \textit{backup}, código para realizar un backup de la base de datos.
+\item \textit{controllers}, código relativo a los actuadores.
+\item \textit{datacollecting}, código relativo a la recolección de datos y los sensores.
+\item \textit{modules}, credenciales de acceso a la base de datos.
+\item \textit{test}, test para comprobar el correcto funcionamiento de los sensores.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/esquema_general_software}
+    \caption{Esquema de la implementación software del sistema.}
+    \label{figura:esquema_general_software}
+\end{figure}
+
+Como se muestra en la figura~\ref{figura:esquema_general_software} se han realizado dos aplicaciones relativas a la visualización de datos y monitorización del sistema, una aplicación web para la visualización de datos con Dash, que se ha desplegado en Heroku\footnote{\url{https://greenhouse-tfg.herokuapp.com}}, y un bot de Telegram\footnote{\url{t.me/greenhouseTFGBot}}, que está desplegado en la propia Raspberry, y que permite además recibir notificaciones sobre el estado del invernadero, las medidas tomadas y los actuadores.
+Existe además, una aplicación para controlar el riego en el invernadero mediante los actuadores del sistema.
+
+La base de datos que se ha utilizado esta desplegada en los laboratorios docentes de la ETSIT de la URJC en un contenedor Docker, en concreto en la máquina \textit{l2018-pc05.aulas.etsit.urjc.es}. Esta base de datos consta de dos colecciones, \textit{sensors\_data} y \textit{controllers\_data}. Para hacer la conexión a esta base de datos se ha usado la librería \textit{pymongo}. El esquema seguido en la colección \textit{sensors\_data} se muestra en las siguientes figuras.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=8cm, keepaspectratio]{img/estructura_db}
+    \caption{Esquema general de la estructura de la base de datos.}
+    \label{figura:estructura_bd}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=15cm, keepaspectratio]{img/sensors_data_collection}
+    \caption{Estructura de la colección \textit{sensors\_data}, perteneciente a la base de datos \textit{greenhouseDB}.}
+    \label{figura:sensors data collection}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=15cm, keepaspectratio]{img/controllers_data_collection}
+    \caption{Estructura de la colección \textit{controllers\_data}, perteneciente a la base de datos \textit{greenhouseDB}.}
+    \label{figura:controllers data collection}
+\end{figure}
+
+Como se puede observar en las figuras anteriores se almacenan seis valores por cada lectura del sensor. Se realizan un total de ocho lecturas, (dos por sensor), cada dos horas en \textit{sensors\_data}. Para el caso de \textit{controllers\_data} se almacena un valor una vez al día.
+%Estos valores permiten alojar esta base de datos en los laboratorios docentes de la ETSIT, ya que su capacidad es suficiente.
+
+Se realiza una copia de seguridad de cada una de las colecciones de la base de datos, dejándola en dos archivos \textit{.csv}, EL motivo de realizar esta copia de seguridad es el de poder restaurar la información porque haya un problema con la base de datos, por ejemplo que el contenedor de Docker se borre. El código para realizar este backup se localiza en \textit{TFG/code/backup}. En \textit{backup.py} se encuentra la lógica del proceso y en \textit{execute\_backup.sh} se realiza una llamada a esta función dejando un mensaje en \textit{TFG/code/backup/logs/success.log} si todo funciona correctamente, en \textit{TFG/code/backup/logs/error.log} si falla y en \textit{TFG/code/backup/logs/cronerror.log} si es cron el que encuentra problemas para ejecutar el proceso. Se realiza esta copia de seguridad una vez al día.
+
+Todo el sistema de recogida de datos y actuación se realiza en la Raspberry. El motivo de la divisón entre la toma de datos, actuación y el bot, desplegados en la Raspberry y la aplicación web desplegada en la nube, es contemplar una posible caída de, por ejemplo, la conexión a Internet en la red a la que está conectada la Raspberry Pi. En caso de que esto sucediera, la subida de los nuevos datos recogidos no se podría realizar y su visualización no sería posible, pero el sistema seguiría siendo autónomo y funcionando de manera correcta, además la visualización mediante la aplicación web de Dash de los datos ya almacenados en la base de datos seguiría siendo posible. 
+ 
+Algunos de los scripts realizados, son lanzados en segundo plano utilizando Cron, a continuación se puede ver el fichero de configuración de este:
+
+\begin{lstlisting}
+1 */2 * * * /home/pi/TFG/code/datacollecting/execute.sh > /home/pi/TFG/code/datacollecting/logs/cronerror.log 2>&1
+10 */2 * * * /home/pi/TFG/code/apps/telegram/execute_monitoring.sh > /home/pi/TFG/code/apps/telegram/logs/cronerror.log 2>&1
+1 */24 * * * /home/pi/TFG/code/backup/execute_backup.sh > /home/pi/TFG/code/backup/logs/cronerror.log 2>&1
+30 */24 * * * /home/pi/TFG/code/apps/actions/execute_actions.sh > /home/pi/TFG/code/apps/actions/logs/cronerror.log 2>&1
+\end{lstlisting}
+
+Se pueden observar los diferentes \textit{.sh} que se han desarrollado para ejecutar las aplicaciones y como, en caso de fallo, se escribe el fichero \textit{cronerror.log}  
+
+
+
+%La estructuctura que se ha descrito, un script de Python con la lógica del proceso, un ejecutable de Bash y los ficheros de log \textit{success.log}, \textit{error.log} y \textit{cronerror.log}, es la arquitectura que se ha seguido en la mayoría de las partes que forman la aplicación. Por ejemplo, esta misma arquitectura se sigue en la aplicación de riego, en el bot de Telegram o en la recogida de datos.%
+ 
+
+\subsection{Recogida de datos}
+\label{subsec:recogida de datos}
+La recogida de datos, como se ha mencionado anteriormente, se realiza en la propia Raspberry. Se pueden encotrar varios archivos relativos a este propósito, en primer lugar un fichero de configuración \textit{config.py}. Para facilitar el uso de los sensores en el código se ha definido una clase \textit{Sensor} como se muestra a continuación.
+
+\begin{lstlisting}[language=Python]
+class Sensor:
+    def __init__(self, pin, location):
+        self.pin = pin
+        self.location = location
+\end{lstlisting}
+
+Todos los sensores en este TFG se expresan en el código con instancias de la clase \textit{Sensor}. El pin se utiliza a modo de identificador único y en las funciones que trabajan con sensores es uno de los parámetros recibidos. La localización indica si el sensor se encuentra, por ejemplo, dentro o fuera del invernadero.
+
+Los scripts para la recogida de datos se han implementado en los ficheros \textit{sensors.py} y \textit{db\_conn.py}. En \textit{sensors.py} se definen las diferentes funciones que leen los datos, existiendo una función por tipo de sensor. Para este propósito se utilizan distintas librerías para el control de los dispositivos, como \textit{pyfirmata2}, \textit{Adafruit\_DHT} y \textit{w1thermsensor}.
+Las funciones propias de los módulos se utilizan dentro de las desarolladas en este TFG para obtener el conjunto de datos necesario para cada sensor. Por ejemplo, la función \textit{get\_ground\_hum\_list} utiliza la función \textit{read\_ground\_hum} para devolver una lista con las lecturas de los diferentes sensores usados para medir la humedad de la tierra.
+
+En el fichero \textit{db\_conn.py} se realiza la inserción de los datos en la base de datos \textit{greenhouseDB} de MongoDB, en concreto en la colección \textit{sensors\_data}. En este fichero se definen funciones \textit{insert}, cuya funcionalidad consiste en almacenar en la base de datos el valor correspondiente. Antes de insertar la información en la base de datos, se valida para detectar inconsistencias. En el caso de caso de que la lectura sea nula (en Python \textit{None}) o que sea un valor fuera de un rango establecido (por ejemplo, 120 ºC de temperatura es un error) se almacena un -1. Puede interesar conocer, por ejemplo, la tasa de fallo de un sensor, es por este motivo que no se hacen reintentos en la lectura. Un fallo en una lectura queda escrito en los ficheros de log, además, como se comenta posteriormente, se le comunica al usuario vía Telegram.
+Dentro de las funciones \textit{insert}, se define también el objeto que será almacenado en la base de datos, un ejemplo de esto es:
+
+\begin{lstlisting}[language=Python]
+        now = datetime.now()
+
+        item = {"type": "ambient temperature", "value": ambient_temperature, "sensorID": d.pin, "location": d.location,
+                "date": now}
+        collection.insert_one(item)
+\end{lstlisting}
+
+Como se puede observar, se almacena el tipo de dato, el valor obtenido, el ID del sensor, la localización y la fecha de captura del dato.
+
+Se ha desarrolado un script de Bash donde se lanzan los scripts de Python encargados de la recolección de datos, además se realizan las exportaciones de módulos de Python pertinentes y se almacena el resultado del proceso en los ficheros de log. El script de Bash si realiza reintentos, de tal manera que si es la aplicación la que falla relanza su ejecución. En caso de fallo se almacena el resultado con la etiqueta \textit{Exec Error}, en caso de fallar este segundo reintento la etiqueta pasa a ser \textit{Fatal Error}. Si el segundo intento tiene éxito, se escribe en el fichero de log indicando que ha sido tras un reintento. Todos los ficheros de log se escriben con la fecha y el resultado de la ejecución.
+Un ejemplo de esta clase de fichero es:
+
+\begin{lstlisting}[language=Bash]
+vie may 27 20:01:27 CEST 2022 success {'type': 'ground humidity', 'value': 0.2278, 'sensorID': 0, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 8, 24826), '_id': ObjectId('629111e4b2c6d1b9a5e7f23f')} 0.2209 {'type': 'ground humidity', 'value': 0.2209, 'sensorID': 1, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 13, 710340), '_id': ObjectId('629111e9b2c6d1b9a5e7f240')} 32.0 {'type': 'ambient humidity', 'value': 32.0, 'sensorID': 22, 'location': 'outdoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 15, 457495), '_id': ObjectId('629111ebb2c6d1b9a5e7f241')} 27.200000762939453 {'type': 'ambient humidity', 'value': 27.200000762939453, 'sensorID': 27, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 17, 203246), '_id': ObjectId('629111edb2c6d1b9a5e7f242')} 28.899999618530273 {'type': 'ambient temperature', 'value': 28.899999618530273, 'sensorID': 22, 'location': 'outdoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 21, 482673), '_id': ObjectId('629111f1b2c6d1b9a5e7f243')} 32.79999923706055 {'type': 'ambient temperature', 'value': 32.79999923706055, 'sensorID': 27, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 23, 239564), '_id': ObjectId('629111f3b2c6d1b9a5e7f244')} 33.0 {'type': 'ground temperature', 'value': 33.0, 'sensorID': '325a0f1e64ff', 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 25, 179596), '_id': ObjectId('629111f5b2c6d1b9a5e7f245')} 27.625 {'type': 'ground temperature', 'value': 27.625, 'sensorID': '32360c1e64ff', 'location': 'indoor', 'date': datetime.datetime(2022, 5, 27, 20, 1, 27, 99572), '_id': ObjectId('629111f7b2c6d1b9a5e7f246')}
+\end{lstlisting}
+
+Este tipo de información es útil para poder encontrar fallos en el sistema. Además de los ficheros \textit{success.log} y \textit{error.log}, existe \textit{cronerror.log}. Este es escrito en caso de fallar Cron.
+
+
+\subsection{Aplicación de Dash}
+\label{aplicacion de dash}
+En este TFG se ha desarrollado una aplicación con el propósito de mostrar los datos proporcionados por los sensores de una manera gráfica. Esta aplicación se ha implementado usando el framework \textit{Dash}, descrito en la sección~\ref{subsec:dash}.
+Está formada por varios módulos principales, \textit{app.py}, programa principal, \textit{dash\_utils.py}, funciones de filtrado y \textit{create\_figures.py}, funciones para la creación de las figuras basada en la librería \textit{Plotly}.
+
+La aplicación dispone de las siguientes funcionalidades:
+\begin{itemize}
+\item \textit{HOME}, página principal.
+\item \textit{SENSORS DATA}, un desplegable con las magnitudes medidas.
+\item \textit{CONTROLLERS DATA}, un desplegable con los controladores (la aplicación de riego).
+\item \textit{DOCUMENTATION}, documentación del proyecto.
+\end{itemize}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/web}
+    \caption{Aplicación de visualización de datos.}
+    \label{figura:web}
+\end{figure}
+
+Cada opción del menú da acceso a ver la figura a la que hace referencia, por ejemplo, en el desplegable \textit{SENSORS DATA} se pueden ver las distintas magnitudes que se miden y para las que se obtienen datos del sistema, humedad ambiente, temperatura ambiente, humedad de la tierra y temperatura de la tierra.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/humedad_ambiente_grafica}
+    \caption{Aplicación de visualización de datos.}
+    \label{figura:humedad_ambiente_grafica}
+\end{figure}
+
+Como se observa en la figura~\ref{figura:humedad_ambiente_grafica}, en su parte superior izquierda hay un selector de fecha de inicio y fecha de fin y en su parte superior derecha un selector del sensor que se desea mostar, pudiendo ser uno, varios o todos los disponibles.
+Este cambio se verá reflejado en la gráfica como se muestra en la siguiente figura~\ref{figura:humedad_ambiente_grafica_selectores}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/humedad_ambiente_valores}
+    \caption{Cambio tras selección de fecha y sensor en la humedad ambiente.}
+    \label{figura:humedad_ambiente_grafica_selectores}
+\end{figure}
+
+Todo el código que usa la aplicación se encuentra dentro de \textit{/code/apps/dashapp}.
+En \textit{app.py} se encuentra el grueso de la aplicación, utilizando los componentes html y CSS embebidos en dash se compone el estilo de la página, usando además una plantilla libre de Bootstrap. La interactividad de la aplicación se consigue mediante lo que en \textit{Dash} se conocen como \textit{callbacks}. Un \textit{callback} es una función que se lanza automáticamente cada vez que un componente recibe un cambio, pudiendo generar este cambio una actualización de la visualización.
+\begin{lstlisting}[language=Python]
+@app.callback(
+    Output('ambient_temperature_fig', 'figure'),
+    [Input('date_picker_ambient_temperature', 'start_date'),
+     Input('date_picker_ambient_temperature', 'end_date'),
+     Input('dropdown_ambient_temperature', 'value')]
+)
+def update_output(start_date, end_date, value):
+    df = getdataframe("ambient temperature")
+    if not value and not start_date and not end_date:
+        # By defect values
+        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
+    if start_date or end_date:
+        df = du.date_filter(df, start_date, end_date)
+    if value and len(value) > 0:
+        df = df[df['sensorID'].isin(value)]
+
+    fig = figures.create_temperature_fig(df)
+    return fig
+\end{lstlisting}
+
+El código anterior implementa un ejemplo de una función \textit{callback}. En esta función, se reciben como parámetros de entrada los filtros a través de los que se establecen una fecha de inicio y de fin de los datos, así como el ID del sensor que se quiere visualizar.  En base a los filtros, se seleccionan los datos pertinentes y se genera una nueva visualización.
+
+Todo el manejo de datos se realiza utilizando la librería de Python Pandas, esta proporciona una mayor velocidad y facilidad de acceso a los datos. Es muy común trabajar utilizando Pandas y MongoDB. La aplicación hace una llamada a la base de datos cuando se le solicita nueva información, información que es convertida en una estructura de datos propia de Pandas, dataframe, y sobre la que se hacen los filtrados pertinentes.
+%
+%El próposito principal de la aplicación es el de poder visualizar datos y monitorizar de esta manera el sistema. Un caso de uso de esto podría ser detectar un sensor con problemas, como se muestra a continuación:
+%
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
+%    \caption{Gráfica que muestra un comportamiento anormal de uno de los sensores.}
+%    \label{figura:sensor_problemas}
+%\end{figure}
+%
+%Se encontró que durante varios dias todas las medidas eran cercanas a 1, esto hizo que se comprobara que uno de los sensores de humedad de suelo estaba fallando.
+
+Esta misma funcionalidad es equivalente para mostrar los datos relativos a los actuadores, en concreto, se muestran los litros utilizados al día por la aplicación de riego, cuyo funcionamiento concreto se mostrará en la sección~\ref{subsec:riego}.
+
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/figura_riego_dash}
+%    \caption{Gráfica obtenida del apartado \textit{CONTROLLERS} de la aplicación web.}
+%    \label{figura:sensor_problemas}
+%\end{figure}
+
+Todas las gráficas que se generan en esta aplicación web se pueden descargar en formato \textit{png}, se puede hacer zoom sobre una zona en concreto de la figura o sobre la totalidad de esta y otras funciones proporcionadas por Plotly.
+ 
+
+\subsection{Bot de Telegram}
+\label{bot de telegram}
+En este TFG se ha desarrollado un bot de Telegram llamado \textit{greenhouseTFGBot}, cuyo propósito no es exclusivamente el de enviar mensajes al usario sino, además, poder obtener información de los sensores, tanto en tiempo real como desde la base de datos y enviar gráficas construidas con Plotly interactuando con el usuario. En esta sección se especifican todas las funcionalidades implementadas en este bot. Ejemplos concretos y salidas de comandos pueden ser vistos en la sección~\ref{sec:cosas particulares cambiar nombre}.
+
+Este bot se ha desarrollando haciendo uso de la API de telegram y de la librería de Python Telepot. Se puede encontrar el código en \textit{TFG/code/apps/telegram} del repositorio de Github.
+
+Para crear el bot, se ha utilizado un bot propio de Telegram, llamado \textit{Botfather}, que permite, no sólo crear, sino también administrar los bots ya existentes. Al crear un bot se crea un token de identificación única que será el utilizado para poder desarrollar toda la funcionalidad y asociarla a un bot en concreto.
+ 
+La aplicación principal se encuentra en el fichero \textit{app.py}. Como se ha comentado anteriormente, hace uso de la librería Telepot. Telepot tiene una función incluida llamada \textit{MessageLoop}. Esta función recibe dos parámetros, el objeto que hace referencia al bot, y la función \textit{handle} que manejará los mensajes que el usuario introduzca por pantalla. \textit{MessageLoop} es un bucle infinito que está en continua escucha y responde a las diferentes peticiones del usuario.
+
+Las funcionalidades que se han incluido en este bot son:
+\begin{itemize}
+\item Obtener una lista con todos los comandos disponibles
+\item Obtener una lista con información sobre cada uno de los sensores
+\item Obtener una lista con información sobre cada uno de los actuadores
+\item Obtener el estado de uno o todos los sensores en tiempo real
+\item Obtener el estado de uno o todos los sensores y actuadores leyendo desde la base de datos.
+\item Obtener las figuras construidas con Plotly de uno o todos los sensores y actuadores.
+\item Enviar mensajes de error cuando alguna de las lecturas de cualquier sensor falle.
+\item Enviar mensajes informativos sobre la ejecución de los actuadores.
+\end{itemize}
+
+El caso de uso de este bot no es el de realizar un análisis pormenorizado del estado del sistema, sino el de poder tener acceso a datos concretos de una manera rápida y recibir mensajes que puedan resultar de interés para el usuario y para la monitorización del sistema completo.
+
+Cuando el usuario escribe por pantalla el comando \textit{/help} o cuando se inicia el bot por primera vez (\textit{/start}) se recibe una lista con todos los comandos disponibles. Cuando se introduce un comando erróneo o inexistente se recibe un mensaje indicando que el comando introducido es incorrecto concatenado con la lista de comandos disponibles.
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/comandos}
+%    \caption{Mensaje con los comandos disponibles.}
+%    \label{figura:comandos}
+%\end{figure}
+
+
+Escribiendo \textit{/sensorsinfo} se recibe una lista con información sobre cada uno de los sensores que están implementados en el sistema, indicando su id (GPIO, pin Arduino o su id de hardware). Esto mismo ocurre con \textit{/controllersinfo}, pero para los actuadores.
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/mensajes_info}
+%    \caption{Resultado de las peticiones \textit{/sensorsinfo} y \textit{/controllersinfo}.}
+%    \label{figura:mensajes info}
+%\end{figure}
+
+Para obtener información en tiempo real de cada una de las magnitudes medidas por los sensores se hace uso de los comandos \textit{/sensorsdata}, \textit{/groundhumidity}, \textit{/groundtemperature}, \textit{/ambienthumidity} y \textit{/ambienttemperature}. Estas llamadas devuelven dos mensajes, el primero en el que se indica que se está obteniendo la información solicitada y que puede tardar unos segundos en realizar dicha acción, y el segundo que devuelve la propia información solicitada, el id del sensor, su localización y el valor medido. En el caso de hacer \textit{/sensorsdata} devuelve esta misma información pero para todos los sensores del sistema en un mismo mensaje.
+
+Esta funcionalidad hace uso del código desarrollado en \textit{TFG/code/datacollecting/sensors.py} y en \textit{TFG/code/datacollecting/config.py}. En \textit{sensors.py} existen varias funciones que pueden devolver la información solicitada y con un formato concreto. Por ejemplo, la función que se muestra a continuación recibe un parámetro por defecto, en el caso de ser necesario devuelve el valor leído, en caso de no ser necesario no realiza esta lectura. Esto permite ahorrar tiempo de ejecución cuando, por ejemplo, solo es necesario obtener un diccionario con los valores \textit{type}, \textit{sensor} y \textit{location}, como ocurre cuando únicamente se necesita obtener información general de los sensores (\textit{/sensorsinfo} y \textit{/controllersinfo}).
+El fichero \textit{config.py} es el fichero donde se instancian cada uno de los sensores, como se ha indicado anteriormente.
+
+\begin{lstlisting}[language=Python]
+def get_ground_temp_list(value=True):
+    ground_temperature_list = []
+    for i in config.ds18b20_list:
+        if value:
+            d = dict(type="ground_temp", sensor=i.pin, location=i.location, 		value=read_ground_temperature(i.pin))
+        else:
+            d = dict(type="ground_temp", sensor=i.pin, location=i.location)
+        ground_temperature_list.append(d)
+    return ground_temperature_list
+\end{lstlisting}
+
+Se puede también obtener información no únicamente en tiempo real, sino de la última lectura almacenada en la base de datos. Estas llamadas son: \textit{/sensorsdatadb}, \textit{/groundhumiditydb}, \textit{/groundtemperaturedb}, \textit{/ambienthumiditydb}, \textit{/ambienttemperaturedb} e \textit{/irrigationdb}. El mensaje devuelto por estos comandos es similar a los mencionados anteriormente, con la diferencia de que añade la fecha y hora de la lecura que se está mostrando. De igual manera, \textit{/sensorsdatadb} devuelve la última lectura de todos los sensores del sistema.
+
+
+Esta funcionalidad hace uso de la librería Pymongo, que permite realizar la conexión a la colección pertinente de la base de datos de MongoDB.
+
+Otra de las funciones accesibles mediante comandos es la de obtener un gráfico. Por defecto, devuelve la figura de las mediciones realizadas el mismo día y el día anterior. Pero existe la posibilidad de pasarle parámetros opcionales que hacen referencia a la fecha de inicio que se desea y la fecha de fin. En el caso de sólo incluir el parámetro de fecha de inicio la figura contemplará los valores desde dicha fecha hasta el día en el que se realiza la solicitud. En el caso de únicamente incluir la fecha de fin, devuelve un mensaje indicando que requiere una fecha de inicio. El formato que esperan estos parámetros es \textit{yyyy-mm-dd}, en el caso de no seguir este formato, se devuelve otro mensaje de error sintáctico.
+Existen otros mensajes para indicar que el usuario está haciendo un mal uso del comando, como cuando, por ejemplo, se solicita una fecha posterior a la del día en que se realiza la petición o si se escribe mal un parámetro.
+Las gráficas se obtienen haciendo uso de los comandos \textit{/getallfigures}, \textit{/groundhumidityfig}, \textit{/groundtemperaturefig}, \textit{/ambienthumidityfig}, \textit{/ambienttemperaturefig} e \textit{/irrigationfig}, si se desea con sus parámetros opcionales \textit{--startdate} y \textit{--enddate}. Cualquiera de estos comandos devuelve tres mensajes, el primero en el que se indica que se está construyendo la figura, el segundo con la propia figura y el tercero que indica la localización de los sensores a los que se está haciendo referencia. En el caso de \textit{/getallfigures}, se devuelven todas las figuras, además de un mensaje indicando que ha terminado.
+
+Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en el script \textit{TFG/code/apps/dashapp/dash\_utils.py} y \textit{TFG/code/apps/dashapp/create\_figures.py}. Las imágenes son enviadas en formato png, convirtiendolas previamente a bytes. Si existiera algún errror durante el procesamiento del comando se enviaría un mensaje de error al usuario como se muestra en la figura~\ref{figura:error send photo}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/error_send_photo}
+    \caption{Mensaje de error enviado cuando el proceso de obtención de la imagen o el envío de esta falla.}
+    \label{figura:error send photo}
+\end{figure}
+
+Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de persistencia de datos, se realiza a la hora de la recogida. Existiría la posibilidad de no almacenar datos potencialemente erróneos, pero se ha optado por hacerlo para poder encontrar facilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_mensaje}
+%    \caption{Mensaje de error enviado cuando el sensor con ID 22 falla en su lectura.}
+%    \label{figura:error send sensor mensaje}
+%\end{figure}
+
+Como se ha comentado anteriormente, el usuario también recibe mensajes con información de los actuadores, en concreto, recibe el número de litros usado en la aplicación de riego. Esto se realiza desde la propia aplicación como se comenta posteriormente.
+
+%\begin{figure}[H]
+%	\centering
+%    \includegraphics[width=12cm, keepaspectratio]{img/mensaje_riego}
+%    \caption{Mensaje informativo recibido tras la activación del riego.}
+%    \label{figura:mensaje riego}
+%\end{figure} 
+
+
+
+\subsection{Aplicación de riego}
+\label{subsec:riego}
+En \textit{TFG/code/apps/actions} se encuentra el código relativo a los actuadores. En \textit{actions.py} se ha desarrollado una aplicación que sirve para automatizar el riego del sistema. Utiliza el código relativo a la lectura de datos de los sensores para obtener la humedad actual de la tierra. Experimentalmente se ha comprobado que los valores ideales para esta deben estar en torno a 0.2-0.45, esto haría referencia a un 80-55\% de humedad, aproximadamente. Según diversos estudios el porcentaje ideal de humedad de la tierra para el correcto desarrollo de los cultivos se encuentra entre el 50 y el 80\% y valores que se salgan de este rango pueden tener consecuencias negativas para el rendimiento de los cultivos. 
+
+Este script se ejecuta en Cron, realiza la medida y en función del valor obtenido realiza el riego con mayor o menor cantidad de agua. Si el porcentaje es demasiado bajo utilizará más cantidad y si es cercano a los valores ideales utilizará menos. Esta acción se realiza calculando el tiempo necesario que debe estar encendida la bomba. De nuevo la cantidad de agua que se utiliza se ha obtenido de manera experimental. En general, se ha conseguido mantener la humedad dentro de los parámetros deseados, y el gasto de agua se ha visto reducido en comparación con un riego al uso o con un sistema de riego no inteligente.
+Una vez ha realizado el riego satisfactoriamente se envía un mensaje al usuario por Telegram indicando cuantos litros han sido necesarios para realizarlo. Se almacena este dato, además, en la base de datos, en la colección llamada \textit{controllers\_data}.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/mensaje_riego}
+    \caption{Mensaje informativo recibido tras la activación del riego.}
+    \label{figura:mensaje riego}
+\end{figure} 
+
+Se contemplan algunos errores potenciales, como, por ejemplo, que la diferencia entre dos sensores de humedad que monitorizan la misma zona de riego no sea despreciable. Es un error potencial que dos sensores que son muy cercanos, como es el caso que se muestra en la figura den valores muy dispares entre sí, es por ello que se notifica al usuario. No se contempla como un error ya que podría darse el caso que, por ejemplo, un cultivo necesite más agua que otro y que ambos estén en la misma zona. Por lo que las medidas de los sensores podrían verse afectadas.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/warning_humedad_tierra}
+    \caption{Mensaje de posible error enviado cuando la diferencia entre dos sensores de humedad de la tierra es significativa.}
+    \label{figura:diferencia de sensores}
+\end{figure}
+
+En el directorio \textit{TFG/code/apps/actions/controllers} se encuentran el fichero de configuración de actuadores, \textit{config\_controllers.py}, este fichero es análogo al de los sensores, en el se define la clase \textit{Controller}, como se muestra a continuación:  
+
+\begin{lstlisting}[language=Python]
+# Config controllers file
+class Controller:
+    def __init__(self, pin, data):
+        self.pin = pin
+        self.data = data # In the bomb case, liters per minute
+
+bomb = Controller(24, 4)
+\end{lstlisting}
+
+El propósito de este tipo de ficheros de configuración es el de poder añadir nuevos dispositivos de manera sencilla. 
+
+En este mismo directorio también se encuentra el fichero \textit{controllers.py}, donde se definen las funciones para el apagado y encendido del dispositivo deseado, estas funciones reciben el pin de los actuadores, en el caso de la bomba de riego se está utilizando el GPIO 24, el sistema de nombrado que se ha utilizado en esta aplicación es el BCM.
+
+Estas funciones dan de alta el pin de salida deseado haciendo uso de la librería GPIO, con \textit{GPIO.OUT} y luego encienden o apagan el dispositivo que está utilizando pasádole un valor binario.
+
+Tal y como se ha realizado en cada una de las funcionalidades de este TFG, la aplicación de riego tiene sus propios logs, que se pueden consultar en \textit{TFG/code/apps/actions/logs}. En este directorio se encuentran los ficheros \textit{success.log}, \textit{error.log} y si procede \textit{cronerror.log}.
+La apicación se ejecuta en Cron y se lanza una vez al día, a las 00:30.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% EXPERIMENTOS Y VALIDACIÓN %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\cleardoublepage
+%\chapter{Experimentos y validación}
+%
+%Este capítulo se introdujo como requisito en 2019. 
+%Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
+%Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% RESULTADOS %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Casos de uso}
+\label{chap:casos de uso}
+
+En este capítulo se incluyen ejemplos y casos de uso de las funcionalidades desarrolladas en las aplicaciones mencionadas en el capítulo~\ref{chap:diseño e implementación}.
+
+\section{caso dedato bueno cambiar nombre}
+\label{sec:aplicación de dash ejemplos}
+En esta sección se muestran casos de uso y el flujo de funcionamineto de la plataforma completa.
+Como se muestra en el capítulo~\ref{chap:diseño e implementación}, en primer lugar se realiza la recogida de datos, tras esto, se suben a la colección correspondiente en la base de datos. Las aplicaciones desarrolladas hacen uso de estos datos.
+
+\subsection{Temperatura y humedad ambiente}
+\label{subsec: temperatura y humedad ambiente}
+El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se realiza la recogida de datos usando los sensores \textit{DHT22}. Los datos recogidos se suben a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. En las figuras~\ref{figura:robo3t_ambient_temperature}y ~\ref{figura:robo3t_ambient_humidity} se muestran los datos almacenados de humedad y temperatura ambiente correspondientes al 6 de Junio de 2022, para la lectura realizada a las 4 de la mañana. En estas figuras se puede observar la arquitectura que siguen los datos de humedad y temperatura ambiente, que son similares al resto de datos que se manejan en este TFG.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/robo3t_ambient_temperature}
+    \caption{Datos almacenados en \textit{sensors\_data} para la temperatura ambiente.}
+    \label{figura:robo3t_ambient_temperature}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/robo3t_ambient_humidity}
+    \caption{Datos almacenados en \textit{sensors\_data} para la humedad ambiente.}
+    \label{figura:robo3t_ambient_humidity}
+\end{figure} 
+
+Una vez los datos están almacenados en la base de datos pueden ser consultados desde las diferentes aplicaciones que se han desarrollado.
+En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso. También es posible obtener únicamente los datos de un sensor, para ello es necesario utilzar el desplegable de sensores, situado en la parte superior izquierda de la página.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_01_08_junio}
+    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \label{figura:ambient_temperature_01_08_junio}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/desplegable_fecha}
+    \caption{Uso del selector de fechas en la aplicación web.}
+    \label{figura:desplegable_fecha}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/desplegable_sensores}
+    \caption{Uso del selector de sensores en la aplicación web.}
+    \label{figura:desplegable_sensores}
+\end{figure}
+
+Se puede apreciar en las figuras anteriores como las lecturas de ambos sensores miden aproximadamente lo mismo, esto confirma el correcto funcionamiento del sistema. En la época del año en la que se realizaron las lecturas el invernadero se encontraba abierto, de manera que la temperatura interior y exterior debe ser la misma. Las fluctuaciones que se muestran en la figura se corresponden con las altas temperaturas durante el día y la bajada de estas durante la noche.
+
+En la figura~\ref{figura:desplegable_sensores} se puede observar que hay tres ID de sensores disponibles, esto se debe a que uno de los sensores fue cambiado de ID para comprobar el funcionamiento del sistema.
+
+
+También es posible obtener esta gráfica haciendo uso del bot de Telegram mediante el comando \textit{/ambienttemperaturefig} con sus parámetros opcionales para indicar la fecha deseada \textit{--startdate} y \textit{--enddate}, como se muestra en la figura~\ref{figura:telegram_ambient_temperature_01_08_junio}.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/telegram_ambient_temperature_01_08_junio}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \label{figura:telegram_ambient_temperature_01_08_junio}
+\end{figure}
+
+En el caso de ejecutar el comando \textit{/ambienttemperaturefig} sin ningún argumento se obtiene la gráfica con los datos obtenidos por defecto como se muestra en la figura~\ref{figura:ambienttemperaturefig}. Es posible utilizar únicamente un parámetro opcional, \textit{--startdate}(ver figura~\ref{figura:ambienttemperaturefig_startdate}). En el caso de usar únicamente el parámetro \textit{--enddate} se envía un mensaje de error como el mostrado en la figura~\ref{figura:ambienttemperaturefig_enddate}. Este mensaje especifica que es necesario indicar una fecha de inicio, tras este mensaje envía una figura con los valores por defecto, es decir, ignora los parámetros enviados.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperaturefig}
+    \caption{Gráfica obtenida mediante el comando \textit{/ambienttemperaturefig} realizado el día 12 de Junio de 2022.}
+    \label{figura:ambienttemperaturefig}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperaturefig_startdate}
+    \caption{Gráfica obtenida mediante el comando \textit{/ambienttemperaturefig} realizado el día 12 de Junio de 2022.}
+    \label{figura:ambienttemperaturefig_startdate}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperaturefig_enddate}
+    \caption{Gráfica obtenida mediante el comando \textit{/ambienttemperaturefig} realizado el día 12 de Junio de 2022.}
+    \label{figura:ambienttemperaturefig_enddate}
+\end{figure}
+
+Como se observa en las figuras anteriores se puede observar de manera rápida y sencilla un error en la lectura de un sensor, el día 11 de Junio de 2022 el sensor 27 de temperatura falló en su lectura. 
+Este tipo de errores como se indica en la sección~\ref{bot de telegram} también se notifican al usuario de manera que no sea necesario estar consultando el bot para confirmar su correcto funcionamiento. En la siguiente figura se muestra el mensaje recibido tras el error de lectura.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_11_junio}
+    \caption{Mensaje de error obtenido el 11 de Junio de 2022 tras error de lectura de temperatura ambiente del sensor 27.}
+    \label{figura:error_sensor_11_junio}
+\end{figure}
+
+
+Otros de los comandos disponibles en el bot de Telegram relativos a la temperatura ambiente son \textit{/ambienttemperature}, con el que se obtiene la temperatura ambiente en tiempo real (ver figura~\ref{figura:ambienttemperature}) y \textit{/ambienttemperaturedb} (ver figura~\ref{figura:ambienttemperaturedb}) que devuelve la última lectura almacenada en la base de datos.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperature}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/ambienttemperature}.}
+    \label{figura:ambienttemperature}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperaturedb}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/ambienttemperaturedb}.}
+    \label{figura:ambienttemperaturedb}
+\end{figure}
+
+A pesar de que en los mensajes anteriores se da información sobre los sensores que referencian las figuras y los mensajes, el usuario puede utilizar el comando \textit{/sensorsinfo} para obtener información detallada sobre todos los sensores del sistema como se muestra en la figura~\ref{figura:sensorsinfo}.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/sensorsinfo}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/sensorsinfo}.}
+    \label{figura:sensorsinfo}
+\end{figure}
+
+Como se ha mencionado anteriormente el caso de la humedad ambiente es análogo al de la temperatura. A continuación se muestran las diferentes figuras relativas a la humedad ambiente. De igual manera en las figuras se pueden apreciar las fluctuaciones correspondientes al cambio de humedad en la noche respecto al cambio durante el día. Los valores obtenidos por ambos sensores también son similares en sus medidas en cuanto a la humedad.
+ 
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambient_humidity_01_08_junio}
+    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \label{figura:ambient_humidity_01_08_junio}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/telegram_ambient_humidity_01_08_junio}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \label{figura:telegram_ambient_humidity_01_08_junio}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienthumidity}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/ambienthumidity}.}
+    \label{figura:ambienthumidity}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambienthumiditydb}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/ambienthumiditydb}.}
+    \label{figura:ambienthumiditydb}
+\end{figure}
+
+\subsection{Temperatura de la tierra}
+\label{subsec: temperatura de la tierra}
+En esta sección se muestra el caso de uso de la aplicación para la recogida y consulta de datos de temperatura de la tierra realiza mediante los sensores \textit{DS18B20} que son subidos a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. Es muy similar al descrito en la sección~\ref{subsec: temperatura y humedad ambiente}.
+La estructura seguida en la recogida de datos es la que se muestra en la figura~\ref{figura:ground_temperature_robo3t}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_robo3t}
+    \caption{Arquitectura de los datos almacenados en \textit{sensors\_data} para la temperatura de la tierra.}
+    \label{figura:ground_temperature_robo3t}
+\end{figure}
+La gráfica en la aplicación web se puede obtener en \textit{GROUND TEMPERATURE} dentro del desplegable \textit{SENSORS DATA} del menú principal.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_01_06_junio}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura de la tierra desde 1 al 8 de Junio de 2022}
+    \label{figura:ground_temperature_01_08_junio}
+\end{figure}
+
+En la figura~\ref{figura:ground_temperature_01_08_junio} se puede observar una diferencia clara en las medidas de las horas centrales del día. Esto se debe a que el sensor representado en azul esta colocado más cercano a la superficie de la tierra, por lo que recibe mucho más calor. De igual manera se pueden apreciar las fluctuaciones de temperatura correspondientes al día y a la noche.
+
+En las sucesivas figuras se muestra el uso del bot de Telegram para obtener los datos relativos a la temperatura de la tierra.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_telegram}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/groundtemperature}}
+    \label{figura:ground_temperature_telegram}
+\end{figure}
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_db_telegram}
+    \caption{Mensaje recibido haciendo uso del comando \textit{/groundtemperaturedb}}
+    \label{figura:ground_temperature_db_telegram}
+\end{figure}
+
+Como se muestra en las figuras anteriores, la temperatura de la tierra de ambos sensores es bastante pareja en horas que no reciben la luz del sol, por ejemplo, el comando de la figura~\ref{figura:ground_temperature_telegram} fue ejecutado a las 23:09.
+Esto se puede observar de igual manera en la figura que se muestra a continuación. A medida que avanza el día la diferencia entre las lecturas de ambos sensores es mayor, en cambio, por la noche las lecturas son muy similares. 
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_diferencias}
+    \caption{Diferencia entre lecturas de ambos sensores. Medidas tomadas entre las 20 del dia 11 de Junio de 2022 y las 14 del día 12 de Junio de 2022}
+    \label{figura:ground_temperature_diferencias}
+\end{figure}
+
+Igual que para el resto de magnitudes es posible utlizar el bot de Telegram para obtener gráficas como se muestra en las siguientes figuras.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/groundtemperaturefig_telegram}
+    \caption{Gráfica obtenida mediante el comando \textit{/groundtemperaturefig} realizado el día 12 de Junio de 2022.}
+    \label{figura:groundtemperaturefig_telegram}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/groundtemperaturefig_telegram_options}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \label{figura:groundtemperaturefig_telegram_options}
+\end{figure}
+
+
+\subsection{Humedad de la tierra}
+\label{subsec: humedad de la tierra}
+En esta sección se presenta el caso del tratamiento de la información de la humedad de la tierra. Se realiza la lectura de datos utilizando sensores YL-69. La lectura de estos higrómetros es almacenada en la base de datos \textit{greenhouseDB}, en concreto en la colección \textit{sensors\_data}. La estructura seguida en la recogida de datos de este tipo es la que se muestra en la figura~\ref{figura:arquitectura_humedad_tierra}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/arquitectura_humedad_tierra}
+    \caption{Arquitectura de los datos almacenados en \textit{sensors\_data} para la humedad de la tierra.}
+    \label{figura:arquitectura_humedad_tierra}
+\end{figure}
+
+Estos datos al igual que en los casos anteriores pueden ser consultados o bien desde la aplicación web, obteniendola en \textit{AMBIENT HUMIDITY} dentro del desplegable \textit{SENSORS DATA} del menú principal, o bien desde el bot de Telegram. Todas las figuras, comandos y datos disponibles para la humedad de la tierra son análogos a los casos descritos en las secciones~\ref{subsec: temperatura y humedad ambiente} y~\ref{subsec: temperatura de la tierra}.
+
+La humedad de la tierra está relacionada con la aplicación de riego que se ha desarrollado. Como se expone en la sección~\ref{subsec:riego}. En las figuras sucesivas se muestra como la relación entre los datos de humedad de la tierra y los datos almacenados en la colección \textit{controllers\_data} conservan una estrecha relación.
+En las figuras~\ref{figura:figura riego} y~\ref{figura:humedad tierra} se muestra como a mayor sequedad de la tierra el sistema riega con una mayor cantidad de agua.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/figura_riego}
+    \caption{Gráfica con datos de riego del 4 al 6 de junio de 2022.}
+    \label{figura:figura riego}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ground_humidity}
+    \caption{Gráfica con datos de humedad de la tierra del 4 al 6 de junio de 2022.}
+    \label{figura:humedad tierra}
+\end{figure}
+
+Para obtener las figuras de riego existen las mismas posibilidades que para el resto de figuras. Se puede utilizar la aplicación web, estas figuras se encuentran en el desplegable \textit{IRRIGATION} de la sección \textit{CONTROLLERS DATA} del menú principal (ver figura~\ref{figura:grafica_irrigation_data_04_07_junio}).
+Haciendo uso del comando \textit{/irrigationfig}, con sus parámetros opcionales se obtiene la figura de riego y con el comando \textit{/irrigationdb} se obtiene el útltimo dato almacenado en la base de datos sobre el riego. El comando \textit{/controllersinfo} devuelve un mensaje con información relevante sobre los diferentes actuadores del sistema, en este caso, sobre la bomba de riego (ver figura~\ref{figura:comando controllers info}).
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/grafica_irrigation_data_04_07_junio}
+    \caption{Datos de riego obtenidos mediante la aplicación web del 04 al 07 de junio de 2022.}
+    \label{figura:grafica_irrigation_data_04_07_junio}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/irrigationfig_04_07_junio}
+    \caption{Datos de riego obtenidos mediante el bot de Telegram del 04 al 07 de junio de 2022.}
+    \label{figura:irrigationfig_04_07_junio}
+\end{figure}
+
+Como se muestra en las figuras~\ref{figura:grafica_irrigation_data_04_07_junio} y~\ref{figura:irrigationfig_04_07_junio} las gráficas elegidas para mostrar los datos relativos al riego son barras que representan la cantidad de litros usados para el riego en un día. En la figura~\ref{figura:comando controllers info} se observa la salida del comando \textit{/controllersinfo}. Este comando proporciona información sobre los actuadores del sistema, en el caso de la bomba se indica su ID (el pin al que está conectado) y su caudal.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/controllers_info}
+    \caption{Salida del comando \textit{/controllersinfo}.}
+    \label{figura:comando controllers info}
+\end{figure}
+
+
+\section{cosas particulares cambiar nombre}
+\label{sec:cosas particulares cambiar nombre}
+Como se menciona en el apartado~\ref{aplicacion de dash} uno de los objetivos de la aplicación web es el de poder realizar un análisis concreto del estado del sistema y encontrar así errores.
+La aplicación es útil para detectar comportamientos anomarles en los sensores o actuadores,por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
+    \caption{Gráfica que muestra un comportamiento anormal de uno de los higrómetros.}
+    \label{figura:sensor_problemas_higro}
+\end{figure}
+
+Otro caso de error se muestra en la figura~\ref{figura:error temperatura ambiente}, donde se muestra que el sensor con ID 22 no estaba funcionando correctamente.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_error}
+    \caption{Gráfica que muestra un comportamiento anormal de uno de los sensores de temperatura ambiente.}
+    \label{figura:error temperatura ambiente}
+\end{figure}
+
+Otros de los objetivos del control de errores es el de notificar al usuario al momento de su detección, para ello se envían mensajes cuando esta clase de errores es detectada, como se muestra en los apartados anteriores.
+
+En las secciones~\ref{subsec: temperatura y humedad ambiente}, \ref{subsec: temperatura de la tierra} y \ref{subsec: humedad de la tierra} se muestran las distintas posibilidades que existen para la obtención de información para ese tipo de datos en concreto, pero también es posible realizar este análisis usando los comandos \textit{/sensorsdata}, \textit{/sensorsdatadb} y \textit{/getallfigures}. Con estos comandos se puede obtener los datos de todos los sensores a la vez. Sirven para realizar un vistazo del estado del sistema más general.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/sensorsdata}
+    \caption{Salida del comando \textit{/sensorsdata}.}
+    \label{figura:sensorsdata}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/sensorsdatadb}
+    \caption{Salida del comando \textit{/sensorsdatadb}.}
+    \label{figura:sensorsdatadb}
+\end{figure}
+
+\begin{figure}[H]
+  \centering
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/getallfiguresp1}
+    \caption{Primera parte salida del comando \textit{/getallfigures}.}
+    \label{figura:getallfiguresp1}
+  \end{minipage}
+  \hfill
+  \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/getallfiguresp2}
+    \caption{Segunda parte salida del comando \textit{/getallfigures}.}
+    \label{figura:getallfiguresp2}
+  \end{minipage}
+  \hfill
+    \begin{minipage}[b]{0.4\textwidth}
+    \includegraphics[width=\textwidth]{img/getallfiguresp3}
+    \caption{Tercera parte salida del comando \textit{/getallfigures}.}
+    \label{figura:getallfiguresp3}
+  \end{minipage}
+\end{figure}
+
+Cuando el bot recibe el comando \textit{/getallfigures} se envían todas las figuras disponibles y un mensaje adicional indicando que ya se ha terminado el proceso. Se observa que todas las figuras tienen lógica con lo comentado en los apartados anteriores y que el sistema se encuentra funcionando correctamente. La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} también es coherente.
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% CONCLUSIONES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\chapter{Conclusiones}
+\label{chap:conclusiones}
+
+
+\section{Conclusiones finales}
+\label{sec:consecucion-objetivos}
+
+una conclusión
+
+\section{Trabajos futuros}
+\label{sec:trabajos_futuros}
+
+trabajo futuros
+
+%Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
+
+%Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% APÉNDICE(S) %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+\appendix
+\chapter{Manual de usuario}
+\label{app:manual}
+
+%Esto es un apéndice.
+Si has creado una aplicación, siempre viene bien tener un manual de usuario.
+Pues ponlo aquí.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BIBLIOGRAFIA %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\cleardoublepage
+
+\begin{thebibliography}{X}
+	\bibitem{historia} \textsc{Historia de la robótica.}
+	\url{https://scielo.isciii.es/pdf/aue/v31n3/v31n3a02.pdf}
+	
+	\bibitem{javascript} \textsc{Documentación oficial de javascript}
+	\url{https://developer.mozilla.org/es/docs/Web/JavaScript}	
+	
+	\bibitem{django} \textsc{Documentacion oficial de Django}
+	\url{https://docs.djangoproject.com}
+	
+	\bibitem{django-channels} \textsc{Documentacion oficial de Django-Channels}
+	\url{https://channels.readthedocs.io/en/stable/}
+	
+	\bibitem{docker} \textsc{Documentacion oficial de Docker}
+	\url{https://docs.docker.com/}
+	
+	\bibitem{webrtc} \textsc{Documentación oficial de WebRTC.}
+	\url{https://webrtc.org/}
+	
+	\bibitem{TFM-pablo} \textsc{Pablo Moreno. Torneos de programación de robots
+en una plataforma online. (2020)}
+	\url{https://gsyc.urjc.es/jmplaza/students/tfm-kibotics-torneos-pablo_moreno-2020.pdf}
+	
+	\bibitem{TFG-alvaro} \textsc{Álvaro Paniagua. Simulador de robots con tecnologías web vr. (2018)}
+	\url{https://github.com/RoboticsLabURJC/2018-tfg-alvaro_paniagua}
+	
+	\bibitem{A ROS-based open web platform for
+Intelligent Robotics education.} \textsc{David Roldán, Sakshay Mahna José M. Cañas
+International Conference on Robotics in Education (RiE-2021), pp 243-255,
+Advances in Intelligent Systems and Computing, vol 1359. Springer, 2022.}
+	\url{https://gsyc.urjc.es/jmplaza/papers/rie2021-unibotics-draft.pdf}
+	
+\end{thebibliography}
+
+\end{document}

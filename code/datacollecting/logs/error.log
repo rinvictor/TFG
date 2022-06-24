@@ -1,0 +1,72 @@
+lun mar 21 19:22:10 CET 2022 exec error
+
+lun mar 21 19:22:10 CET 2022 FATAL ERROR
+
+lun mar 21 19:24:34 CET 2022 exec error
+
+lun mar 21 19:24:34 CET 2022 FATAL ERROR
+
+lun mar 21 19:28:50 CET 2022 exec error
+
+jue mar 24 16:01:39 CET 2022 exec error
+
+sáb mar 26 20:01:59 CET 2022 exec error
+
+lun mar 28 10:01:28 CEST 2022 exec error
+
+mié mar 30 06:01:39 CEST 2022 exec error
+
+lun abr 11 00:01:39 CEST 2022 exec error
+
+lun abr 11 02:01:38 CEST 2022 exec error
+
+lun abr 11 08:01:38 CEST 2022 exec error
+
+lun abr 11 10:01:38 CEST 2022 exec error
+
+lun abr 11 10:01:38 CEST 2022 FATAL ERROR
+
+lun abr 11 12:01:38 CEST 2022 exec error
+
+lun abr 11 12:01:38 CEST 2022 FATAL ERROR
+
+lun abr 11 14:01:39 CEST 2022 exec error
+
+lun abr 11 14:01:39 CEST 2022 FATAL ERROR
+
+mar abr 12 06:01:38 CEST 2022 exec error
+
+vie abr 15 02:01:28 CEST 2022 exec error
+
+sáb abr 16 22:01:58 CEST 2022 exec error
+
+sáb abr 16 22:01:58 CEST 2022 FATAL ERROR
+
+dom abr 17 00:01:38 CEST 2022 exec error
+
+dom abr 17 00:01:38 CEST 2022 FATAL ERROR
+
+dom abr 17 02:01:38 CEST 2022 exec error
+
+dom abr 17 12:01:38 CEST 2022 exec error
+
+dom abr 17 14:01:40 CEST 2022 exec error
+
+dom abr 17 14:01:40 CEST 2022 FATAL ERROR
+
+lun abr 18 06:01:39 CEST 2022 exec error
+
+lun abr 18 12:01:39 CEST 2022 exec error
+
+lun abr 18 12:01:39 CEST 2022 FATAL ERROR
+
+lun abr 25 16:01:28 CEST 2022 exec error
+
+dom may 15 20:09:02 CEST 2022 exec error 0.9775 0.998 0.9961 {'type': 'ground humidity', 'value': 0.9961, 'sensorID': 0, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 15, 20, 1, 19, 555965), '_id': ObjectId('62813fef8d45b97f163f6869')} 0.9814 {'type': 'ground humidity', 'value': 0.9814, 'sensorID': 1, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 15, 20, 1, 25, 148164), '_id': ObjectId('62813ff58d45b97f163f686a')} None Ambient humidity reading failed in 22 sensor {'type': 'ambient humidity', 'value': -1, 'sensorID': 22, 'location': 'outdoor', 'date': datetime.datetime(2022, 5, 15, 20, 3, 19, 46617), '_id': ObjectId('628140678d45b97f163f686b')} None Ambient humidity reading failed in 27 sensor {'type': 'ambient humidity', 'value': -1, 'sensorID': 27, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 15, 20, 5, 13, 191844), '_id': ObjectId('628140d98d45b97f163f686c')} None Ambient temperature reading failed in 22 sensor {'type': 'ambient temperature', 'value': -1, 'sensorID': 22, 'location': 'outdoor', 'date': datetime.datetime(2022, 5, 15, 20, 7, 7, 332331), '_id': ObjectId('6281414b8d45b97f163f686d')} None Ambient temperature reading failed in 27 sensor {'type': 'ambient temperature', 'value': -1, 'sensorID': 27, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 15, 20, 9, 1, 217775), '_id': ObjectId('628141bd8d45b97f163f686e')}
+
+lun may 16 22:21:45 CEST 2022 exec error 0.9756 1.0 0.999 {'type': 'ground humidity', 'value': 0.999, 'sensorID': 0, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 16, 22, 1, 18, 289551), '_id': ObjectId('6282ad8e82f1cc97470f2b30')} 0.9795 {'type': 'ground humidity', 'value': 0.9795, 'sensorID': 1, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 16, 22, 1, 24, 123355), '_id': ObjectId('6282ad9482f1cc97470f2b31')} None Ambient humidity reading failed in 22 sensor {'type': 'ambient humidity', 'value': -1, 'sensorID': 22, 'location': 'outdoor', 'date': datetime.datetime(2022, 5, 16, 22, 3, 18, 28456), '_id': ObjectId('6282ae0682f1cc97470f2b32')} 50.099998474121094 {'type': 'ambient humidity', 'value': 50.099998474121094, 'sensorID': 27, 'location': 'indoor', 'date': datetime.datetime(2022, 5, 16, 22, 3, 22, 323284), '_id': ObjectId('6282ae0a82f1cc97470f2b33')} None Ambient temperature reading failed in 22 sensor
+
+mié may 18 00:01:49 CEST 2022 exec error 0.9785 0.9971 0.998
+
+sáb may 21 06:01:50 CEST 2022 exec error 0.9189 0.998 1.0
+
