@@ -165,7 +165,7 @@ def validate_date(date):
 def check_options(text, chat_id):
     wrong_date_format_msg = "Date format must be yyyy-mm-dd. Wrong format at: "
     today = datetime.strftime(datetime.now(), '%Y-%m-%d')
-
+    origin = '2022-02-08'
     if "--startdate" in text:
         startdate = text.split("--startdate")
         startdate = startdate[len(startdate) - 1]
@@ -199,8 +199,8 @@ def check_options(text, chat_id):
                 enddate = None
 
     if startdate is None and enddate is not None:
-        bot.sendMessage(chat_id, "--startdate required. By defect values are set")
-        enddate = None
+        startdate = origin
+        enddate = enddate
 
     if startdate is not None and enddate is not None:
         if startdate > enddate or startdate > today or enddate > today:
@@ -224,17 +224,17 @@ def handle(msg):
                "/groundhumiditydb - Get last ground humidity read from database" + '\n' + "/groundtemperaturedb - Get last ground temperature read from database" + '\n' + \
                "/ambienthumiditydb - Get last ambient humidity read from database" + '\n' + "/ambienttemperaturedb - Get last ambient temperature read from database" + '\n' + \
                "/irrigationdb - Get last irrigation data read from database\n" + '\n' + \
-               '/getallfigures [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get all today\'s figures' + '\n' \
-               '/groundhumidityfig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get today\'s ground humidity figure' + '\n' + \
-               '/groundtemperaturefig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get today\'s ground temperature figure' + '\n' + \
-               '/ambienthumidityfig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get today\'s ambient humidity figure' + '\n' + \
-               '/ambienttemperaturefig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get today\'s ambient temperature figure' + '\n' + \
-               '/irrigationfig [--startdate yyy-mm-dd][--enddate yyyy-mm-dd] - Get irrigation data fig'
+               '/getallfigures [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get all available figures' + '\n' \
+               '/groundhumidityfig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get ground humidity figure' + '\n' + \
+               '/groundtemperaturefig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get ground temperature figure' + '\n' + \
+               '/ambienthumidityfig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get ambient humidity figure' + '\n' + \
+               '/ambienttemperaturefig [--startdate yyyy-mm-dd][--enddate yyyy-mm-dd] - Get ambient temperature figure' + '\n' + \
+               '/irrigationfig [--startdate yyy-mm-dd][--enddate yyyy-mm-dd] - Get irrigation data figure'
 
     chat_id = msg["chat"]["id"]
     text = msg["text"]
 
-    if text == "/help":
+    if text == "/help" or text=="/start":
         response = help_msg
 
     elif text == "/sensorsinfo":
