@@ -1,0 +1,6 @@
+venv/
+.idea/
+__pychache__/
+envdash/
+token.txt
+db_credentials.py
