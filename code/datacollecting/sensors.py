@@ -1,4 +1,3 @@
-# Programa que se encarga de la lectura de sensores
 import config
 import Adafruit_DHT as dht
 from time import sleep
