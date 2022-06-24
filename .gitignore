@@ -2,5 +2,6 @@ venv/
 .idea/
 __pychache__/
 envdash/
+logs/
 token.txt
 db_credentials.py
