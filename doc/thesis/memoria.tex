@@ -16,7 +16,6 @@
 %% (las imágenes deben ir en PNG o JPG)
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
 \documentclass[a4paper, 12pt, oneside]{book}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
@@ -174,7 +173,7 @@ mi familia}
 %\addcontentsline{toc}{chapter}{Agradecimientos} % si queremos que aparezca en el índice
 \markboth{AGRADECIMIENTOS}{AGRADECIMIENTOS} % encabezado 
 
-Aquí vienen los agradecientos\ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
+Aquí vienen los agradecimientos \ldots Aunque está bien acordarse de la pareja, no hay que olvidarse de dar las gracias a tu madre, que aunque a veces no lo parezca disfrutará tanto de tus logros como tú\ldots 
 Además, la pareja quizás no sea para siempre, pero tu madre sí.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -194,7 +193,7 @@ Un resumen
 \addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-Un resumen en ingés
+Un resumen en inglés
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -224,46 +223,73 @@ Un resumen en ingés
 
 \cleardoublepage
 \chapter{Introducción}
-\label{sec:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
+\label{chap:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 
-Una introduccion
+En este capítulo se realiza una introducción sobre los temas con más relevancia, el contexto y las motivaciones para el desarrollo de este trabajo de fin de grado.
 
 \section{Internet de las Cosas}
-\label{sec: Internet de las Cosas}
+\label{sec:Internet de las Cosas}
 El Internet de las cosas, \textit{Internet Of Things} (IoT), en inglés es un concepto que se refiere a la conexión vía Internet de elementos y objetos físicos de la vida cotidiana de manera que se permita el envío y la recepción de diferentes datos.
 
 Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París.
 
-Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT, Turing afirmaba que existiía una necesidad de aportar capacidades de comunicación a sensores.
+Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT, Turing afirmaba que existiría una necesidad de aportar capacidades de comunicación a sensores.
 
-Otro de los puntos históricos claves para la llegada del IoT es el nacimiento de Internet. En el año 1969 nacería ARPANET, como continuación del proyecto ARPA (Advanced Research Projects Agency), que nacería en 1957 y  pretendía proponer avances tecnológicos y militares. ARPA conseguió múltiples avances como un sistema de comunicaciones en el que si una máquina caía, el resto podía seguir conectadas. 
-En 1965 se consiguió comunicar en Estados Unidos un ordenador TX2 en Massachusetts con un Q-32 Wn California mediante una línea telefónica conmutada.
-El proyecto ARPA sigió investigando en esta línea hasta que en 1969 con la incorporación del investigador Michel Elie a UCLA (University of California, Los Angeles) y a ARPA se consiguió conectar dos máquinas, una de la UCLA con otra del SRI (Stanford Research Institute), poco después serían cuatro ordenadores distribuidos en diferentes universidades de Estados Unidos, en una red que sería denominada ARPANET.
+Otro de los puntos históricos claves para la llegada del IoT es el nacimiento de Internet. En el año 1969 nacería ARPANET, como continuación del proyecto ARPA (Advanced Research Projects Agency), que nacería en 1957 y  pretendía proponer avances tecnológicos y militares. ARPA consiguió múltiples avances como un sistema de comunicaciones en el que si una máquina caía, el resto podía seguir conectadas. 
+En 1965 se consiguió comunicar en Estados Unidos un ordenador \textit{TX2} en Massachusetts con un \textit{Q-32} en California mediante una línea telefónica conmutada.
+El proyecto ARPA siguió investigando en esta línea hasta que en 1969 con la incorporación del investigador Michel Elie a UCLA (University of California, Los Angeles) y a ARPA se consiguió conectar dos máquinas, una de la UCLA con otra del SRI (Stanford Research Institute), poco después serían cuatro ordenadores distribuidos en diferentes universidades de Estados Unidos, en una red que sería denominada ARPANET.
 En 1972 eran 50 las universidades y centros de investigación que estaban conectados a ARPANET.
-Cuando el Departamento de Defensa de Estados Unidos decidió 1983 usar los protocolos TCP/IP nacería ARPA Internet, que más tarde pasó a conocerse como Internet. En 1991, un año después de que Tim Berners Lee desarrollara HTML y HTTP, el Internet que conocemos hoy en día nació en el CERN (European Organization for Nuclear Research). En agosto de 1991, cualquiera podría acceder a esta red.
+Cuando el Departamento de Defensa de Estados Unidos decidió en 1983 usar los protocolos TCP/IP nacería ARPA Internet, que más tarde pasó a conocerse como Internet. En 1991, un año después de que Tim Berners Lee desarrollara HTML y HTTP en el CERN (European Organization for Nuclear Research), el Internet que conocemos hoy en día nació. En agosto de 1991, cualquiera podría acceder a esta red.
 
 No es hasta el año 2009 que, de la mano del profesor del MIT (Massachusetts Institute of Technology) Kevon Ashton surge el término \textit{Internet de las Cosas}.
 
-Con el paso de los años y la combinación de distintas tecnologías y campos de estudio como el Big Data, el Machine Learning o la Inteligencia Artificial el IoT se ha ido asentando y creciendo dando lugar incluso a nuevos conceptos como las Smart Cities o Ciudades inteligentes, una aplicación del IoT junto a estas tecnologías.
+Con el paso de los años y la combinación de distintas tecnologías y campos de estudio como el Big Data, el Machine Learning o la Inteligencia Artificial, el IoT se ha ido asentando y creciendo dando lugar incluso a nuevos conceptos como las Smart Cities o Ciudades inteligentes, una aplicación del IoT junto a estas tecnologías.
 
-El IoT está en continuo crecimiento, según Cisco Internet Solutions Group (IBSG) entre los años 2008 y 2009 ya eran más los objectos conectados a Internet que las personas y se estima que para el año 2025 habrá unos 75 mil millones de objetos conectados a Internet. Como se ha comentado anteriormente, la tendencia actual del IoT, es la del tratado masivo de datos, la automatización de procesos y la toma de decisiones en función de los múltiples datos recolectados.
+El IoT está en continuo crecimiento, según Cisco Internet Solutions Group (IBSG) entre los años 2008 y 2009 ya eran más los objectos conectados a Internet que las personas existentes y se estima que para el año 2025 habrá unos 75 mil millones de objetos conectados a Internet. Como se ha comentado anteriormente, la tendencia actual del IoT, es la del tratado masivo de datos, la automatización de procesos y la toma de decisiones en función de los múltiples datos recolectados.
 
-En este TFG se ha implementado un invernadero autónomo haciendo uso de esta tecnología, aplicando soluciones IoT. 
+\section{Tecnologías web}
+\label{sec:tecnologías web}
+La llegada de Internet a la vida de las personas es uno de los hitos más importantes y con mayor impacto de la historia y está en continuo crecimiento. Las tecnologías web permiten acceder a los diferentes recursos ofrecidos en Internet, es por este motivo, la gran importancia y presencia en el día a día de este tipo de tecnologías. En nuestro día a día utilizamos multitud de aplicaciones web con diferentes usos, desde leer el periódico, hasta realizar compras o trabajar.
+
+El desarrollo web se puede dividir en dos partes claramente diferenciadas, el \textit{back-end} y el \textit{frond-end}. El \textit{back-end} es la parte encargada de la lógica de negocio, algunas de las funciones más comunes de esta rama son la conexión a bases de datos, comunicación con servidores o desarrollo de procesos y operaciones propios de la lógica de la página web. El \textit{front-end} es la parte visual, encargada de presentar la información al usuario, el desarrollo del \textit{front-end} utiliza tecnologías en el lado del cliente. El desarrollo web es muy amplio y existen multitud de posibilidades y tecnologías que permiten llevarlo a cabo. Algunas de las más comunes en el lado del servidor son \textit{Java}, \textit{Python}, \textit{C++}, \textit{PHP}, entre muchas otras. En el lado del cliente las más habituales son \textit{HTML}, \textit{CSS}y \textit{JavaScript}, que trabajan sobre el propio navegador.
+
+Como se ha mencionado anteriormente, la explotación masiva de Internet y los datos provoca que las tecnologías web estén en constante movimiento y evolución. Algunas de las tendencias del desarrollo web son las \textit{Progressive Web Apps} (PWA), una tecnología que permite mezclar las ventajas de las páginas web al uso y las aplicaciones móviles, la mejora de la privacidad y seguridad en la red o el análisis de datos usando técnicas de Big Data y Machine learning. 
+
+Otras dos tecnologías que son presente y futuro del Internet y que, además, han sido utilizadas en el desarrollo de este TFG son los sistemas de computación en la nube y el Internet de las cosas. La computación en la nube ya está muy extendida hoy en día pero aún no ha alcanzado su máximo potencial y es una tecnología relativamente nueva. La computación en la nube permite almacenar y procesar grandes cantidades de datos, servidores, redes o software. Se preveé que a lo largo del año 2022 la inversión total en infraestructura se alcancen los 300.000 millones de euros. En el año 2021 este mercado tuvo un crecimiento del 37\% con respecto al año 2020, alcanzando los 155.000 millones de euros.
+El Internet de las cosas está íntimamente relacionado con el desarrollo web ya que, como se ha mencionado en el apartado~\ref{sec:Internet de las Cosas} permite analizar grandes cantidades de datos y promover cambios para mejorar la interacción con los usuarios, 
+
+
+\section{Agricultura autónoma}
+\label{sec:agricultura autonoma}
 En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura. La toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura es la tendencia actual, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
-Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura(FAO), el sector agrícola debería producir un 50\% más para poder cubrir la demanda para el año 2050, la falta de inversión y digitalización de este sector podría poner en riesgo nuestro sistema de alimentación. La inversión y la investigación en IoT puede aportar una mejora importante en la digitalización y ayudar así a combatir este problema. 
+Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), el sector agrícola debería producir un 50\% más para poder cubrir la demanda para el año 2050, la falta de inversión y digitalización de este sector podría poner en riesgo nuestro sistema de alimentación. La inversión y la investigación en IoT puede aportar una mejora importante en la digitalización y ayudar así a combatir este problema.
 
+Los avances en tecnologías aplicadas a la agricultura pretenden mejorar la productividad y el rendimiento de los cultivos, simplificando su gestión. La llamada \textit{agricultura de precisión} es uno de las motivaciones de este TFG. El objetivo de esta es mejorar la productividad agrícola mediante el análisis de datos y la toma de decisiones. Mediante el uso de Internet de las cosas se pueden conectar sistemas que envíen datos en tiempo real para conectar interconectar diferentes sistemas. Mediante el uso de invernaderos inteligentes se pueden controlar parámetros clímaticos y optimizar la producción.
+
+En este TFG se ha desarrollado un sistema distribuido para un invernadero autónomo de bajo costo que permite monitorizar y automatizar diferentes tareas, utilizando diferentes tecnologías web y soluciones IoT.
 
 %de aquí he sacado lo de los 10.000 milln¡ones de dolares:
 %https://hellofuture.orange.com/en/connected-greenhouses-how-the-internet-of-things-can-feed-the-planet/
 
-\section{Tecnologías web}
-\label{tecnologías web}
-\section{Jardines autónomos}
-\label{sec:jardines autonomos}
-
 \section{Estructura de la memoria}
 \label{sec:estructura}
+
+En esta sección se resume el contenido de cada uno de los capítulos que forman esta memoria, siguiendo la siguiente estructura.
+
+\begin{itemize}
+\item En el capítulo~\ref{chap:intro}, se realiza una introducción al proyecto, dando contexto al marco en el que se encuadra este TFG.
+
+\item En el capítulo~\ref{chap:objetivos}, se muestran los objetivos de este TFG y los hitos que se pretenden alcanzar. Además, se menciona la planificación temporal y la metodología seguida para el desarrollo.
+
+\item En el capítulo~\ref{chap:herramientas}, se detallan las diferentes herramientas y tecnologías utilizadas, diviendolas en hardware y software.
+
+\item En el capítulo~\ref{chap:diseño e implementación}, se explica el diseño y la implementación de cada una de las partes que forman este trabajo, desde el montaje físico hasta la implementación del hardware y el desarrollo software.
+
+\item En el capítulo~\ref{chap:casos de uso}, se exponen los casos de uso para las herramientas que se han desarrollado. Además se muestra el flujo de funcionamiento de la plataforma completa desde la recogida de los datos mediante sensores hasta su procesamiento y análisis.
+
+\item En el capítulo~\ref{chap:conclusiones}, se realiza una reflexión sobre las conclusiones y los conocimientos adquiridos a lo largo del desarrollo de este TFG. Además, se sugieren posibles mejoras para proyectos futuros.
+\end{itemize}
 
 %En esta sección se debería introducir la esctura de la memoria. 
 %
@@ -317,7 +343,7 @@ Como se expone en el capítulo~\ref{chap:herramientas}, para el control de versi
 
 \section{Plan de trabajo}
 \label{plan de trabajo}
-Las etapas en las que se ha dividido el desarrollo del proyecto para así conseguir los objectivos anteriormente mencionados han sido:
+Las etapas en las que se ha dividido el desarrollo del proyecto para así conseguir los objetivos anteriormente mencionados han sido:
 
 \begin{itemize}
 \item Estudio previo del tema del TFG, leyendo diferente literatura sobre automatización y monitorización de jardines e invernaderos.
@@ -1547,16 +1573,68 @@ La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se
 \label{chap:conclusiones}
 
 
-\section{Conclusiones finales}
-\label{sec:consecucion-objetivos}
+\section{Consecución de objetivos}
+\label{sec:consecución de objetivos}
 
-una conclusión
+
+\section{Aplicación de lo aprendido}
+\label{sec:aplicación de lo aprendido}
+Para la realización de este proyecto, se han aplicado conocimientos adquiridos de diferentes asignaturas cursadas durante el grado:
+
+\begin{itemize}
+\item \textbf{Fundamentos de la Programación}, se realiza una introducción a la programación imperativa utilizando como primer lenguaje de programación Pascal
+
+\item \textbf{Programación de Sistemas de Telecomunicación}, donde se amplían los conocimientos sobre la asignatura anterior, se utiliza el lenguaje de programación Ada para desarrollar software orientado a las comunicaciones, realizando proyectos de mayor complejidad.
+
+\item \textbf{Sistemas y Circuitos}, se imparten los conceptos físicos básicos para realizar una introducción en el análisis y el diseño de circuitos eléctricos.
+
+\item \textbf{Electrónica}, se amplían los conocimientos de la asigantura anterior. Además, se concreta sobre el análisis y diseño de circuitos electrónicos.
+
+\item \textbf{Sistemas Operativos}, utilizando en lenguaje de programación C se profundiza en el sistema operativo GNU/Linux y sistemas UNIX. Se desarrollan además scripts utilizando Shell Scripting.
+
+\item \textbf{Servicios Telemáticos}, en esta asignatura se utiliza Python como lenguaje de programación para la creación de servicios web, esta asignatura se centra en el lado del servidor.
+
+\item \textbf{Aplicaciones telemáticas}, se imparten conceptos de desarrollo web, utilizando HTML, CSS y JavaScript.
+
+\item \textbf{Sistemas Distribuidos}, se realiza una introducción a los sistemas distribuidos actuales y se realiza una introducción al diseño de estos.
+
+\item \textbf{Laboratorio de Administración y Gestión de Redes y Sistemas}, se imparte el uso de Docker y técnicas de administración de sistemas. Toda la asignatura se centra en el uso de sistemas de tipo UNIX. Se realiza también una introducción al uso de bots de Telegram para la administración de sistemas.
+
+\item \textbf{Laboratorio de Bases de Datos}, se realiza una introducción al diseño, implementación y mantenimiento de bases de datos.
+
+\end{itemize}
+ 
+
+\section{Competencias adquiridas}
+\label{sec:competencias adquiridas}
+
+Con el desarrollo de este TFG se han ampliado y asentado los conocimientos mencionados en el apartado~\ref{sec:aplicación de lo aprendido}. Además, se han adquirido otros nuevos como son:
+
+\begin{itemize}
+\item \textbf{Dash}, el uso de este framework basado en Python y que permite desarrollar aplicaciones web para mostrar datos es una de las competencias adquiridas.
+
+\item \textbf{Bots de Telegram}, a pesar de que en la asignatura \textit{Laboratorio de Adeministración y Gestión de Redes y Sistemas} se realiza una pequeña introducción, se ha alcanzado un conocimiento mucho mayor sobre el desarrollo de estos para la monitorización y administración de sistemas.
+
+\item \textbf{MongoDB}, en la asignatura \textit{Laboratorio de Bases de Bases de Datos} únicamente se utilizan bases de datos relacionales. Aunque muchos de los conceptos son aplicables a una base de datos orientada a documentos otra de las competencias adquiridas es el uso de MongoDB.
+
+\item \textbf{Módulos de Python}, la mayoría de los módulos que se han utilizado para el desarrollo de la plataforma no se han enseñado en ninguna de las asignaturas. 
+
+\item \textbf{Mantenimiento y desarrollo de un proyecto de estas características}, a lo largo del grado se han desarrollado proyectos de mayor o menor complejidad, pero nunca uno de estas características y teniendo que realizar su mantenimiento a lo largo del tiempo.
+
+\end{itemize}
+
 
 \section{Trabajos futuros}
-\label{sec:trabajos_futuros}
+\label{sec:trabajos futuros}
 
-trabajo futuros
+Este trabajo a sido desarrollado desde cero y algunas de las posibles mejoras de cara a futuro que se podrían implementar son:
 
+\begin{itemize}
+\item \textbf{Soporte para nuevos tipos de sensores}, una de las posibles mejoras sería aumentar el tamaño del sistema añadiendo nuevos tipos de sensores como de CO2 del ambiente o de PH de la tierra.
+
+\item \textbf{Añadir nuevos actuadores al sistema}, para poder así automatizar otras tareas como abrir y cerrar el invernadero en función de la temperatura y la humedad ambiente.
+
+\end{itemize}
 %Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
 
 %Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
