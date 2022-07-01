@@ -182,9 +182,15 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 \chapter*{Resumen}
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
+En este \textit{Trabajo de fin de Grado} se ha desarrollado un sistema distribuido que permite monitorizar y automatizar un invernadero. En este proyecto convergen diferentes conceptos que cada vez están más extendidos y cobran más importancia, como son el \textit{Internet de las Cosas}, el \textit{análisis y visualización de datos} y el \textit{desarrollo web}. Todos estos conceptos han sido aplicados a uno de los sectores más importantes, el sector agrícola. Con la necesidad de la digitalización del sector primario para aumentar su productividad de manera sostenible se ha creado una nueva línea tecnológica que pretende conseguir estos objetivos lo más pronto posible.
 
+Se ha diseñado un sistema de software libre y de bajo costo que permite automatizar y monitorizar un invernadero y sus cultivos. Este sistema distribuido consta de software que haciendo uso de sensores y actuadores permite recolectar información sobre la humedad y temperatura del ambiente y de la tierra, además de automatizar el riego. Permite visualizar información de manera gráfica y textual a partir de la información almacenada en la base de datos. También es posible obtener información sobre el estado del sistema en tiempo real y que el usuario reciba notificaciones cuando es pertinente.
 
-Un resumen
+Para este TFG se han desarrollado una serie de scripts de recogida de datos, una aplicación web para visualizar de forma gráfica información almacenada en la base de datos, un bot de Telegram que permite obtener información en tiempo real y desde la base de datos de manera textual y gráfica, además del envío de notificaciones al usuario. Por último, el sistema también cuenta con una serie de scripts que permiten automatizar el riego del sistema utilizando información obtenida por los sensores de humedad el suelo.
+
+Se ha buscado que el sistema sea lo más asequible posible, para ello se han utilizado diferentes elementos hardware que se consideran los más adecuados para este propósito. El software utilizado es libre y gratuito.   
+
+De esta manera se aporta a una tendencia creciente como es incluir las nuevas tecnologías en la agricultura para poder conseguir una mayor eficiencia en explotaciones urbanas y de autoconsumo. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
@@ -232,45 +238,80 @@ En este capítulo se realiza una introducción sobre los temas con más relevanc
 \label{sec:Internet de las Cosas}
 El Internet de las cosas, \textit{Internet Of Things} (IoT), en inglés es un concepto que se refiere a la conexión vía Internet de elementos y objetos físicos de la vida cotidiana de manera que se permita el envío y la recepción de diferentes datos.
 
-Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París.
+Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París. \cite{www.google.com}
 
-Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT, Turing afirmaba que existiría una necesidad de aportar capacidades de comunicación a sensores.
+Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT.  Turing afirmaba que existiría una necesidad de aportar capacidades de comunicación a sensores.
 
 Otro de los puntos históricos claves para la llegada del IoT es el nacimiento de Internet. En el año 1969 nacería ARPANET, como continuación del proyecto ARPA (Advanced Research Projects Agency), que nacería en 1957 y  pretendía proponer avances tecnológicos y militares. ARPA consiguió múltiples avances como un sistema de comunicaciones en el que si una máquina caía, el resto podía seguir conectadas. 
 En 1965 se consiguió comunicar en Estados Unidos un ordenador \textit{TX2} en Massachusetts con un \textit{Q-32} en California mediante una línea telefónica conmutada.
-El proyecto ARPA siguió investigando en esta línea hasta que en 1969 con la incorporación del investigador Michel Elie a UCLA (University of California, Los Angeles) y a ARPA se consiguió conectar dos máquinas, una de la UCLA con otra del SRI (Stanford Research Institute), poco después serían cuatro ordenadores distribuidos en diferentes universidades de Estados Unidos, en una red que sería denominada ARPANET.
-En 1972 eran 50 las universidades y centros de investigación que estaban conectados a ARPANET.
+El proyecto ARPA siguió investigando en esta línea hasta que en 1969 con la incorporación del investigador Michel Elie a UCLA (University of California, Los Angeles) y a ARPA se consiguió conectar dos máquinas, una de la UCLA con otra del SRI (Stanford Research Institute). Poco después serían cuatro ordenadores distribuidos en diferentes universidades de Estados Unidos, en una red que sería denominada ARPANET.
+En 1972 fueron 50 las universidades y centros de investigación que estaban conectados a ARPANET.
 Cuando el Departamento de Defensa de Estados Unidos decidió en 1983 usar los protocolos TCP/IP nacería ARPA Internet, que más tarde pasó a conocerse como Internet. En 1991, un año después de que Tim Berners Lee desarrollara HTML y HTTP en el CERN (European Organization for Nuclear Research), el Internet que conocemos hoy en día nació. En agosto de 1991, cualquiera podría acceder a esta red.
 
-No es hasta el año 2009 que, de la mano del profesor del MIT (Massachusetts Institute of Technology) Kevon Ashton surge el término \textit{Internet de las Cosas}.
+Aún con Internet ya creado y sufriendo esta tecnología una evolución constante, no fue hasta el año 2009 que, de la mano del profesor del MIT (Massachusetts Institute of Technology) Kevon Ashton surge el término \textit{Internet de las Cosas}.
 
 Con el paso de los años y la combinación de distintas tecnologías y campos de estudio como el Big Data, el Machine Learning o la Inteligencia Artificial, el IoT se ha ido asentando y creciendo dando lugar incluso a nuevos conceptos como las Smart Cities o Ciudades inteligentes, una aplicación del IoT junto a estas tecnologías.
 
-El IoT está en continuo crecimiento, según Cisco Internet Solutions Group (IBSG) entre los años 2008 y 2009 ya eran más los objectos conectados a Internet que las personas existentes y se estima que para el año 2025 habrá unos 75 mil millones de objetos conectados a Internet. Como se ha comentado anteriormente, la tendencia actual del IoT, es la del tratado masivo de datos, la automatización de procesos y la toma de decisiones en función de los múltiples datos recolectados.
+El IoT está en continuo crecimiento. Según Cisco Internet Solutions Group (IBSG) entre los años 2008 y 2009 ya eran más los objetos conectados a Internet que las personas existentes y se estima que para el año 2025 habrá unos 75 mil millones de objetos conectados a Internet. Como se ha comentado anteriormente, la tendencia actual del IoT, es la del tratado masivo de datos, la automatización de procesos y la toma de decisiones en función de los múltiples datos recolectados.
 
 \section{Tecnologías web}
 \label{sec:tecnologías web}
 La llegada de Internet a la vida de las personas es uno de los hitos más importantes y con mayor impacto de la historia y está en continuo crecimiento. Las tecnologías web permiten acceder a los diferentes recursos ofrecidos en Internet, es por este motivo, la gran importancia y presencia en el día a día de este tipo de tecnologías. En nuestro día a día utilizamos multitud de aplicaciones web con diferentes usos, desde leer el periódico, hasta realizar compras o trabajar.
+El desarrollo web se puede dividir en dos partes claramente diferenciadas, el \textit{back-end} (lado del servidor) y el \textit{frond-end} (lado del cliente).
 
-El desarrollo web se puede dividir en dos partes claramente diferenciadas, el \textit{back-end} y el \textit{frond-end}. El \textit{back-end} es la parte encargada de la lógica de negocio, algunas de las funciones más comunes de esta rama son la conexión a bases de datos, comunicación con servidores o desarrollo de procesos y operaciones propios de la lógica de la página web. El \textit{front-end} es la parte visual, encargada de presentar la información al usuario, el desarrollo del \textit{front-end} utiliza tecnologías en el lado del cliente. El desarrollo web es muy amplio y existen multitud de posibilidades y tecnologías que permiten llevarlo a cabo. Algunas de las más comunes en el lado del servidor son \textit{Java}, \textit{Python}, \textit{C++}, \textit{PHP}, entre muchas otras. En el lado del cliente las más habituales son \textit{HTML}, \textit{CSS}y \textit{JavaScript}, que trabajan sobre el propio navegador.
+\subsection{Tecnologías en el lado del servidor}
+\label{subsec:tecnologías en el lado del servidor}
+ El \textit{back-end} es la parte encargada de la lógica de negocio, algunas de las funciones más comunes de esta rama son la conexión a bases de datos, comunicación con servidores o desarrollo de procesos y operaciones propios de la lógica de la página web.
+ 
+El desarrollo web es muy amplio y existen multitud de posibilidades y tecnologías que permiten llevarlo a cabo. Algunas de las más comunes en el lado del servidor son \textit{Java}, \textit{Python}, \textit{C++}, \textit{PHP}, entre muchas otras.
 
+Existen diferentes frameworks que encapsulan las funcionalidades de los lenguajes para facilitar el desarrollo de aplicaciones web. Algunos ejemplos son \textit{Spring Boot}, para aplicaciones de Java,\textit{Django}, para Python, \textit{Crow} para C++ o \textit{Laravel} para PHP.
+
+\subsection{Tecnologías en el lado del cliente}
+\label{subsec:tecnlogías en el lado del cliente}
+El \textit{front-end} es la parte visual, encargada de presentar la información al usuario, el desarrollo del \textit{front-end} utiliza tecnologías en el lado del cliente. Algunas de las más habituales son \textit{HTML}, \textit{CSS} y \textit{JavaScript}, que trabajan sobre el propio navegador.
+
+De igual manera, en el desarrollo front-end también existen diversos frameworks para facilitar el desarrollo. Algunos ejemplos de estos frameworks son \textit{React}, \textit{Angular} o \textit{Vue}, entre otros.
+
+\subsection{Bases de datos}
+\label{subsec: bases de datos}
+El uso de bases de datos en el desarrollo web es una de las piezas fundamentales, permiten almacenar grandes cantidades de datos con persistencia de la información manejada.
+
+Existen diferentes sistemas de bases de datos en función de las necesidades del proyecto. Hay dos grandes familias de bases de datos, relacionales y no relacionales. Las bases de datos relacionales organizan la información en formato tabular y su información es almacenada en filas, necesitando seguir un esquema previamente diseñado. Algunos de los sistemas de bases de datos relacionales más populares son MySQL, PostgreSQL u Oracle. En cambio, las bases de datos no relacionales (NoSQL) organizan la información en formatos diferentes como formato clave-valor, en formatos documentales o grafos. MongoDB es el sistema de bases de datos no relacional orientado a documentos más popular, Cassandra o Neo4j son otras opciones conocidas, organizando sus datos en formato clave-valor y como nodos de un grafo, respectivamente.
+
+En general, los motivos más comunes para utilizar una base de datos NoSQL es el crecimiento muy rápido de los datos a almacenar o cuando el esquema de bases de datos no es homogéneo o no puede ser definido.
+
+\subsection{Tendencias del desarrollo web}
+\label{subsec: tendencias del desarrollo web}
 Como se ha mencionado anteriormente, la explotación masiva de Internet y los datos provoca que las tecnologías web estén en constante movimiento y evolución. Algunas de las tendencias del desarrollo web son las \textit{Progressive Web Apps} (PWA), una tecnología que permite mezclar las ventajas de las páginas web al uso y las aplicaciones móviles, la mejora de la privacidad y seguridad en la red o el análisis de datos usando técnicas de Big Data y Machine learning. 
 
-Otras dos tecnologías que son presente y futuro del Internet y que, además, han sido utilizadas en el desarrollo de este TFG son los sistemas de computación en la nube y el Internet de las cosas. La computación en la nube ya está muy extendida hoy en día pero aún no ha alcanzado su máximo potencial y es una tecnología relativamente nueva. La computación en la nube permite almacenar y procesar grandes cantidades de datos, servidores, redes o software. Se preveé que a lo largo del año 2022 la inversión total en infraestructura se alcancen los 300.000 millones de euros. En el año 2021 este mercado tuvo un crecimiento del 37\% con respecto al año 2020, alcanzando los 155.000 millones de euros.
+Otras dos tecnologías que son presente y futuro del Internet son los sistemas de computación en la nube y el Internet de las cosas. La computación en la nube ya está muy extendida hoy en día pero aún no ha alcanzado su máximo potencial y es una tecnología relativamente nueva. La computación en la nube permite almacenar y procesar grandes cantidades de datos, servidores, redes o software. Se prevé que a lo largo del año 2022 la inversión total en infraestructura se alcancen los 300.000 millones de euros. En el año 2021 este mercado tuvo un crecimiento del 37\% con respecto al año 2020, alcanzando los 155.000 millones de euros.
 El Internet de las cosas está íntimamente relacionado con el desarrollo web ya que, como se ha mencionado en el apartado~\ref{sec:Internet de las Cosas} permite analizar grandes cantidades de datos y promover cambios para mejorar la interacción con los usuarios, 
 
 
 \section{Agricultura autónoma}
 \label{sec:agricultura autonoma}
-En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura. La toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura es la tendencia actual, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
+En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura. La tendencia actual es la toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
 Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), el sector agrícola debería producir un 50\% más para poder cubrir la demanda para el año 2050, la falta de inversión y digitalización de este sector podría poner en riesgo nuestro sistema de alimentación. La inversión y la investigación en IoT puede aportar una mejora importante en la digitalización y ayudar así a combatir este problema.
 
-Los avances en tecnologías aplicadas a la agricultura pretenden mejorar la productividad y el rendimiento de los cultivos, simplificando su gestión. La llamada \textit{agricultura de precisión} es uno de las motivaciones de este TFG. El objetivo de esta es mejorar la productividad agrícola mediante el análisis de datos y la toma de decisiones. Mediante el uso de Internet de las cosas se pueden conectar sistemas que envíen datos en tiempo real para conectar interconectar diferentes sistemas. Mediante el uso de invernaderos inteligentes se pueden controlar parámetros clímaticos y optimizar la producción.
+En el año 2015, tuvo lugar la Cumbre del Desarrollo Sostenible entre más de 150 jefes de Estado y de Gobierno, aprobando  la Agenda 2030. La Agenda contiene 17 objetivos que pretenden lograr un mundo sostenible para el año 2030. En este escenario, la agricultura juega un papel clave, especialmente en el segundo de los objetivos, acabar con el hambre en el mundo. Este es uno de los mayores retos a los que la agricultura se ha enfrentado, ya que en la actualidad unas 820 millones de personas se encuentran en hambruna, esto supone un 10\% de la población mundial. Otro problema añadido es la fragmentación de las tierras agrícolas, ya que un 85\% de las explotaciones tienen menos de dos hectáreas, lo que dificulta la creación de explotaciones agrarias masivas. Para solucionar este problema, es importante desarrollar tecnologías accesibles y potenciar la digitalización en este tipo de cultivos. Por otro lado, esta potenciación de la tecnología en agricultura a pequeña escala puede mejorar la sostenibilidad, ya que promueve el consumo local de alimentos, otro de los Objetivos de Desarrollo de la Agenda 2030. Este tipo de consumo es más respetuoso con el medio ambiente y ayuda a las economías locales.
 
-En este TFG se ha desarrollado un sistema distribuido para un invernadero autónomo de bajo costo que permite monitorizar y automatizar diferentes tareas, utilizando diferentes tecnologías web y soluciones IoT.
+Se estima que para el año 2030 la población mundial pase de 7600 millones a 8600 millones, esto junto a la falta de innovación en el campo puede suponer que el porcentaje de personas en situación de hambruna se dispare.
+
+La solución planteada es la mejora de la inversión tecnológica en la agricultura, maximizando la eficiencia, es decir, maximizar la producción empleando menos recursos. Disminuyendo además el coste climático y energético. Hay que tener en cuenta que esta mejora no es homogénea en todos los puntos de la tierra, el avance del sector primario es menor en países menos desarrollados, de hecho en muchos puntos es posible hablar únicamente de una producción de subsistencia. En estos lugares el acceso a medios tecnológicos y formación por parte de los agricultores es limitado, con lo que la producción disminuye drásticamente en comparación a países industrializados.
+
+La afección al medio ambiente de las explotaciones agrarias es otro factor a tener en cuenta, ya que el 70\% del consumo del agua es provocado por la agricultura, además de la contaminación de aguas y tierras por nitratos, fosfatos y pesticidas. Es aquí donde la optimización y el aprovechamiento de recursos toma gran relevancia.
+
+Los avances en tecnologías aplicadas a la agricultura pretenden mejorar la productividad y el rendimiento de los cultivos, simplificando su gestión. La llamada \textit{agricultura de precisión} es consecuencia de la mejora de inversión tecnológica en este sector. El objetivo de esta es mejorar la productividad agrícola mediante el análisis de datos y la toma de decisiones. Mediante el uso de Internet de las cosas se pueden interconectar sistemas que envíen datos en tiempo real. Mediante el uso de explotaciones e invernaderos inteligentes es posible controlar parámetros climáticos y optimizar la producción.
+
+
 
 %de aquí he sacado lo de los 10.000 milln¡ones de dolares:
 %https://hellofuture.orange.com/en/connected-greenhouses-how-the-internet-of-things-can-feed-the-planet/
+
+%https://www.iagua.es/blogs/sergio-roman/papel-agricultura-objetivos-agenda-2030
+%https://www.mitma.gob.es/arquitectura-vivienda-y-suelo/objetivos-desarrollo-sostenible
+%https://www.cde.ual.es/los-datos-masivos-ayudan-a-las-pequenas-explotaciones-agricolas-a-mejorar-la-utilizacion-de-recursos-y-la-rentabilidad/
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -278,17 +319,17 @@ En este TFG se ha desarrollado un sistema distribuido para un invernadero autón
 En esta sección se resume el contenido de cada uno de los capítulos que forman esta memoria, siguiendo la siguiente estructura.
 
 \begin{itemize}
-\item En el capítulo~\ref{chap:intro}, se realiza una introducción al proyecto, dando contexto al marco en el que se encuadra este TFG.
+\item En el capítulo~\ref{chap:intro}, \textit{Introducción}, se realiza una introducción al proyecto, dando contexto al marco en el que se encuadra este TFG.
 
-\item En el capítulo~\ref{chap:objetivos}, se muestran los objetivos de este TFG y los hitos que se pretenden alcanzar. Además, se menciona la planificación temporal y la metodología seguida para el desarrollo.
+\item En el capítulo~\ref{chap:objetivos}, \textit{Objetivos}, se muestran la finalidad de este TFG y los hitos que se pretenden alcanzar. Además, se menciona la metodología seguida y el plan de trabajo para el desarrollo.
 
-\item En el capítulo~\ref{chap:herramientas}, se detallan las diferentes herramientas y tecnologías utilizadas, diviendolas en hardware y software.
+\item En el capítulo~\ref{chap:herramientas}, \textit{Herramientas}, se detallan las diferentes herramientas y tecnologías utilizadas, dividiéndolas en hardware y software.
 
-\item En el capítulo~\ref{chap:diseño e implementación}, se explica el diseño y la implementación de cada una de las partes que forman este trabajo, desde el montaje físico hasta la implementación del hardware y el desarrollo software.
+\item En el capítulo~\ref{chap:diseño e implementación}, \textit{Diseño e implementación}, se explica el diseño y la implementación de cada una de las partes que forman este trabajo, desde el montaje físico hasta la implementación del hardware y el desarrollo software.
 
-\item En el capítulo~\ref{chap:casos de uso}, se exponen los casos de uso para las herramientas que se han desarrollado. Además se muestra el flujo de funcionamiento de la plataforma completa desde la recogida de los datos mediante sensores hasta su procesamiento y análisis.
+\item En el capítulo~\ref{chap:casos de uso}, \textit{Casos de uso}, se exponen los casos de uso para las herramientas que se han desarrollado. Además, se muestra el flujo de funcionamiento de la plataforma completa desde la recogida de los datos mediante sensores hasta su procesamiento y análisis.
 
-\item En el capítulo~\ref{chap:conclusiones}, se realiza una reflexión sobre las conclusiones y los conocimientos adquiridos a lo largo del desarrollo de este TFG. Además, se sugieren posibles mejoras para proyectos futuros.
+\item En el capítulo~\ref{chap:conclusiones}, \textit{Conclusiones},  se realiza una reflexión sobre las conclusiones y los conocimientos adquiridos a lo largo del desarrollo de este TFG. Además, se sugieren posibles mejoras para proyectos futuros.
 \end{itemize}
 
 %En esta sección se debería introducir la esctura de la memoria. 
@@ -312,9 +353,6 @@ En esta sección se resume el contenido de cada uno de los capítulos que forman
 \cleardoublepage % empezamos en página impar
 \chapter{Objetivos} % título del capítulo (se muestra)
 \label{chap:objetivos} % identificador del capítulo (no se muestra, es para poder referenciarlo)
-
-\section{Objetivo general} % título de sección (se muestra)
-\label{sec:objetivo-general} % identificador de sección (no se muestra, es para poder referenciarla)
 En este capítulo se explican los objetivos que se pretenden conseguir en este trabajo de fin de grado, la planificación para su consecución y la metodología seguida.
 
 
@@ -324,7 +362,7 @@ En este capítulo se explican los objetivos que se pretenden conseguir en este t
 Este TFG consiste en crear un sistema distribuido que permita monitorizar y automatizar un invernadero. Para ello se han planteado varios subobjetivos:
 
 \begin{itemize}
-\item Desarrollo de un entorno de bajo costo que permita realizar la recolección y almacenamiento de datos a partir de sensores. Trabajando con magnitudes muy utilizadas en el cuidado de cualquier invernadero, en concreto, humedad ambiente, temperatura ambiente, humedad de la tierra y temperatura de la tierra.
+\item Desarrollo de un invernadero de bajo costo que permita realizar la recolección y almacenamiento de datos a partir de sensores. Trabajando con magnitudes muy utilizadas en el cuidado de cualquier invernadero, en concreto, humedad ambiente, temperatura ambiente, humedad de la tierra y temperatura de la tierra.
 
 \item Desarrollo de una aplicación web cuyo objetivo sea mostrar gráficos en función de los datos recogidos.
 
@@ -333,7 +371,7 @@ Este TFG consiste en crear un sistema distribuido que permita monitorizar y auto
 \item Desarrollo de scripts que permitan automatizar el riego del invernadero de manera inteligente, usando la información obtenida por los sensores de humedad de la tierra. 
 \end{itemize}
 
-\section{Planificación temporal}
+\section{Metodología}
 \label{sec:Metodología}
 Para desarrollar este TFG se ha seguido una metodología \textit{Scrum} basada en \textit{sprints}.
 \textit{Scrum} es una metodología de desarrollo de software ágil. Esta nace en contraposición al llamado desarrollo \textit{waterfall}, o desarrollo en cascada. Un \textit{sprint} es un ciclo de trabajo, suelen durar entre 1 y 4 semanas.
@@ -341,28 +379,45 @@ En este caso en concreto, los reuniones han sido semanales, en estas se ha prese
 
 Como se expone en el capítulo~\ref{chap:herramientas}, para el control de versiones se han utilizado las herramientas Git y Github. Para la resolución de incidencias concretas se han creado \textit{issues} que se han resuelto en una rama derivada de \textit{master}. Una vez resueltas, este código ha sido incorporado a la rama \textit{master} mediante una \textit{Pull request}.
 
+Todo el código desarrollado para este TFG se encuentra disponible en un repositorio de Github público, en concreto en \textit{https://github.com/rinvictor/TFG}, esta dividido en dos subcarpetas: 
+\begin{itemize}
+\item \textbf{code}, con todo el código desarrollado para la implementación y despliegue del sistema al completo. Dentro de esta carpeta se encuentran otras cinco subcarpetas: \textit{apps}, \textit{backup}, \textit{datacollecting}, \textit{modules} y \textit{tests}. La funcionalidad del contenido de estas subcarpetas se describe en la sección~\ref{subsec:arquitectura general}.
+
+\item \textbf{doc}, en esta carpeta se encuentra la memoria en pdf, la carpeta \textit{img}, con las imágenes utilizadas en esta memoria y los archivos Latex utilizados para escribirla.
+\end{itemize}
+
+A parte de estas tres carpetas también en el directorio raíz se encuentra un archivo \textit{README.md}, indicando que es repositorio que se está consultando, un \textit{.gitignore}, utilizado durante el desarrollo para indicar en Git que ficheros debían ser ignorados y, por último, un archivo \textit{LICENSE}, con información sobre la licencia de este proyecto.
+Este TFG se ha desarrollado bajo una licencia GPL-3.0 (GNU General Public License v3.0). En la imagen~\ref{figura:license} se pueden ver los permisos, limitaciones y condiciones que otorga esta licencia. Se ha decidido usar esta licencia porque permite compartir, modificar y usar el software que se ha desarrollado libremente.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=15cm, keepaspectratio]{img/license}
+    \caption{Resumen de las condiciones de la licencia GNU General Public License v3.0.}
+    \label{figura:license}
+\end{figure}
+
 \section{Plan de trabajo}
 \label{plan de trabajo}
 Las etapas en las que se ha dividido el desarrollo del proyecto para así conseguir los objetivos anteriormente mencionados han sido:
 
 \begin{itemize}
-\item Estudio previo del tema del TFG, leyendo diferente literatura sobre automatización y monitorización de jardines e invernaderos.
+\item \textbf{Estudio previo del tema del TFG}, leyendo diferente literatura sobre automatización y monitorización de jardines e invernaderos.
 
-\item Diseño del sistema distribuido a nivel software y hardware, decidiendo además cuales de los componentes hardware disponibles en el mercado son los más adecuados para la implementación final.
+\item \textbf{Diseño del sistema distribuido a nivel software y hardware}, decidiendo además cuales de los componentes hardware disponibles en el mercado son los más adecuados para la implementación final.
 
-\item Implentación electrónica de los sensores y desarrollo de los scripts de testeo para estos, recolección de datos y subida a la base de datos de MongoDB. En primer lugar se implementaron los sensores de humedad y temperatura ambiente y una vez se probó el correcto funcionamiento del sistema, se añadieron los de humedad y temperatura de la tierra.
+\item \textbf{Iniciación e investigación sobre las tecnologías utilizadas}, por ejemplo, para la aplicación web, se crearon diferentes programas de prueba para comprender los conceptos básicos del framework utilizado, \textit{Dash}.
 
-\item Desarrollo de la aplicación web para mostrar los datos disponibles y crear figuras a partir de estos.
+\item \textbf{Implementación electrónica de los sensores y desarrollo de los scripts de testeo para estos, recolección de datos y subida a la base de datos de MongoDB}. En primer lugar se implementaron los sensores de humedad y temperatura ambiente y una vez se probó el correcto funcionamiento del sistema, se añadieron los de humedad y temperatura de la tierra.
 
-\item Desarrollo del bot de Telegram para poder obtener datos en tiempo real, desde la base de datos y generar gráficas a partir de estos.
+\item \textbf{Desarrollo de la aplicación web}. Permite visualizar la información recogida por los sensores y crear figuras a partir de esta.
 
-\item Inclusión de los actuadores en el sistema y desarrollo de los scripts de automatización del invernadero. Añadiento, además, soporte para los actuadores en la aplicación web y en el bot de Telegram.
+\item \textbf{Desarrollo del bot de Telegram}. Permitiendo obtener datos en tiempo real. También se implementó funcionalidad que permitiese solicitar información concreta a la base de datos, generando resultados textuales y en forma de gráfica.
 
-\item Añadir mayor soporte para el control de errores creando scripts capaces de notificar al usuario vía Telegram sobre estos. A pesar de que las etapas están claramente diferenciadas, en todos los puntos se ha ido mejorando el control de errores y resolviendo \textit{bugs} que se pudieran detectar. 
+\item \textbf{Inclusión de los actuadores en el sistema y desarrollo de los scripts de automatización del invernadero}. Añadiendo, además, soporte para los actuadores en la aplicación web y en el bot de Telegram.
+
+\item \textbf{Añadir mayor soporte para el control de errores creando scripts capaces de notificar al usuario vía Telegram sobre estos}. A pesar de que las etapas están claramente diferenciadas, en todos los puntos se ha ido mejorando el control de errores y resolviendo \textit{bugs} que se pudieran detectar. 
 
 \end{itemize}
-
-En cada una de las etapas hubo una gran parte de inciación e investigación sobre las tecnologías utilizadas, por ejemplo, para la aplicación web, se crearon diferentes programas de prueba para comprender los conceptos básicos del framework utilizado, \textit{Dash}.
   
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -379,7 +434,7 @@ En este capítulo se  describen de las distintas herramientas utilizadas para es
 \section{Hardware}
 \label{sec:hardware}
 
-A continuación se presenta el hardware utilizado, todas estas tecnologías utilizadas son de bajo coste, y entre las mútiples posibilidades existentes en el mercado se han elegido las siguientes para abaratar el presupuesto necesario para realizar este TFG.
+A continuación se presenta el hardware utilizado, todas estas tecnologías utilizadas son de bajo coste, y entre las múltiples posibilidades existentes en el mercado se han elegido las siguientes para abaratar el presupuesto necesario para realizar este TFG.
 
 \subsection{Raspberry Pi}
 \label{subsec:raspberry pi}
@@ -565,9 +620,9 @@ Toda la funcionalidad de la Raspberry para este TFG se ha implementado sobre Ras
 
 \subsection{Python}
 \label{subsec:python}
-Python es un lenguaje de programación de alto nivel, interpretado, mutiplataforma, de código abierto y de propósito general. Una de sus grandes ventajas es la sencillez y la legibilidad a la hora de desarrollar aplicaciones usando este lenguaje, además, de la multitud de librerías y frameworks disponibles. Soporta no solo la programación orientada a objetos sino también la programación imperativa y la funcional.
+Python es un lenguaje de programación de alto nivel, interpretado, multiplataforma, de código abierto y de propósito general. Una de sus grandes ventajas es la sencillez y la legibilidad a la hora de desarrollar aplicaciones usando este lenguaje, además, de la multitud de librerías y frameworks disponibles. Soporta no solo la programación orientada a objetos sino también la programación imperativa y la funcional.
 Fue desarrollado a finales de la década de los 80 por Guido Van Rossum, investigador del centro holandés Centrum Wiskunde \& Informatica.
-Su uso está hoy en día ampliamente extendido. Es muy común en diferentes areas de la ciencia y la ingeniería y es uno de los lenguajes de programación más solicitados en el mercado.
+Su uso está hoy en día ampliamente extendido. Es muy común en diferentes áreas de la ciencia y la ingeniería y es uno de los lenguajes de programación más solicitados en el mercado.
 En este TFG se han usado dos versiones diferentes de Python, la Python 3.8 y la 3.5, debido al soporte de las diferentes librerías.
 Los principales módulos utilizados se irán referenciando a lo largo de la siguiente sección.
 
@@ -581,7 +636,7 @@ Bash scripting consiste en utilizar Bash como un lenguaje de programación usand
 \subsection{Dash}
 \label{subsec:dash}
 
-Dash es un framework de código abierto utilizado para desarrollar aplicaciones de visualización de datos interactivas usando Python, R, Julia o F\#. Está escrito sobre Plotly.js y React.js. Las aplicaciones web creadas con Dash son servidores web Flask, un framework escrito en Python para crear aplicaciones web, que se comunican usando JSON, un formato ligrero para intercambiar datos, sobre HTTP (Hypertext Transfer Protocol).
+Dash es un framework de código abierto utilizado para desarrollar aplicaciones de visualización de datos interactivas usando Python, R, Julia o F\#. Está escrito sobre Plotly.js y React.js. Las aplicaciones web creadas con Dash son servidores web Flask, un framework escrito en Python para crear aplicaciones web, que se comunican usando JSON, un formato ligero para intercambiar datos, sobre HTTP (Hypertext Transfer Protocol).
 El front-end Dash está implementado con React.js, una librería de JavaScript para la interfaz de usuario escrita y mantenida por Facebook. Dash además de las diferentes tecnologías citadas anteriormente tiene embebidos HTML y CSS. En este TFG se ha usado, además, Bootstrap, que se explica a continuación y Plotly, una librería de Python utilizada para crear gráficos interactivos.
 
 \subsubsection{HTML en Dash}
@@ -635,19 +690,19 @@ Las hojas de estilo en cascada, CSS(Cascading Style Sheets), son empleadas para 
 \subsubsection{Bootstrap en Dash}
 \label{subsubsec:boostrap}
 Este framework de software libre, muy utilizado en programación web se utiliza como una abstracción de HTML, CSS y JavaScript cuyo propósito es facilitar la creación de sitios web para múltiples dispositivos (\textit{responsive design}). Fue desarrollado inicialmente en el año 2011 por ingenieros de la compañía estadounidense Twitter, Inc. Su versión más reciente es Bootstrap 5, lanzada en el año 2021, cuya principal diferencia respecto a sus anteriores versiones es que utiliza Vanilla JavaScript (JavaScript puro), en lugar de JQuery, una librería de JavaScript muy utilizada para agregar interactividad a los sitios web.
-Como se ha mencionado anteriormente, se ha utilizado una plantilla libre de Bootstrap 5 a la que se le han hecho ligeras modificaciones de estilo, se puede usar este framework en Dash usando la libería Dash\_bootstrap\_components.
+Como se ha mencionado anteriormente, se ha utilizado una plantilla libre de Bootstrap 5 a la que se le han hecho ligeras modificaciones de estilo, se puede usar este framework en Dash usando la librería Dash\_bootstrap\_components.
 
 \subsection{API de telegram}
 \label{subsec:api telegram}
 
-Una API (Application Programming Interfaces) o interfaz de programación de aplicaciones en español, es un conjunto de protocolos y definiciones que se utilizan para desarrollar software y que permite la comunicación entre dos aplicaciones. Telegram es una aplicación de mensajería instántanea desarrollada por los hermanos Nikilái y Pável Dúrov, lanzada el 14 de agosto de 2013. Telegram permite multitud de servicios, entre ellos la posibilidad de utilizar bots. Los bots de telegram tienen una gran popularidad y muy diferentes usos, con ellos se puede desde obtener información hasta realizar descargas o traducir textos.
+Una API (Application Programming Interfaces) o interfaz de programación de aplicaciones en español, es un conjunto de protocolos y definiciones que se utilizan para desarrollar software y que permite la comunicación entre dos aplicaciones. Telegram es una aplicación de mensajería instantánea desarrollada por los hermanos Nikilái y Pável Dúrov, lanzada el 14 de agosto de 2013. Telegram permite multitud de servicios, entre ellos la posibilidad de utilizar bots. Los bots de telegram tienen una gran popularidad y muy diferentes usos, con ellos se puede desde obtener información hasta realizar descargas o traducir textos.
 
-Telegram ofrece una API para el desarrollo de bots, que es la que se ha utilizado en este TFG junto a la librería Ttelepot para Python.
+Telegram ofrece una API para el desarrollo de bots, que es la que se ha utilizado en este TFG junto al módulo Telepot para Python.
 
 \subsection{MongoDB}
 \label{subsec:mongodb}
 
-MongoDB es un sistema de bases de datos de código abierto, no relacional y orientado a documentos. Utliza estructuras BSON (Binary JSON) para guardar los datos. Una de las principales ventajas de MongoDB es su velocidad y aprovechamiento de los recursos.
+MongoDB es un sistema de bases de datos de código abierto, no relacional y orientado a documentos. Utiliza estructuras BSON (Binary JSON) para guardar los datos. Una de las principales ventajas de MongoDB es su velocidad y aprovechamiento de los recursos.
 
 Las bases de datos no relacionales son muy utilizadas en proyectos de IoT y, en general, en proyectos para los que no sea necesario guardar relaciones entre tablas al estilo SQL (Structured Query Language). MongoDB permite acceder a una gran cantidad de datos en poco tiempo, permite realizar multitud de consultas, expresiones regulares, etc.
 
@@ -663,7 +718,7 @@ En este TFG se ha usado Cron para lanzar periódicamente scripts para la realiza
 
 Docker es un sistema basado en el funcionamiento de virtualización ofrecida por el núcleo de Linux.
 Este prepara máquinas virtuales de proceso y usa diferentes tecnologías como Cgroups, que permite aislar y limitar los recursos consumidos por un grupo de procesos o el espacio de nombrado de Linux (Linux kernel namespaces), que permite aislar los PID, interfaces de red, tablas de encaminamiento, puntos de montaje, etc. Docker es un sistema muy extendido y de código abierto mantenido por Docker Inc. Algunos de los principales organismos contribuyentes a este proyecto son Google, Cisco, Microsoft, RedHat, entre otras importantes compañías, además de la comunidad.
-En este caso se ha utilizado Docker para realizar el despligue de la base de datos de MongoDB en una máquina de los laboratorios de la ETSIT de la Universidad Rey Juan Carlos.
+En este caso se ha utilizado Docker para realizar el despliegue de la base de datos de MongoDB en una máquina de los laboratorios de la ETSIT de la Universidad Rey Juan Carlos.
 
 \begin{figure}[H]
 	\centering
@@ -674,7 +729,7 @@ En este caso se ha utilizado Docker para realizar el despligue de la base de dat
 
 \subsection{Heroku}
 \label{subsec: heroku}
-Heroku, fundada en 2007 por Orion Henry, James Lindenbaum y Adam Wigginses y desde 2010 mantenida por Salesforce Inc. , es una pataforma de servicios en la nube o PaaS (Platform as a Service), en inglés, que permite manejar la administración y configuración de los servidores.
+Heroku, fundada en 2007 por Orion Henry, James Lindenbaum y Adam Wigginses y desde 2010 mantenida por Salesforce Inc., es una plataforma de servicios en la nube o PaaS (Platform as a Service), en inglés, que permite manejar la administración y configuración de los servidores.
 Las principales características de esta popular herramienta son:
 \begin{itemize}
 	\item Soporta diferentes lenguajes de programación (Ruby, PHP, Python, etc).
@@ -688,11 +743,11 @@ Para este proyecto se ha utilizado su versión más sencilla para desplegar la a
 \subsection{Control de versiones}
 \label{subsec:control versiones}
 
-El control de versiones es esencial en cualquier proyecto de desarrollo de software, se ha utlizado Git y Github para este propósito.
+El control de versiones es esencial en cualquier proyecto de desarrollo de software, se ha utilizado Git y Github para este propósito.
 
 Git es el sistema de control de versiones más extendido actualmente, se trata de un proyecto de software libre en continuo crecimiento. Desarrollado por Linus Torvalds en el año 2005. Git es un sistema de control de versiones distribuido, de tal manera que cada copia del trabajo es también un repositorio que alberga todo el historial de cambios.
 
-Una de las principales ventajas del uso de Git es su rendimiento, y es que gracias a su popularidad, que lo ha convertido prácticamente en un estándar, las bases de sus características son muy sólidas y sus principales funciones están muy optimizadas. Otro aspecto a resaltar de este software es la seguridad, utiliza SHA1, un algoritmo criptogáficamente seguro. Todo esto ha llevado a Git a ser el sistema de control de versiones más usado.
+Una de las principales ventajas del uso de Git es su rendimiento, y es que gracias a su popularidad, que lo ha convertido prácticamente en un estándar, las bases de sus características son muy sólidas y sus principales funciones están muy optimizadas. Otro aspecto a resaltar de este software es la seguridad, utiliza SHA1, un algoritmo criptográficamente seguro. Todo esto ha llevado a Git a ser el sistema de control de versiones más usado.
 Github es una plataforma diseñada para alojar código, comprada por Microsoft en el año 2018, permite gestionar proyectos usando Git. Es también muy utilizado y permite alojar proyectos tanto de forma pública como privada.
 
 \begin{figure}[H]
@@ -746,7 +801,7 @@ El invernadero ha diseñado para ser de de bajo coste. Ha sido fabricado en plá
 \end{figure}
 
 En este montaje se ha incluido un depósito de agua. El depósito cuenta con una capacidad de 40 litros, capacidad que permite realizar las pruebas del sistema.  
-Otra opción hubiera consistido en utilizar una toma de agua corriente en lugar de un depósito. También se ha de tener en cuenta que el depósito debe rellenarse de alguna forma, ya sea a través de una toma de agua o manualmente. En el montaje propuesto en este TFG el depósito está desacoplado de una toma de agua, por lo que debe rellenarse manualmente.  Aunque existe en este caso la limitación de acceso al agua, nos permite por otro lado que el invernadero no dependa de infraestructuras externas. Otra opción viable y que no implicaría nigún cambio sería, por ejemplo, sustituir el depósito por un pozo. Para poder llevar el agua hasta las plantas se ha usado una tubería de riego con puntos de salida de agua regulables tipo araña conectado a una bomba como se puede observar en las figuras~\ref{figura:bomba_agua} y~\ref{figura:salidas_agua}. La bomba de agua modelo CESFONJER serña el actuador que se controlará mediante el software desarrollado para realizar el riego del sistema.
+Otra opción hubiera consistido en utilizar una toma de agua corriente en lugar de un depósito. También se ha de tener en cuenta que el depósito debe rellenarse de alguna forma, ya sea a través de una toma de agua o manualmente. En el montaje propuesto en este TFG el depósito está desacoplado de una toma de agua, por lo que debe rellenarse manualmente.  Aunque existe en este caso la limitación de acceso al agua, nos permite por otro lado que el invernadero no dependa de infraestructuras externas. Otra opción viable y que no implicaría ningún cambio sería, por ejemplo, sustituir el depósito por un pozo. Para poder llevar el agua hasta las plantas se ha usado una tubería de riego con puntos de salida de agua regulables tipo araña conectado a una bomba como se puede observar en las figuras~\ref{figura:bomba_agua} y~\ref{figura:salidas_agua}. La bomba de agua modelo CESFONJER será el actuador que se controlará mediante el software desarrollado para realizar el riego del sistema.
 
 \begin{figure}[H]
   \centering
@@ -848,8 +903,8 @@ A su vez, cada uno de los actuadores está asociado a un pin GPIO de la Raspberr
 
 \subsection{Arquitectura general}
 \label{subsec:arquitectura general}
-El código desarrollado en este TFG está disponible en Github \footnote{\url{https://github.com/rinvictor/TFG}}. El repositorio se divide en \textit{code/}, donde se puede encontrar todo el codigo desarrollado, y en \textit{doc/}, con la documentación sobre el mismo.
-En code/ podemos encontrar otras cinco subcarpetas:
+El código desarrollado en este TFG está disponible en Github \footnote{\url{https://github.com/rinvictor/TFG}}. El repositorio se divide en \textit{code/}, donde se puede encontrar todo el código desarrollado, y en \textit{doc/}, con la documentación sobre el mismo.
+En \textit{code/} podemos encontrar otras cinco subcarpetas:
 \begin{itemize}
 \item \textit{apps}, código para el desarrollo de las aplicaciones que se han realizado.
 \item \textit{backup}, código para realizar un backup de la base de datos.
@@ -899,7 +954,7 @@ Se almacenan seis valores por cada lectura del sensor. Se realizan un total de o
 
 Se realiza una copia de seguridad de cada una de las colecciones de la base de datos una vez al día, dejándola en dos archivos \textit{.csv}.De esta manera el sistema puede sobreponerse al borrado no intencionado de la información como por ejemplo,  si el contenedor es borrado.
 El código para realizar este backup se localiza en \textit{TFG/code/backup}. La lógica del proceso se encuentra en \textit{backup.py} mientras que el proceso que lanza la lógica se encuentra en \textit{execute\_backup.sh}. 
-Al ejecutar el proceso anterior se alamcenan los mensajes en \textit{TFG/code/backup/logs/success.log} si todo funciona correctamente, en \textit{TFG/code/backup/logs/error.log} si falla y en \textit{TFG/code/backup/logs/cronerror.log} si es cron el que encuentra problemas para ejecutar el proceso.
+Al ejecutar el proceso anterior se almacenan los mensajes en \textit{TFG/code/backup/logs/success.log} si todo funciona correctamente, en \textit{TFG/code/backup/logs/error.log} si falla y en \textit{TFG/code/backup/logs/cronerror.log} si es cron el que encuentra problemas para ejecutar el proceso.
 
 El software para la de recogida de datos, control de actuadores y el bot de Telegram se ha desplegado en la Raspberry Pi, mientras que la aplicación web se ha desplegado en la nube y la base de datos está alojada en los laboratorios docentes de la URJC. De esta forma, si hubiera una rotura o una caída de la red en la Raspberry podría detectarse rápidamente a través de la aplicación web, y los datos almacenados hasta el momento no se perderían y podrían seguir siendo consultados. Por otro lado, la caída de la aplicación web no afectaría al funcionamiento de la Raspberry Pi y todos los procesos ejecutados en ella continuarían. Por último, si la base de datos dejase de funcionar se podría detectar rápidamente a través de los logs de la Raspberry y mediante el bot de Telegram.
  
@@ -948,7 +1003,7 @@ A continuación se muestra un pequeño fragmento a través del cual se inserta e
         collection.insert_one(item)
 \end{lstlisting}
 
-Se ha desarrolado un script de Bash donde se lanzan los scripts de Python encargados de la recolección de datos, además se realizan las exportaciones de módulos de Python pertinentes y se almacena el resultado del proceso en los ficheros de log. El script de Bash si realiza reintentos, de tal manera que si es la aplicación la que falla relanza su ejecución. En caso de fallo se almacena el resultado con la etiqueta \textit{Exec Error}. En caso de fallar este segundo reintento la etiqueta pasa a ser \textit{Fatal Error}. Si el segundo intento tiene éxito, se escribe en el fichero de log indicando que ha sido tras un reintento. Todos los ficheros de log se escriben con la fecha y el resultado de la ejecución.
+Se ha desarrollado un script de Bash donde se lanzan los scripts de Python encargados de la recolección de datos, además se realizan las exportaciones de módulos de Python pertinentes y se almacena el resultado del proceso en los ficheros de log. El script de Bash si realiza reintentos, de tal manera que si es la aplicación la que falla relanza su ejecución. En caso de fallo se almacena el resultado con la etiqueta \textit{Exec Error}. En caso de fallar este segundo reintento la etiqueta pasa a ser \textit{Fatal Error}. Si el segundo intento tiene éxito, se escribe en el fichero de log indicando que ha sido tras un reintento. Todos los ficheros de log se escriben con la fecha y el resultado de la ejecución.
 A continuación se muestra un ejemplo de la información que se almacena en los \textit{logs}.
 
 \begin{lstlisting}[language=Bash]
@@ -1058,7 +1113,7 @@ Entre las funcionalidades ofrecidas por Plotly, cabe destacar que es posible des
 
 \subsection{Bot de Telegram}
 \label{bot de telegram}
-En este TFG se ha desarrollado un bot de Telegram llamado \textit{greenhouseTFGBot}. El objetivo de éste bot no es exclusivamente el de enviar mensajes al usario sino, además, poder obtener información de los sensores, tanto en tiempo real como desde la base de datos y enviar gráficas construidas con Plotly interactuando con el usuario. En esta sección se especifican todas las funcionalidades implementadas en este bot. Ejemplos concretos y salidas de comandos pueden ser vistos en la sección~\ref{sec:cosas particulares cambiar nombre}.
+En este TFG se ha desarrollado un bot de Telegram llamado \textit{greenhouseTFGBot}. El objetivo de éste bot no es exclusivamente el de enviar mensajes al usuario sino, además, poder obtener información de los sensores, tanto en tiempo real como desde la base de datos y enviar gráficas construidas con Plotly interactuando con el usuario. En esta sección se especifican todas las funcionalidades implementadas en este bot. Ejemplos concretos y salidas de comandos pueden ser vistos en la sección~\ref{sec:cosas particulares cambiar nombre}.
 
 Este bot se ha desarrollando haciendo uso de la API de telegram y de la librería de Python Telepot. Se puede encontrar el código en \textit{code/apps/telegram} del repositorio de Github.
 
@@ -1119,13 +1174,13 @@ def get_ground_temp_list(value=True):
     return ground_temperature_list
 \end{lstlisting}
 
-El bot desarrollado también permite obtener la última lectura de los sensores almacenada en la base de datos. De esta manera, no se lanza una petición para recoger información en tiempo real. Estas llamadas son: \textit{/sensorsdatadb}, \textit{/groundhumiditydb}, \textit{/groundtemperaturedb}, \textit{/ambienthumiditydb}, \textit{/ambienttemperaturedb} e \textit{/irrigationdb}. El mensaje devuelto por estos comandos es similar a los mencionados anteriormente, con la diferencia de que añade la fecha y hora de la lecura que se está mostrando. De igual manera, \textit{/sensorsdatadb} devuelve la última lectura de todos los sensores del sistema.
+El bot desarrollado también permite obtener la última lectura de los sensores almacenada en la base de datos. De esta manera, no se lanza una petición para recoger información en tiempo real. Estas llamadas son: \textit{/sensorsdatadb}, \textit{/groundhumiditydb}, \textit{/groundtemperaturedb}, \textit{/ambienthumiditydb}, \textit{/ambienttemperaturedb} e \textit{/irrigationdb}. El mensaje devuelto por estos comandos es similar a los mencionados anteriormente, con la diferencia de que añade la fecha y hora de la lectura que se está mostrando. De igual manera, \textit{/sensorsdatadb} devuelve la última lectura de todos los sensores del sistema.
 
-A través de los comandos disponibles en el Bot también se pueden obtener gráficas similares a las presentadas en Dash. Por defecto, devuelve la figura de las mediciones realizadas el mismo día y el día anterior. Para permitir el filtrado de la información es posible añadir parametros extra al comando. De esta manera es posible indicar una fecha de inicio y de fin para obtener únicamente la información recogida entre dos fechas. En el caso de únicamente incluir la fecha de fin, se devuelve la información alamacenada desde la primera lectura hasta la fecha de fin indicada. El formato que esperan estos parámetros es \textit{yyyy-mm-dd}, en el caso de no seguir este formato, se devuelve un mensaje de error.
+A través de los comandos disponibles en el Bot también se pueden obtener gráficas similares a las presentadas en Dash. Por defecto, devuelve la figura de las mediciones realizadas el mismo día y el día anterior. Para permitir el filtrado de la información es posible añadir parámetros extra al comando. De esta manera es posible indicar una fecha de inicio y de fin para obtener únicamente la información recogida entre dos fechas. En el caso de únicamente incluir la fecha de fin, se devuelve la información almacenada desde la primera lectura hasta la fecha de fin indicada. El formato que esperan estos parámetros es \textit{yyyy-mm-dd}, en el caso de no seguir este formato, se devuelve un mensaje de error.
 Existen otros mensajes para indicar que el usuario está haciendo un mal uso del comando, como cuando, por ejemplo, se solicita una fecha posterior a la del día en que se realiza la petición o si se escribe mal un parámetro.
 Las gráficas se obtienen haciendo uso de los comandos \textit{/getallfigures}, \textit{/groundhumidityfig}, \textit{/groundtemperaturefig}, \textit{/ambienthumidityfig}, \textit{/ambienttemperaturefig} e \textit{/irrigationfig}, pudiendo añadir los parámetros opcionales \textit{--startdate} y \textit{--enddate}. Cualquiera de estos comandos devuelve tres mensajes, el primero indica que se está construyendo la figura, el segundo mensaje incluye la propia figura y el tercero indica la localización de los sensores a los que se está haciendo referencia. En el caso de \textit{/getallfigures}, se devuelven todas las figuras, además de un mensaje indicando que el proceso ha terminado.
 
-Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en el script \textit{TFG/code/apps/dashapp/dash\_utils.py} y \textit{TFG/code/apps/dashapp/create\_figures.py}. Las imágenes son enviadas en formato png, convirtiendolas previamente a bytes. Si existiera algún errror durante el procesamiento del comando se enviaría un mensaje de error al usuario como se muestra en la figura~\ref{figura:error send photo}.
+Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en el script \textit{TFG/code/apps/dashapp/dash\_utils.py} y \textit{TFG/code/apps/dashapp/create\_figures.py}. Las imágenes son enviadas en formato png, convirtiéndolas previamente a bytes. Si existiera algún error durante el procesamiento del comando se enviaría un mensaje de error al usuario como se muestra en la figura~\ref{figura:error send photo}.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/error_send_photo}
@@ -1133,7 +1188,7 @@ Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en e
     \label{figura:error send photo}
 \end{figure}
 
-Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje al chat del usuario con el bot indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de persistencia de datos, se realiza a la hora de la recogida. Aunque es posible ignorar los datos erróneos, se ha optado por no hacerlo para poder encontrar facilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
+Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje al chat del usuario con el bot indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de persistencia de datos, se realiza a la hora de la recogida. Aunque es posible ignorar los datos erróneos, se ha optado por no hacerlo para poder encontrar fácilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
 %\begin{figure}[H]
 %	\centering
 %    \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_mensaje}
@@ -1193,28 +1248,14 @@ El propósito de este tipo de ficheros de configuración es el de poder añadir 
 
 En este mismo directorio también se encuentra el fichero \textit{controllers.py}, donde se definen las funciones para el apagado y encendido del actuador deseado. Estas funciones reciben el pin de los actuadores. En el caso de la bomba de riego se está utilizando el GPIO 24.
 
-Estas funciones dan de alta el pin de salida deseado haciendo uso de la librería GPIO, con \textit{GPIO.OUT} y luego encienden o apagan el dispositivo que está utilizando pasádole un valor binario.
+Estas funciones dan de alta el pin de salida deseado haciendo uso de la librería GPIO, con \textit{GPIO.OUT} y luego encienden o apagan el dispositivo que está utilizando pasándole un valor binario.
 
 Al igual que con las funcionalidades descritas anteriormente, la aplicación de riego tiene sus propios logs. Estos logs se encuentran en \textit{code/apps/actions/logs}. En este directorio se encuentran los ficheros \textit{success.log}, \textit{error.log} y si procede \textit{cronerror.log}.
-La apicación se ejecuta en Cron y se lanza una vez al día, a las 00:30.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% EXPERIMENTOS Y VALIDACIÓN %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\cleardoublepage
-%\chapter{Experimentos y validación}
-%
-%Este capítulo se introdujo como requisito en 2019. 
-%Describe los experimentos y casos de test que tuviste que implementar para validar tus resultados. 
-%Incluye también los resultados de validación que permiten afirmar que tus resultados son correctos.
-
+La aplicación se ejecuta en Cron y se lanza una vez al día, a las 00:30.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS %
+% CASOS DE USO %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
@@ -1225,7 +1266,7 @@ En este capítulo se incluyen ejemplos y casos de uso de las funcionalidades int
 
 \section{caso dedato bueno cambiar nombre}
 \label{sec:aplicación de dash ejemplos}
-En esta sección se muestran casos de uso y el flujo de funcionamineto de la plataforma completa.
+En esta sección se muestran casos de uso y el flujo de funcionamiento de la plataforma completa.
 Como norma general que se repite para cada uno de los sensores disponibles, en primer lugar el sensor recoge la información y es guardada en la base de datos. Después, desde la aplicación Dash y desde el Bot de Telegram se puede acceder a la base de datos para visualizar la información. En las siguientes secciones se presentan ejemplos con valores para explicar de mejor manera el proceso.
 
 \subsection{Temperatura y humedad ambiente}
@@ -1246,7 +1287,7 @@ El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se 
 \end{figure} 
 
 Una vez los datos son almacenados en la base de datos pueden ser consultados desde las diferentes aplicaciones que se han desarrollado.
-En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible obtener únicamente los datos de un sensor, para ello es necesario utilzar el desplegable de sensores, situado en la parte superior izquierda de la página (ver figura~\ref{figura:desplegable_sensores}).
+En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible obtener únicamente los datos de un sensor, para ello es necesario utilizar el desplegable de sensores, situado en la parte superior izquierda de la página (ver figura~\ref{figura:desplegable_sensores}).
 
 En las figuras se observa como las lecturas de ambos sensores miden aproximadamente lo mismo, esto confirma el correcto funcionamiento del sistema. En la época del año en la que se realizaron las lecturas el invernadero se encontraba abierto, de manera que la temperatura interior y exterior debe ser similar. Las fluctuaciones que se muestran en la figura se corresponden con las altas temperaturas durante el día y la bajada de estas durante la noche.
 
@@ -1416,11 +1457,11 @@ Tal y como se puede observar en la figura~\ref{figura:ground_temperature_diferen
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_diferencias}
-    \caption{Diferencia entre lecturas de ambos sensores. Medidas tomadas entre las 20 del dia 11 de Junio de 2022 y las 14 del día 12 de Junio de 2022}
+    \caption{Diferencia entre lecturas de ambos sensores. Medidas tomadas entre las 20 del día 11 de Junio de 2022 y las 14 del día 12 de Junio de 2022}
     \label{figura:ground_temperature_diferencias}
 \end{figure}
 
-Igual que para el resto de magnitudes, es posible utlizar el bot de Telegram para obtener gráficas como se muestra en las figuras~\ref{figura:groundtemperaturefig_telegram} y~\ref{figura:groundtemperaturefig_telegram_options}.
+Igual que para el resto de magnitudes, es posible utilizar el bot de Telegram para obtener gráficas como se muestra en las figuras~\ref{figura:groundtemperaturefig_telegram} y~\ref{figura:groundtemperaturefig_telegram_options}.
 
 \begin{figure}[H]
 	\centering
@@ -1448,7 +1489,7 @@ En esta sección se presenta el tratamiento de la información de la humedad de 
     \label{figura:arquitectura_humedad_tierra}
 \end{figure}
 
-Estos datos al igual que en los casos anteriores pueden ser consultados o bien desde la aplicación web, obteniendola en \textit{GROUND HUMIDITY} dentro del desplegable \textit{SENSORS DATA} del menú principal, o bien desde el bot de Telegram. Todas las figuras, comandos y datos disponibles para la humedad de la tierra son análogos a los casos descritos en las secciones~\ref{subsec: temperatura y humedad ambiente} y~\ref{subsec: temperatura de la tierra}.
+Estos datos al igual que en los casos anteriores pueden ser consultados o bien desde la aplicación web, obteniéndola en \textit{GROUND HUMIDITY} dentro del desplegable \textit{SENSORS DATA} del menú principal, o bien desde el bot de Telegram. Todas las figuras, comandos y datos disponibles para la humedad de la tierra son análogos a los casos descritos en las secciones~\ref{subsec: temperatura y humedad ambiente} y~\ref{subsec: temperatura de la tierra}.
 
 La humedad de la tierra está relacionada con la aplicación de riego que se ha desarrollado. Como se expone en la sección~\ref{subsec:riego}. En las figuras sucesivas se muestra como la relación entre los datos de humedad de la tierra y los datos almacenados en la colección \textit{controllers\_data} conservan una estrecha relación.
 En las figuras~\ref{figura:figura riego} y~\ref{figura:humedad tierra} se muestra como a mayor sequedad de la tierra el sistema riega con una mayor cantidad de agua. El terreno está más seco cuando la lectura de los sensores es más cercana a uno, es por este motivo que el día 4 de Junio se regó con una mayor cantidad de agua que el día 6.
@@ -1467,8 +1508,8 @@ En las figuras~\ref{figura:figura riego} y~\ref{figura:humedad tierra} se muestr
     \label{figura:humedad tierra}
 \end{figure}
 
-Las gráfica para los actuadores, en este caso las gráfica de riego, se generan siguiendo el mismo proceso que para los sennsores. Se puede utilizar la aplicación web, estas figuras se encuentran en el desplegable \textit{IRRIGATION} de la sección \textit{CONTROLLERS DATA} del menú principal (ver figura~\ref{figura:grafica_irrigation_data_04_07_junio}).
-Haciendo uso del comando \textit{/irrigationfig}, con sus parámetros opcionales \textit{--startdate} y \textit{--enddate}, se obtiene la figura de riego y con el comando \textit{/irrigationdb} se obtiene el útltimo dato almacenado en la base de datos sobre el riego. El comando \textit{/controllersinfo} devuelve un mensaje con información relevante sobre los diferentes actuadores del sistema, en este caso, sobre la bomba de riego (ver figura~\ref{figura:comando controllers info}).
+Las gráfica para los actuadores, en este caso las gráfica de riego, se generan siguiendo el mismo proceso que para los sensores. Se puede utilizar la aplicación web, estas figuras se encuentran en el desplegable \textit{IRRIGATION} de la sección \textit{CONTROLLERS DATA} del menú principal (ver figura~\ref{figura:grafica_irrigation_data_04_07_junio}).
+Haciendo uso del comando \textit{/irrigationfig}, con sus parámetros opcionales \textit{--startdate} y \textit{--enddate}, se obtiene la figura de riego y con el comando \textit{/irrigationdb} se obtiene el último dato almacenado en la base de datos sobre el riego. El comando \textit{/controllersinfo} devuelve un mensaje con información relevante sobre los diferentes actuadores del sistema, en este caso, sobre la bomba de riego (ver figura~\ref{figura:comando controllers info}).
 
 \begin{figure}[H]
 	\centering
@@ -1497,7 +1538,7 @@ Como se muestra en las figuras~\ref{figura:grafica_irrigation_data_04_07_junio} 
 \section{cosas particulares cambiar nombre}
 \label{sec:cosas particulares cambiar nombre}
 Como se menciona en el apartado~\ref{aplicacion de dash}, uno de los objetivos de la aplicación web es el de poder realizar un análisis concreto del estado del sistema y encontrar así errores.
-La aplicación es útil para detectar comportamientos anomarles en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
+La aplicación es útil para detectar comportamientos anormales en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
 
 \begin{figure}[H]
 	\centering
@@ -1571,10 +1612,37 @@ La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se
 \cleardoublepage
 \chapter{Conclusiones}
 \label{chap:conclusiones}
-
+En este capítulo se presentan las conclusiones tras el desarrollo de este TFG. Se indican los objetivos conseguidos y las competencias adquiridas, además de una exposición de los contenidos de distintas asignaturas del grado aplicados a este trabajo.
 
 \section{Consecución de objetivos}
 \label{sec:consecución de objetivos}
+El objetivo propuesto para este TFG era crear un sistema distribuido de monitorización y automatización de un invernadero, como se indica en el capítulo~\ref{chap:objetivos}.
+
+El primer hito consistía en la creación de una serie de scripts para realizar la recogida de información a partir de diferentes sensores y la subida de esta a la base de datos. Este hito ha sido alcanzado con éxito. Como se explica en la sección~\ref{subsec:recogida de datos} estos scripts se ejecutan en Cron y los datos son insertados en la base de datos \textit{greenhouseDB} de MongoDB.
+
+Otro de los objetivos marcados era crear una aplicación web para visualizar la información recogida por los sensores. Esto se ha conseguido desarrollando una aplicación web mediante el framework Dash. Toda su funcionalidad queda descrita en la sección~\ref{aplicacion de dash}.
+
+Otro de los objetivos era el desarrollo de un bot de Telegram que permitiese consultar datos en tiempo real y desde la base de datos. Además de usar este bot para enviar gráficas con la información de la base de datos y el envío de notificaciones al usuario cuando procediese. Este objetivo ha sido llevado a cabo con éxito, desarrollando todas las funcionalidades propuestas mediante el módulo \textit{Telepot} de Python, entre otros. Este desarrollo se indica en la sección~\ref{bot de telegram}.
+
+Por último, se ha automatizado el riego del invernadero utilizando la información proporcionada por los sensores de humedad de la tierra. Se ha conseguido optimizar el riego manteniendo la humedad de la tierra en condiciones ideales para los cultivos, como se explica en la sección~\ref{subsec:riego}.
+
+Un objetivo general era conseguir un sistema de bajo costo y se ha conseguido utilizando sensores y actuadores económicos y herramientas de software gratuitas.
+
+El coste total del proyecto ha sido:
+
+\begin{itemize}
+\item \textbf{Invernadero, sacos de cultivo, depósito de agua, tuberías de riego y tierra}: 100€
+\item \textbf{Caja hermética para electrónica}: 5€
+\item \textbf{Raspberry Pi 3B+ y fuente de alimentación}: 45€.
+\item \textbf{Arduino UNO rev3}: 23€.
+\item \textbf{Sensores (DHT22, YL-69 y DS18B20)}: 25€.
+\item \textbf{Actuadores (bomba CESFONJER)}: 15€.
+\item \textbf{Módulo de relés}: 11€ 
+\item \textbf{Resto de componentes electrónicos (cables y Protoboard)}: 20€
+\end{itemize}
+
+Estos precios pueden variar ligeramente en función de la disponibilidad y del proveedor. Pero se puede tomar 244€ como un coste total del proyecto orientativo.
+Hay que tener en cuenta que muchos de los materiales pueden ser reutilizados por lo que el precio puede bajar significativamente.   
 
 
 \section{Aplicación de lo aprendido}
@@ -1582,25 +1650,25 @@ La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se
 Para la realización de este proyecto, se han aplicado conocimientos adquiridos de diferentes asignaturas cursadas durante el grado:
 
 \begin{itemize}
-\item \textbf{Fundamentos de la Programación}, se realiza una introducción a la programación imperativa utilizando como primer lenguaje de programación Pascal
+\item \textbf{Fundamentos de la Programación}: se realiza una introducción a la programación imperativa utilizando como primer lenguaje de programación Pascal.
 
-\item \textbf{Programación de Sistemas de Telecomunicación}, donde se amplían los conocimientos sobre la asignatura anterior, se utiliza el lenguaje de programación Ada para desarrollar software orientado a las comunicaciones, realizando proyectos de mayor complejidad.
+\item \textbf{Programación de Sistemas de Telecomunicación}: donde se amplían los conocimientos sobre la asignatura anterior, se utiliza el lenguaje de programación Ada para desarrollar software orientado a las comunicaciones, realizando proyectos de mayor complejidad.
 
-\item \textbf{Sistemas y Circuitos}, se imparten los conceptos físicos básicos para realizar una introducción en el análisis y el diseño de circuitos eléctricos.
+\item \textbf{Sistemas y Circuitos}: se imparten los conceptos físicos básicos para realizar una introducción en el análisis y el diseño de circuitos eléctricos.
 
-\item \textbf{Electrónica}, se amplían los conocimientos de la asigantura anterior. Además, se concreta sobre el análisis y diseño de circuitos electrónicos.
+\item \textbf{Electrónica}: se amplían los conocimientos de la asignatura anterior. Además, se concreta sobre el análisis y diseño de circuitos electrónicos.
 
-\item \textbf{Sistemas Operativos}, utilizando en lenguaje de programación C se profundiza en el sistema operativo GNU/Linux y sistemas UNIX. Se desarrollan además scripts utilizando Shell Scripting.
+\item \textbf{Sistemas Operativos}: utilizando en lenguaje de programación C se profundiza en el sistema operativo GNU/Linux y sistemas UNIX. Se desarrollan además scripts utilizando Shell Scripting.
 
-\item \textbf{Servicios Telemáticos}, en esta asignatura se utiliza Python como lenguaje de programación para la creación de servicios web, esta asignatura se centra en el lado del servidor.
+\item \textbf{Servicios Telemáticos}: en esta asignatura se utiliza Python como lenguaje de programación para la creación de servicios web. Esta asignatura se centra en el lado del servidor.
 
-\item \textbf{Aplicaciones telemáticas}, se imparten conceptos de desarrollo web, utilizando HTML, CSS y JavaScript.
+\item \textbf{Aplicaciones telemáticas}: se imparten conceptos de desarrollo web, utilizando HTML, CSS y JavaScript.
 
-\item \textbf{Sistemas Distribuidos}, se realiza una introducción a los sistemas distribuidos actuales y se realiza una introducción al diseño de estos.
+\item \textbf{Sistemas Distribuidos}: se realiza una introducción a los sistemas distribuidos actuales y se realiza una introducción al diseño de estos.
 
-\item \textbf{Laboratorio de Administración y Gestión de Redes y Sistemas}, se imparte el uso de Docker y técnicas de administración de sistemas. Toda la asignatura se centra en el uso de sistemas de tipo UNIX. Se realiza también una introducción al uso de bots de Telegram para la administración de sistemas.
+\item \textbf{Laboratorio de Administración y Gestión de Redes y Sistemas}: se imparte el uso de Docker y técnicas de administración de sistemas. Toda la asignatura se centra en el uso de sistemas de tipo UNIX. Se realiza también una introducción al uso de bots de Telegram para la administración de sistemas.
 
-\item \textbf{Laboratorio de Bases de Datos}, se realiza una introducción al diseño, implementación y mantenimiento de bases de datos.
+\item \textbf{Laboratorio de Bases de Datos}: se realiza una introducción al diseño, implementación y mantenimiento de bases de datos.
 
 \end{itemize}
  
@@ -1611,15 +1679,15 @@ Para la realización de este proyecto, se han aplicado conocimientos adquiridos 
 Con el desarrollo de este TFG se han ampliado y asentado los conocimientos mencionados en el apartado~\ref{sec:aplicación de lo aprendido}. Además, se han adquirido otros nuevos como son:
 
 \begin{itemize}
-\item \textbf{Dash}, el uso de este framework basado en Python y que permite desarrollar aplicaciones web para mostrar datos es una de las competencias adquiridas.
+\item \textbf{Dash}: el uso de este framework basado en Python y que permite desarrollar aplicaciones web para mostrar datos es una de las competencias adquiridas.
 
-\item \textbf{Bots de Telegram}, a pesar de que en la asignatura \textit{Laboratorio de Adeministración y Gestión de Redes y Sistemas} se realiza una pequeña introducción, se ha alcanzado un conocimiento mucho mayor sobre el desarrollo de estos para la monitorización y administración de sistemas.
+\item \textbf{Bots de Telegram}: a pesar de que en la asignatura \textit{Laboratorio de Administración y Gestión de Redes y Sistemas} se realiza una pequeña introducción, se ha alcanzado un conocimiento mucho mayor sobre el desarrollo de estos para la monitorización y administración de sistemas.
 
-\item \textbf{MongoDB}, en la asignatura \textit{Laboratorio de Bases de Bases de Datos} únicamente se utilizan bases de datos relacionales. Aunque muchos de los conceptos son aplicables a una base de datos orientada a documentos otra de las competencias adquiridas es el uso de MongoDB.
+\item \textbf{MongoDB}: en la asignatura \textit{Laboratorio de Bases de Bases de Datos} únicamente se utilizan bases de datos relacionales. Aunque muchos de los conceptos son aplicables a una base de datos orientada a documentos otra de las competencias adquiridas es el uso de MongoDB.
 
-\item \textbf{Módulos de Python}, la mayoría de los módulos que se han utilizado para el desarrollo de la plataforma no se han enseñado en ninguna de las asignaturas. 
+\item \textbf{Módulos de Python}: la mayoría de los módulos que se han utilizado para el desarrollo de la plataforma no se han enseñado en ninguna de las asignaturas. 
 
-\item \textbf{Mantenimiento y desarrollo de un proyecto de estas características}, a lo largo del grado se han desarrollado proyectos de mayor o menor complejidad, pero nunca uno de estas características y teniendo que realizar su mantenimiento a lo largo del tiempo.
+\item \textbf{Mantenimiento y desarrollo de un proyecto de estas características}: a lo largo del grado se han desarrollado proyectos de mayor o menor complejidad, pero nunca uno de estas características y teniendo que realizar su mantenimiento a lo largo del tiempo.
 
 \end{itemize}
 
@@ -1630,29 +1698,15 @@ Con el desarrollo de este TFG se han ampliado y asentado los conocimientos menci
 Este trabajo a sido desarrollado desde cero y algunas de las posibles mejoras de cara a futuro que se podrían implementar son:
 
 \begin{itemize}
-\item \textbf{Soporte para nuevos tipos de sensores}, una de las posibles mejoras sería aumentar el tamaño del sistema añadiendo nuevos tipos de sensores como de CO2 del ambiente o de PH de la tierra.
+\item \textbf{Soporte para nuevos tipos de sensores}. Una de las posibles mejoras sería aumentar el tamaño del sistema añadiendo nuevos tipos de sensores como de CO2 del ambiente o de PH de la tierra.
 
-\item \textbf{Añadir nuevos actuadores al sistema}, para poder así automatizar otras tareas como abrir y cerrar el invernadero en función de la temperatura y la humedad ambiente.
+\item \textbf{Añadir nuevos actuadores al sistema}. Para poder así automatizar otras tareas como abrir y cerrar el invernadero en función de la temperatura y la humedad ambiente.
+
+\item \textbf{Actualización de los componentes}. Al ser un proyecto de bajo coste los componentes son más propensos a errores y tienen una precisión menor.
+
+\item \textbf{Extensión de la aplicación de Dash y del bot de Telegram}. Mejora de estas dos aplicaciones y soporte para los puntos anteriormente descritos. 
 
 \end{itemize}
-%Ningún proyecto ni software se termina, así que aquí vienen ideas y funcionalidades que estaría bien tener implementadas en el futuro.
-
-%Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% APÉNDICE(S) %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\cleardoublepage
-\appendix
-\chapter{Manual de usuario}
-\label{app:manual}
-
-%Esto es un apéndice.
-Si has creado una aplicación, siempre viene bien tener un manual de usuario.
-Pues ponlo aquí.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
