@@ -183,11 +183,11 @@ Además, la pareja quizás no sea para siempre, pero tu madre sí.
 \chapter*{Resumen}
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
-En este \textit{Trabajo de fin de Grado} se ha implementado un sistema distribuido de bajo coste que permite monitorizar y automatizar un invernadero. Una de las motivaciones para el desarrollo de este TFG es aportar al desarrollo sostenible y a la agricultura inteligente. La importancia de la tecnología en el sector agrícola es creciente. Esta mejoría en la digitalización del sector primario es necesaria para mantener nuestro sistema de alimentación de la manera más eficiente posible. El sistema que se ha diseñado en este TFG está orientado a incluir las nuevas tecnologías en la agricultura para poder conseguir una mayor eficiencia en explotaciones urbanas y de autoconsumo.
+En este \textit{Trabajo de fin de Grado} se ha implementado un sistema distribuido de bajo coste que permite monitorizar y automatizar un invernadero. Una de las motivaciones para el desarrollo de este TFG es contribuir al desarrollo sostenible a través de la agricultura inteligente. En los últimos años se han hecho esfuerzos para digitalizar el sector primario con el próposito de sostenibilizar nuestro sistema de alimentación. El sistema que se ha diseñado en este TFG está orientado a incluir las nuevas tecnologías en la agricultura para poder conseguir una mayor eficiencia en explotaciones urbanas y de autoconsumo.
 
-Los objetivos de este TFG son la creación de herramientas para la monitorización y automatización de un invernadero y su implementación física. Creando un sistema con un precio asequible y que permita realizar la recolección de datos mediante sensores de humedad y temperatura en el ambiente y en la tierra, la visualización de estos datos de manera gráfica y textual y, por último, que permita tomar acciones en base a la información tomada por los sensores.
+Los objetivos de este TFG son la creación de herramientas para la monitorización y automatización de un invernadero y su implementación física. Se quiere crear un sistema con un precio asequible y que permita realizar la recolección de datos mediante sensores de humedad y temperatura en el ambiente y en la tierra. Este sistema se complementará con herramientas para la visualización de los datos de manera gráfica y textual y que proporcione los mecanismos correspondientes para poder tomar acciones en base a la información tomada por los sensores.
 
-Para conseguir estos propósitos se han desarrollado scripts que para realizar la recogida de datos y su almacenamiento en una base de datos. Las herramientas desarrolladas para la visualización de datos han sido una aplicación web y un bot de Telegram. Por último también se han desarrollado una serie de scripts para realizar el riego en base a la información suministrada por los sensores de humedad de la tierra.
+Para alcanzar estos objetivos se han desarrollado scripts que recogen los datos de los sensores implantados en el sistema y los almacenan en una base de datos. Se han desarrollado una aplicación web y un bot de Telegram que permiten visualizar los datos anteriores. Por último también se han desarrollado una serie de scripts para realizar el riego en base a la información suministrada por los sensores de humedad de la tierra.
 
 Se han combinado diferentes tecnologías como son una base de datos de \textit{MongoDB}, para el almacenamiento de datos o el framework \textit{Dash}, para desarrollar la aplicación web.
 El lenguaje de programación utilizado ha sido \textit{Python}, aunque en menor medida se ha utilizado también \textit{Bash Scripting}. El software utilizado es libre y gratuito. Para el hardware se ha utilizado un invernadero de bajo coste, se han elegido diferentes sensores y actuadores que se indican a lo largo de la memoria, además de una \textit{Raspberry Pi 3B+} y un \textit{Arduino UNO rev3}.
@@ -199,7 +199,14 @@ El lenguaje de programación utilizado ha sido \textit{Python}, aunque en menor 
 \addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-Un resumen en inglés
+In this \textit{Final Degree Project}, a low-cost distributed system has been implemented for monitoring and automating a greenhouse. One of the motivations for the development of this project is to contribute to sustainable development through smart agriculture. In recent years, efforts have been made to digitalize the primary sector with the aim of making our food system more sustainable. The system that has been designed in this project is oriented to include new technologies in agriculture in order to achieve greater efficiency in urban and self-consumption exploitations.
+
+The objectives of this project are the creation of tools for the monitoring and automation of a greenhouse and its physical implementation. The aim is to create a system with an affordable price and that allows the collection of data using humidity and temperature sensors in the environment and in the ground. This system will be complemented with tools to display the data graphically and textually and to provide the corresponding mechanisms to be able to take actions based on the information collected by the sensors.
+
+To achieve these objectives, scripts have been developed to collect the data from the sensors implemented in the system and store them in a database. A web application and a Telegram bot have been developed to visualize the aforementioned data. Finally, a series of scripts have also been developed to carry out irrigation based on the information provided by the ground humidity sensors.
+
+Different technologies have been combined, such as a \textit{MongoDB} database for data storage and the \textit{Dash} framework for developing the web application.
+The programming language that has been used is \textit{Python}, although to a lesser extent \textit{Bash Scripting} has also been used. The software used is free and open source. For the hardware, a low-cost greenhouse has been used, different sensors and actuators have been chosen, which are indicated throughout the memory, as well as a \textit{Raspberry Pi 3B+} and an \textit{Arduino UNO rev3}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -811,8 +818,8 @@ Otra opción hubiera consistido en utilizar una toma de agua corriente en lugar 
   \end{minipage}
   \hfill
   \begin{minipage}[b]{0.4\textwidth}
-    \includegraphics[width=\textwidth]{img/caja_registro_cerrada}
-    \caption{Aquí va una imagen de las salidas de agua.}
+    \includegraphics[width=\textwidth]{img/salidas_agua}
+    \caption{Puntos de salida de agua tipo araña para realizar el riego.}
     \label{figura:salidas_agua}
   \end{minipage}
 \end{figure}
@@ -873,11 +880,11 @@ Tal y como se ha comentado anteriormente, además de la entrada de datos es fund
     \label{figura:conexiones_protoborad}
 \end{figure}
 
-El conexionado de de todos los sensores es equivalente. En la figura~\ref{figura:esquema_sensor} se muestra un esquema del conexionado para un sensor.
+El conexionado de de todos los sensores es equivalente. En la figura~\ref{figura:conexion_sensor} se muestra un esquema del conexionado para un sensor.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=8cm, keepaspectratio]{img/conexion_sensor}
-    \caption{Conexiones internas Protoboard.}
+    \caption{Esquema de conexionado de un sensor.}
     \label{figura:conexion_sensor}
 \end{figure}
 
@@ -1716,36 +1723,49 @@ Este trabajo a sido desarrollado desde cero y algunas de las posibles mejoras de
 \cleardoublepage
 
 \begin{thebibliography}{X}
-	\bibitem{historia} \textsc{Historia de la robótica.}
-	\url{https://scielo.isciii.es/pdf/aue/v31n3/v31n3a02.pdf}
+
+\bibitem{adafruit} \textsc{Documentación oficial de Adafruit}
+\url{https://learn.adafruit.com}
+
+\bibitem{adafruit} \textsc{Documentación oficial de Pyfirmata}
+\url{https://pyfirmata.readthedocs.io/en/latest/}
+
+\bibitem{adafruit} \textsc{Documentación oficial de W1thermsensor}
+\url{https://pypi.org/project/w1thermsensor/}
+
+\bibitem{mongodb} \textsc{Documentación oficial de Mongodb}
+\url{https://www.mongodb.com/docs/}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Pymongo}
+\url{https://pymongo.readthedocs.io/en/stable/}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Dash}
+\url{https://dash.plotly.com/}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Plotly}
+\url{https://plotly.com/python/}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Bootstrap}
+\url{https://getbootstrap.com/docs/5.2/getting-started/introduction/}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Pandas}
+\url{https://pandas.pydata.org/docs/user_guide/index.html}
+
+\bibitem{pymongo} \textsc{Documentación oficial para la API de Telegram}
+\url{https://core.telegram.org/bots/api}
+
+\bibitem{pymongo} \textsc{Documentación oficial de Telepot}
+\url{https://telepot.readthedocs.io/en/latest/}
 	
-	\bibitem{javascript} \textsc{Documentación oficial de javascript}
-	\url{https://developer.mozilla.org/es/docs/Web/JavaScript}	
+\bibitem{heroku} \textsc{Documentación oficial de Heroku}
+\url{https://devcenter.heroku.com/categories/reference}
 	
-	\bibitem{django} \textsc{Documentacion oficial de Django}
-	\url{https://docs.djangoproject.com}
+\bibitem{docker} \textsc{Documentación oficial de Docker}
+\url{https://docs.docker.com/}
+
+\bibitem{docker} \textsc{Platilla de memoria en LaTeX para la ETSIT}
+\url{https://github.com/gregoriorobles/plantilla-memoria/blob/master/memoria.tex}
 	
-	\bibitem{django-channels} \textsc{Documentacion oficial de Django-Channels}
-	\url{https://channels.readthedocs.io/en/stable/}
-	
-	\bibitem{docker} \textsc{Documentacion oficial de Docker}
-	\url{https://docs.docker.com/}
-	
-	\bibitem{webrtc} \textsc{Documentación oficial de WebRTC.}
-	\url{https://webrtc.org/}
-	
-	\bibitem{TFM-pablo} \textsc{Pablo Moreno. Torneos de programación de robots
-en una plataforma online. (2020)}
-	\url{https://gsyc.urjc.es/jmplaza/students/tfm-kibotics-torneos-pablo_moreno-2020.pdf}
-	
-	\bibitem{TFG-alvaro} \textsc{Álvaro Paniagua. Simulador de robots con tecnologías web vr. (2018)}
-	\url{https://github.com/RoboticsLabURJC/2018-tfg-alvaro_paniagua}
-	
-	\bibitem{A ROS-based open web platform for
-Intelligent Robotics education.} \textsc{David Roldán, Sakshay Mahna José M. Cañas
-International Conference on Robotics in Education (RiE-2021), pp 243-255,
-Advances in Intelligent Systems and Computing, vol 1359. Springer, 2022.}
-	\url{https://gsyc.urjc.es/jmplaza/papers/rie2021-unibotics-draft.pdf}
 	
 \end{thebibliography}
 
