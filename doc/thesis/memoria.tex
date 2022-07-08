@@ -208,7 +208,7 @@ El lenguaje de programación utilizado ha sido \textit{Python}, aunque en menor 
 \addcontentsline{toc}{chapter}{Summary} % si queremos que aparezca en el índice
 \markboth{SUMMARY}{SUMMARY} % encabezado
 
-In this \textit{End of Degree Project}, a low-cost distributed system has been implemented for monitoring and automating a greenhouse. One of the motivations for the development of this project is to contribute to sustainable development through smart agriculture. In recent years, efforts have been made to digitalize the primary sector with the aim of making our food system more sustainable. The system that has been designed in this project is oriented to include new technologies in agriculture in order to achieve greater efficiency in urban and self-consumption exploitations.
+In this \textit{Final Degree Project}, a low-cost distributed system has been implemented for monitoring and automating a greenhouse. One of the motivations for the development of this project is to contribute to sustainable development through smart agriculture. In recent years, efforts have been made to digitalize the primary sector with the aim of making our food system more sustainable. The system that has been designed in this project is oriented to include new technologies in agriculture in order to achieve greater efficiency in urban and self-consumption exploitations.
 
 The objectives of this project are the creation of tools for the monitoring and automation of a greenhouse and its physical implementation. The aim is to create a system with an affordable price and that allows the collection of data using humidity and temperature sensors in the environment and in the ground. This system will be complemented with tools to display the data graphically and textually and to provide the corresponding mechanisms to be able to take actions based on the information collected by the sensors.
 
@@ -281,21 +281,56 @@ Las aplicaciones web se pueden dividir en dos partes claramente diferenciadas, e
  
 El desarrollo web es muy amplio y existen multitud de posibilidades y tecnologías que permiten llevarlo a cabo. Algunas de las más comunes en el lado del servidor son \textit{Java},  \textit{Python}, \textit{C++}, \textit{PHP}, entre muchas otras.
 
-Existen diferentes frameworks que encapsulan las funcionalidades de los lenguajes para facilitar el desarrollo de aplicaciones web. Algunos ejemplos son \textit{Spring Boot}, para aplicaciones de Java,\textit{Django}, para Python, \textit{Crow} para C++ o \textit{Laravel} para PHP.
+Existen diferentes frameworks que encapsulan las funcionalidades de los lenguajes para facilitar el desarrollo de aplicaciones web. Algunos ejemplos son:
+
+\begin{itemize}
+\item \textbf{Sprint Boot}\footnote{\url{https://spring.io/projects/spring-boot}}: Es una tecnología que nos permite crear apicaciones autocontenidas. Está basada en Java y simplifica el despliegue y el empaquetado. Esto permite que el usuario se centre en la parte del desarrollo de la aplicación. Con Spring Boot es posible compilar las aplicaciones Web como un archivo \textit{.jar} que podemos ejecutar como una aplicación Java normal. 
+
+\item \textbf{Django}\footnote{\url{https://www.djangoproject.com}}: Este framework de código abierto escrito en Python permite desarrollar aplicaciones web de manera rápida y sencilla. Django es muy versátil, escalable, rápido y seguro, además, viene muy bien equipado, de manera que ya están resueltos la mayoría de los problemas más recurrentes, acceso a bases de datos, inicios de sesión, etc. 
+
+\item \textbf{Flask}\footnote{\url{https://flask.palletsprojects.com/en/2.1.x/}}: Es un micro framework escrito en Python concebido para desarrollar servicios web de manera rápida y sencilla. Utiliza plugins para dotar al framework de distintas funcionalidades. Usa el patrón MVC, es decir, separa el modelo de datos, de la vista y del controlador (peticiones a la web).  
+
+\item \textbf{Crow}\footnote{\url{https://crowcpp.org}}: Es un framework para C++ que permite crear servicios web mediante HTTP o Websockets. Es muy rápido y tiene una filosofía similar a Flask. 
+
+\item \textbf{Laravel}\footnote{\url{https://laravel.com}}: Es un framework de PHP, que también sigue el modelo MVC. Es muy seguro utilizando mecanismos de hash y salt ofrecidos por diferentes librerías, como BCrypt. Es muy robusto, de código abierto y fácil de mantener.  
+
+\item \textbf{Node.js}\footnote{\url{https://nodejs.org}}: Se trata de un entorno en tiempo de ejecución multiplataforma. Está diseñado para crear aplicaciones escalables y gestionar múltiples conexiones. Node.js se ejecuta en el motor de tiempo de ejecución JavaScript V8.
+
+\end{itemize}
 
 \subsection{Tecnologías en el lado del cliente}
 \label{subsec:tecnlogías en el lado del cliente}
 El \textit{front-end} es la parte visual, encargada de presentar la información al usuario, el desarrollo del \textit{front-end} utiliza tecnologías en el lado del cliente. Algunas de las más habituales son \textit{HTML}, \textit{CSS} y \textit{JavaScript}, que trabajan sobre el propio navegador.
 
-De igual manera, en el desarrollo front-end también existen diversos frameworks para facilitar el desarrollo. Algunos ejemplos de estos frameworks son \textit{React}, \textit{Angular} o \textit{Vue}, entre otros.
+\begin{itemize}
+\item \textbf{HTML}: \textit{Hypertext Markup Language} es un lenguaje de marcado, es decir, permite incluir metainformación en un documento. HTML se usa para que los navegadores web compongan páginas con diverso contenido. HTML 5 es la última especificación oficial.
+
+\item \textbf{CSS}: \textit{Cascading Style Sheets} es un lenguaje de hojas de estilos para controlar el aspecto gráfico de los documentos HTML. La última versión es CSS 3.
+
+\item \textbf{JavaScript}: Es un lenguaje de programación interpretado, dinámico y orientado a objetos basado en prototipos. Junto con HTML y CSS es una de las principales tecnologías para presentar contenidos en la web. Fue desarrollado por Brendan Eich, de Netscape, en 1995 como lenguaje de scripting, pero hoy en día está presente en todos los navegadores modernos.
+\end{itemize}
+
+De igual manera, en el desarrollo front-end también existen diversos frameworks para facilitar el desarrollo. Algunos ejemplos de estos frameworks son:
+
+\begin{itemize}
+\item \textbf{React}\footnote{\url{https://reactjs.org}}: Es una librería que permite construir interfaces de usuario. Permite que las vistas se asocien con los datos, de modo que si cambian los datos, también cambian las vistas.
+
+\item \textbf{Angular}\footnote{\url{https://angular.io}}: Angular es un Framework de JavaScript de código abierto escrito en TypeScript, un lenguaje de programación construido a un nivel superior de JavaScript. Su objetivo principal es el desarrollo de aplicaciones web de una sola página. De su mantenimiento se encarga Google.
+
+\item \textbf{Vue}\footnote{\url{https://es.vuejs.org}}: Es un framework progresivo para construir interfaces de usuario. Se trata de una capa añadida a Javascript que permite crear aplicaciones de manera rápida y sencilla.
+\end{itemize}
 
 \subsection{Bases de datos}
 \label{subsec: bases de datos}
 El uso de bases de datos en el desarrollo web es una de las piezas fundamentales, permiten almacenar grandes cantidades de datos con persistencia de la información manejada.
 
-Existen diferentes sistemas de bases de datos en función de las necesidades del proyecto. Hay dos grandes familias de bases de datos, relacionales y no relacionales. Las bases de datos relacionales organizan la información en formato tabular y su información es almacenada en filas, necesitando seguir un esquema previamente diseñado. Algunos de los sistemas de bases de datos relacionales más populares son MySQL, PostgreSQL u Oracle. En cambio, las bases de datos no relacionales (NoSQL) organizan la información en formatos diferentes como formato clave-valor, en formatos documentales o grafos. MongoDB es el sistema de bases de datos no relacional orientado a documentos más popular, Cassandra o Neo4j son otras opciones conocidas, organizando sus datos en formato clave-valor y como nodos de un grafo, respectivamente.
+Existen diferentes sistemas de bases de datos en función de las necesidades del proyecto. Hay dos grandes familias de bases de datos, relacionales y no relacionales.
 
-En general, los motivos más comunes para utilizar una base de datos NoSQL es el crecimiento muy rápido de los datos a almacenar o cuando el esquema de bases de datos no es homogéneo o no puede ser definido.
+\begin{itemize}
+\item \textbf{Bases de datos relacionales}: Las bases de datos relacionales organizan la información en formato tabular y su información es almacenada en filas, necesitando seguir un esquema previamente diseñado. Algunos de los sistemas de bases de datos relacionales más populares son MySQL\footnote{\url{https://www.mysql.com}}, PostgreSQL\footnote{\url{https://www.postgresql.org}} u Oracle\footnote{\url{https://www.oracle.com/database}}.
+
+\item \textbf{Bases de datos no relacionales}: Las bases de datos no relacionales (NoSQL) organizan la información en formatos diferentes como formato clave-valor, en formatos documentales o grafos. MongoDB\footnote{\url{https://www.mongodb.com}} es el sistema de bases de datos no relacional orientado a documentos más popular, Cassandra\footnote{\url{https://cassandra.apache.org}} o Neo4j\footnote{\url{https://neo4j.com/}} son otras opciones conocidas, organizando sus datos en formato clave-valor y como nodos de un grafo, respectivamente. En general, los motivos más comunes para utilizar una base de datos NoSQL es el crecimiento muy rápido de los datos a almacenar o cuando el esquema de bases de datos no es homogéneo o no puede ser definido.
+\end{itemize}
 
 \subsection{Tendencias del desarrollo web}
 \label{subsec: tendencias del desarrollo web}
@@ -393,7 +428,7 @@ Todo el código desarrollado para este TFG se encuentra disponible en un reposit
 \end{itemize}
 
 Las rutas a los ficheros a lo largo de la memoria se facilitarán teniendo en cuenta que el usuario está en la raíz del repositorio.
-A parte de estas tres carpetas también en el directorio raíz se encuentra un archivo \textit{README.md}, indicando que es repositorio que se está consultando, un \textit{.gitignore}, utilizado durante el desarrollo para indicar en Git que ficheros debían ser ignorados y, por último, un archivo \textit{LICENSE}, con información sobre la licencia de este proyecto.
+A parte de estas tres carpetas también en el directorio raíz se un archivo \textit{.gitignore}, utilizado durante el desarrollo para indicar en Git que ficheros debían ser ignorados y, por último, un archivo \textit{LICENSE}, con información sobre la licencia de este proyecto.
 Este TFG se ha desarrollado bajo una licencia GPL-3.0 (GNU General Public License v3.0). En la imagen~\ref{figura:license} se pueden ver los permisos, limitaciones y condiciones que otorga esta licencia. Se ha decidido usar esta licencia porque permite compartir, modificar y usar el software que se ha desarrollado libremente.
 
 \begin{figure}[H]
@@ -795,7 +830,7 @@ En este capítulo se expone la implementación del sistema que se ha llevado a c
 \section{Montaje físico del invernadero}
 \label{sec: montaje físico del invernadero}
 En esta sección se explica el montaje físico del invernadero y se detalla su arquitectura.
-El invernadero ha diseñado para ser de de bajo coste. Ha sido fabricado en plástico, mide 2.5x1.25x0.75 metros y en su interior se han introducido sacos de cultivo para plantar. Se ha elegido este tipo invernadero ya que se considera adecuado teniendo en cuenta el espacio disponible para su ubicación. En la figura~\ref{figura:invernadero} se muestra el invernadero que se ha montado para el desarrollo de este TFG.
+El invernadero ha diseñado para ser de bajo coste. Ha sido fabricado en plástico, mide 2.5x1.25x0.75 metros y en su interior se han introducido sacos de cultivo para plantar. Se ha elegido este tipo invernadero ya que se considera adecuado teniendo en cuenta el espacio disponible para su ubicación. En la figura~\ref{figura:invernadero} se muestra el invernadero que se ha montado para el desarrollo de este TFG.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=8cm, keepaspectratio]{img/invernadero}
@@ -804,7 +839,7 @@ El invernadero ha diseñado para ser de de bajo coste. Ha sido fabricado en plá
 \end{figure}
 
 En este montaje se ha incluido un depósito de agua. El depósito cuenta con una capacidad de 40 litros, capacidad que permite realizar las pruebas del sistema.  
-Otra opción hubiera consistido en utilizar una toma de agua corriente en lugar de un depósito. También se ha de tener en cuenta que el depósito debe rellenarse de alguna forma, ya sea a través de una toma de agua o manualmente. En el montaje propuesto en este TFG el depósito está desacoplado de una toma de agua, por lo que debe rellenarse manualmente.  Aunque existe en este caso la limitación de acceso al agua, nos permite por otro lado que el invernadero no dependa de infraestructuras externas. Otra opción viable y que no implicaría ningún cambio sería, por ejemplo, sustituir el depósito por un pozo. Para poder llevar el agua hasta las plantas se ha usado una tubería de riego con puntos de salida de agua regulables tipo araña conectado a una bomba como se puede observar en las figuras~\ref{figura:bomba_agua} y~\ref{figura:salidas_agua}. La bomba de agua modelo CESFONJER será el actuador que se controlará mediante el software desarrollado para realizar el riego del sistema.
+Otra opción hubiera consistido en utilizar una toma de agua corriente en lugar de un depósito. En el montaje propuesto para este TFG el depósito está desacoplado de una toma de agua, por lo que debe rellenarse manualmente.  Aunque existe en este caso la limitación de acceso al agua, nos permite por otro lado que el invernadero no dependa de infraestructuras externas. Otra opción viable y que no implicaría ningún cambio sería, por ejemplo, sustituir el depósito por un pozo. Para poder llevar el agua hasta las plantas se ha usado una tubería de riego con puntos de salida de agua regulables tipo araña conectado a una bomba como se puede observar en las figuras~\ref{figura:bomba_agua} y~\ref{figura:salidas_agua}. La bomba de agua modelo CESFONJER será el actuador que se controlará mediante el software desarrollado para realizar el riego del sistema.
 
 \begin{figure}[H]
   \centering
@@ -855,7 +890,7 @@ La Raspberry Pi está conectada al Arduino usando los puertos USB de ambos dispo
 
 La placa Arduino cuenta con pines analógicos, que no se encuentran en la Raspberry Pi. Estos pines permiten utilizar sensores analógicos que abaratan significativamente los costes del proyecto. Un ejemplo de este tipo de sensor son los higrómetros que han sido utilizados en este TFG. Una solución alternativa a este problema sería utilizar un conversor analógico-digital, aunque el coste total ascendería. La elección de la primera opción se debe principalmente a dos motivos, primero, como se ha mencionado anteriormente, es más barato un Arduino que un conversor de este tipo y segundo, nos proporciona una mayor cantidad de pines analógicos, digitales y de salida de voltaje para poder extender el modelo implementado o añadir nuevos sensores en proyectos futuros.
 
-A continuación se detalla el montaje de cada uno de los sensores explicados en la sección~\ref{subsec:sensores}. Cada sensor cuenta con tres entradas diferentes la entrada de datos, la entrada de voltaje (VCC), la tierra (GND). La entrada de datos ha sido conectada a las placas como se muestra a continuación, las entradas de voltaje y tierra a una protoboard. 
+A continuación se detalla el montaje de cada uno de los sensores explicados en la sección~\ref{subsec:sensores}. Cada sensor cuenta con tres entradas diferentes: la entrada de datos, la entrada de voltaje (VCC) y la de tierra (GND). La entrada de datos ha sido conectada a las placas como se muestra a continuación, las entradas de voltaje y tierra a una protoboard. 
 
 \begin{itemize}
 	\item El primer módulo con sensor DHT22 al GPIO 17 de la Raspberry.
@@ -868,7 +903,7 @@ A continuación se detalla el montaje de cada uno de los sensores explicados en 
 
 Con respecto a los sensores DS18B20 cabe destacar que ofrecen la posibilidad de realizar lecturas en serie de varios dispositivos. Este tipo de sensores utiliza el protocolo \textit{1-Wire} y permite conectar más de un sensor en el mismo bus para realizar la comunicación. Esto permite utilizar menos entradas, lo que facilita la inclusión de nuevos sensores en el futuro al disponer de más pines para conectarlos.
 
-Tal y como se ha comentado anteriormente, además de la entrada de datos es fundamental conectar cada sensor y actuador a una fuente de alimentación y a tierra. Para facilitar la gestión del cableado, se ha utilizado una protoboard. La protoboard ha sido alimentada con el pin de 5V y GND del Arduino. Todas las conexiones electrónicas se han realizado usando cables Dupont, macho-hembra, macho-macho o hembra-hembra según procediese.
+Tal y como se ha comentado anteriormente, además de la entrada de datos es fundamental conectar cada sensor y actuador a una fuente de alimentación y a tierra. Para facilitar la gestión del cableado, se ha utilizado una protoboard. La protoboard ha sido alimentada con el pin de 5V y GND del Arduino. Todas las conexiones electrónicas se han realizado usando cables dupont, macho-hembra, macho-macho o hembra-hembra según procediese.
 
 \begin{figure}[H]
 	\centering
@@ -887,7 +922,7 @@ El conexionado de de todos los sensores es equivalente. En la figura~\ref{figura
 
 
 Como se indica en el apartado~\ref{subsec:actuadores}, para controlar los actuadores desde el software desarrollado en este TFG se ha añadido un módulo de relés, conectado a la Raspberry Pi. La bomba de agua está conectada a la corriente eléctrica doméstica (240 V), por lo que no se puede alimentar directamente con el voltaje proporcionado por la Raspberry o el Arduino. Para poder apagar o encender los actuadores, se ha colocado el relé en serie a modo de interruptor entre dos de los bornes del actuador, que estará conectado a la corriente eléctrica.
-El diagrama de la figura~\ref{figura:circuito_reles} muestra como se ha diseñado dicho circuito.
+El diagrama de la figura~\ref{figura:circuito_reles} muestra cómo se ha diseñado dicho circuito.
 
 \begin{figure}[H]
 	\centering
@@ -896,7 +931,7 @@ El diagrama de la figura~\ref{figura:circuito_reles} muestra como se ha diseñad
     \label{figura:circuito_reles}
 \end{figure}
 
-A su vez, cada uno de los actuadores está asociado a un pin GPIO de la Raspberry, en concreto, la bomba CESFONJER está asociada al GPIO 24. Físicamente esta conexión se realiza mediante tres cables dupont que conectan el módulo de relés con la Raspberry Pi, para las entradas de VCC (voltaje de corriente continua), tierra y datos.
+A su vez, cada uno de los actuadores está asociado a un pin GPIO de la Raspberry, en concreto, la bomba CESFONJER está asociada al GPIO 24. Físicamente, esta conexión se realiza mediante tres cables dupont que conectan el módulo de relés con la Raspberry Pi, para las entradas de VCC (voltaje de corriente continua), tierra y datos.
 
 %El motivo de utilizar un módulo de relés en lugar de utilizar uno solo es, de nuevo, abrir la posibilidad de poder añadir nuevos actuadores de una manera sencilla.
 
@@ -907,7 +942,7 @@ En esta sección se presenta la arquitectura que se ha seguido para realizar el 
 
 \subsection{Arquitectura general}
 \label{subsec:arquitectura general}
-El código desarrollado en este TFG está disponible en Github \footnote{\url{https://github.com/rinvictor/TFG}}. El repositorio se divide en \textit{code/}, donde se puede encontrar todo el código desarrollado, y en \textit{doc/}, con la documentación sobre el mismo.
+El código desarrollado en este TFG está disponible en Github \footnote{\url{https://github.com/rinvictor/TFG}}. El repositorio se divide en \textit{code/}, donde se puede encontrar todo el código desarrollado, y en \textit{doc/}, que contiene la memoria.
 En \textit{code/} podemos encontrar otras cinco subcarpetas:
 \begin{itemize}
 \item \textit{apps}, código para el desarrollo de las aplicaciones que se han realizado.
@@ -932,7 +967,7 @@ La figura~\ref{figura:estructura_bd} muestra la base de datos que se ha utilizad
 
 En la figura ~\ref{figura:sensors data collection} se muestra la arquitectura que se ha elegido para guardar la información de los sensores. Por cada lectura se almacenan seis valores: el ID del documento, el ID del sensor, el tipo de dato que se almacena, es decir, la magnitud medida, el valor leído, la fecha de lectura y la localización del sensor. Esta información queda almacenada en la colección \textit{sensors\_data}.
 
-En la figura~\ref{figura:controllers data collection} se puede observar la arquitectura para la información sobre las acciones tomadas por los actuadores. En cada documento se almacena el ID del documento, el ID del controlador, la fecha de la acción realizada y el tipo de acción, por ejemplo, riego. Estos valores quedan almacenados en la colección \textit{controllers\_data}.
+En la figura~\ref{figura:controllers data collection} se puede observar la arquitectura para la información sobre las acciones tomadas por los actuadores. En cada documento se almacena el ID del documento, el ID del actuador, la fecha de la acción realizada y el tipo de acción, por ejemplo, riego. Estos valores quedan almacenados en la colección \textit{controllers\_data}.
 
 \begin{figure}[H]
 	\centering
@@ -1019,8 +1054,8 @@ Este tipo de información es útil para poder encontrar fallos en el sistema. Ad
 \subsection{Aplicación de Dash}
 \label{aplicacion de dash}
 En este TFG se ha desarrollado una aplicación que permite visualizar de forma gráfica la información recogida por los sensores y las acciones tomadas por los actuadores. Esta aplicación se ha implementado usando el framework Dash, descrito en la sección~\ref{subsec:dash}.
-Todo el código que usa la aplicación se encuentra dentro de \textit{/code/apps/dashapp}.
-Para el desarrollo de la aplicación se han utilizado los componentes html y CSS embebidos en Dash además de una plantilla libre de Bootstrap para componer el estilo de la página.
+Todo el código que usa la aplicación se encuentra dentro de \textit{code/apps/dashapp}.
+Para el desarrollo de la aplicación se han utilizado los componentes html y CSS integrados en Dash además de una plantilla libre de Bootstrap para componer el estilo de la página.
 
 La aplicación tiene varios componentes, \textit{app.py}, programa principal, \textit{dash\_utils.py},  donde se han implementado funciones de filtrado y \textit{create\_figures.py}, donde se implementa la generación de las visualizaciones utilizando la librería \textit{Plotly}.
 
@@ -1049,7 +1084,7 @@ A través de cada opción del menú se accede a la gráfica que representa la in
     \label{figura:humedad_ambiente_grafica}
 \end{figure}
 
-Entre el título de la figura y la gráfica que se observan en la figura~\ref{figura:humedad_ambiente_grafica}, se muestran que hay una serie de campos que permiten realizar filtrados en la información presentada. Por ejemplo, a través del desplegable se ha elegido el sensor 27 para mostrar únicamente la información recogida por dicho sensor, tal y como se puede ver en la figura~\ref{figura:humedad_ambiente_grafica_selectores}
+Entre el título de la figura y la gráfica que se observan en la figura~\ref{figura:humedad_ambiente_grafica}, se muestra que hay una serie de campos que permiten realizar filtrados en la información presentada. Por ejemplo, a través del desplegable se ha elegido el sensor 27 para mostrar únicamente la información recogida por dicho sensor, tal y como se puede ver en la figura~\ref{figura:humedad_ambiente_grafica_selectores}. Además, se han seleccionado dos fechas, de inicio y fin para presentar la información almacenada entre estas.
 
 \begin{figure}[H]
 	\centering
@@ -1058,7 +1093,14 @@ Entre el título de la figura y la gráfica que se observan en la figura~\ref{fi
     \label{figura:humedad_ambiente_grafica_selectores}
 \end{figure}
 
-La interactividad de la aplicación, que en este caso se consigue a través de los filtros que se han presentado en el párrafo anterior, se consigue con los \textit{callbacks} de Dash. Un \textit{callback} es una función que se lanza automáticamente cada vez que un componente recibe un cambio, pudiendo generar este cambio una actualización de la visualización.
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/desplegable_fecha}
+    \caption{Uso del selector de fechas en la aplicación web.}
+    \label{figura:desplegable_fecha}
+\end{figure}
+
+Utilizando los \textit{callbacks} de Dash se pueden realizar los filtrados presentados en el párrafo anterior, lo que permite dotar de interactividad a la aplicación. Un \textit{callback} es una función que se lanza automáticamente cada vez que un componente recibe un cambio, pudiendo generar este cambio una actualización de la visualización.
 
 
 El siguiente código muestra como se implementa una función \textit{callback}. En esta función, se reciben como parámetros de entrada los filtros a través de los que se establecen una fecha de inicio y de fin de los datos, así como el ID del sensor que se quiere visualizar.  En base a los filtros, se seleccionan los datos pertinentes y se genera una nueva visualización.
@@ -1072,14 +1114,17 @@ El siguiente código muestra como se implementa una función \textit{callback}. 
 )
 def update_output(start_date, end_date, value):
     df = getdataframe("ambient temperature")
+    prev = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+    today = datetime.strftime(datetime.now(), '%Y-%m-%d')
     if not value and not start_date and not end_date:
-        # By defect values
-        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
-        df = du.date_filter(df, start_date=yesterday, end_date=today)
+        df = du.date_filter(df, start_date=prev, end_date=today)
     if start_date or end_date:
         df = du.date_filter(df, start_date, end_date)
-    if value and len(value) > 0:
+    if value and len(value) > 0 and start_date and end_date:
+        df = du.date_filter(df, start_date, end_date)
+        df = df[df['sensorID'].isin(value)]
+    if value and not start_date:
+        df = du.date_filter(df, start_date=prev, end_date=today)
         df = df[df['sensorID'].isin(value)]
 
     fig = figures.create_temperature_fig(df)
@@ -1116,7 +1161,7 @@ Entre las funcionalidades ofrecidas por Plotly, cabe destacar que es posible des
 
 \subsection{Bot de Telegram}
 \label{bot de telegram}
-En este TFG se ha desarrollado un bot de Telegram llamado \textit{greenhouseTFGBot}. El objetivo de éste bot no es exclusivamente el de enviar mensajes al usuario sino, además, poder obtener información de los sensores, tanto en tiempo real como desde la base de datos y enviar gráficas construidas con Plotly interactuando con el usuario. En esta sección se especifican todas las funcionalidades implementadas en este bot. Ejemplos concretos y salidas de comandos pueden ser vistos en la sección~\ref{sec:cosas particulares cambiar nombre}.
+En este TFG se ha desarrollado un bot de Telegram llamado \textit{greenhouseTFGBot}. El objetivo de este bot no es exclusivamente el de enviar mensajes al usuario sino, además, poder obtener información de los sensores, tanto en tiempo real como desde la base de datos y enviar gráficas construidas con Plotly interactuando con el usuario. En esta sección se especifican todas las funcionalidades implementadas en este bot. Ejemplos concretos y salidas de comandos pueden ser vistos en la sección~\ref{sec:aplicación de dash ejemplos}.
 
 Este bot se ha desarrollando haciendo uso de la API de telegram y de la librería de Python Telepot. Se puede encontrar el código en \textit{code/apps/telegram} del repositorio de Github.
 
@@ -1191,7 +1236,7 @@ Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en e
     \label{figura:error send photo}
 \end{figure}
 
-Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje al chat del usuario con el bot indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de persistencia de datos, se realiza a la hora de la recogida. Aunque es posible ignorar los datos erróneos, se ha optado por no hacerlo para poder encontrar fácilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
+Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje al chat del usuario con el bot indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de si el dato está en un rango de valores posibles, se realiza a la hora de la recogida. Aunque se podría haber ignorado los datos erróneos, se ha optado por no hacerlo para poder encontrar fácilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
 %\begin{figure}[H]
 %	\centering
 %    \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_mensaje}
@@ -1212,7 +1257,7 @@ Como se ha comentado anteriormente, el usuario también recibe mensajes automát
 
 \subsection{Aplicación de riego}
 \label{subsec:riego}
-En \textit{code/apps/actions} se encuentra el código relativo a los actuadores. En \textit{actions.py} se ha desarrollado una aplicación que sirve para automatizar el riego del sistema. Utiliza el código implementado para la lectura de datos de los sensores para obtener la humedad actual de la tierra. Experimentalmente se ha comprobado que los valores ideales para esta deben estar en torno a 0.2-0.45, esto haría referencia a un 20-45\% de humedad, aproximadamente. Según diversos estudios\cite{porcentaje_riego} \cite{humedad_suelo} el porcentaje ideal de humedad de la tierra para el correcto desarrollo de los cultivos se encuentra entre el 25\% y el 50\% en cultivos sensibles a sequía. Si los valores se saliesen de este rango, podría tener consecuencias negativas para el rendimiento de los cultivos. 
+En \textit{code/apps/actions} se encuentra el código relativo a los actuadores. En \textit{actions.py} se ha desarrollado una aplicación que sirve para automatizar el riego del sistema. Utiliza el código implementado para la lectura de datos de los sensores para obtener la humedad actual de la tierra. Experimentalmente se ha comprobado que los valores ideales para esta deben estar en torno a 0.25-0.45, esto haría referencia a un 25-45\% de humedad, aproximadamente. Según diversos estudios el porcentaje ideal de humedad de la tierra para el correcto desarrollo de los cultivos se encuentra entre el 25\% y el 50\% en cultivos sensibles a sequía \cite{porcentaje_riego} \cite{humedad_suelo}. Si los valores se saliesen de este rango, podría tener consecuencias negativas para el rendimiento de los cultivos. 
 
 Este script se ejecuta en Cron, midiendo la humedad de la tierra y en función del valor obtenido realiza el riego con mayor o menor cantidad de agua. Si el porcentaje es demasiado bajo utilizará más cantidad y si es cercano a los valores ideales utilizará menos. Esta acción se realiza calculando el tiempo necesario que debe estar encendida la bomba. De nuevo la cantidad de agua que se utiliza se ha obtenido de manera experimental. En general, se ha conseguido mantener la humedad dentro de los parámetros deseados.
 Una vez ha realizado el riego satisfactoriamente se envía un mensaje al usuario por Telegram indicando cuantos litros han sido necesarios para realizarlo. Se almacena este dato, además, en la base de datos, en la colección llamada \textit{controllers\_data}.
@@ -1253,7 +1298,7 @@ En este mismo directorio también se encuentra el fichero \textit{controllers.py
 
 Estas funciones dan de alta el pin de salida deseado haciendo uso de la librería GPIO, con \textit{GPIO.OUT} y luego encienden o apagan el dispositivo que está utilizando pasándole un valor binario.
 
-Al igual que con las funcionalidades descritas anteriormente, la aplicación de riego tiene sus propios logs. Estos logs se encuentran en \textit{code/apps/actions/logs}. En este directorio se encuentran los ficheros \textit{success.log}, \textit{error.log} y si procede \textit{cronerror.log}.
+Al igual que con las funcionalidades descritas anteriormente, la aplicación de riego tiene sus propios logs. Estos logs se encuentran en \textit{code/apps/actions/logs}. En este directorio se encuentran los ficheros \textit{success.log}, \textit{error.log} y \textit{cronerror.log}.
 La aplicación se ejecuta en Cron y se lanza una vez al día, a las 00:30.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -1290,9 +1335,9 @@ El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se 
 \end{figure} 
 
 Una vez la información es almacenada en la base de datos puede ser consultada desde las diferentes aplicaciones que se han desarrollado.
-En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible obtener únicamente los datos de un sensor, para ello es necesario utilizar el desplegable de sensores, situado en la parte superior izquierda de la página (ver figura~\ref{figura:desplegable_sensores}).
+En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible utilizar los filtros como se explica en la sección~\ref{aplicacion de dash}.
 
-En las figuras se observa como las lecturas de ambos sensores miden aproximadamente lo mismo, esto confirma el correcto funcionamiento del sistema. En la época del año en la que se realizaron las lecturas el invernadero se encontraba abierto, de manera que la temperatura interior y exterior debe ser similar. Las fluctuaciones que se muestran en la figura se corresponden con las altas temperaturas durante el día y la bajada de estas durante la noche.
+En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa como las lecturas de ambos sensores miden aproximadamente lo mismo, esto confirma el correcto funcionamiento del sistema. En la época del año en la que se realizaron las lecturas el invernadero se encontraba abierto, de manera que la temperatura interior y exterior debe ser similar. Las fluctuaciones que se muestran en la figura se corresponden con las altas temperaturas durante el día y la bajada de estas durante la noche.
 
 \begin{figure}[H]
 	\centering
@@ -1300,23 +1345,6 @@ En las figuras se observa como las lecturas de ambos sensores miden aproximadame
     \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
     \label{figura:ambient_temperature_01_08_junio}
 \end{figure}
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[width=12cm, keepaspectratio]{img/desplegable_fecha}
-    \caption{Uso del selector de fechas en la aplicación web.}
-    \label{figura:desplegable_fecha}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[width=12cm, keepaspectratio]{img/desplegable_sensores}
-    \caption{Uso del selector de sensores en la aplicación web.}
-    \label{figura:desplegable_sensores}
-\end{figure}
-
-En la figura~\ref{figura:desplegable_sensores} se puede examinar que se representan los sensores disponibles. En esta figura se observa que hay tres sensores, esto se debe a que uno de los sensores fue cambiado de ID para comprobar el funcionamiento del sistema.
-
 
 También es posible obtener esta gráfica haciendo uso del bot de Telegram mediante el comando \textit{/ambienttemperaturefig} con sus parámetros opcionales para indicar la fecha deseada \textit{--startdate} y \textit{--enddate}, como se muestra en la figura~\ref{figura:telegram_ambient_temperature_01_08_junio}.
 \begin{figure}[H]
@@ -1381,7 +1409,7 @@ A pesar de que en los mensajes anteriores se da información sobre los sensores 
     \label{figura:sensorsinfo}
 \end{figure}
 
-Como se ha mencionado anteriormente el caso de la humedad ambiente es análogo al de la temperatura. A continuación se muestran las diferentes figuras relativas a la humedad ambiente. De igual manera en las figuras se pueden apreciar las fluctuaciones correspondientes al cambio de humedad en la noche respecto al cambio durante el día. Los valores obtenidos por ambos sensores también son similares en sus medidas en cuanto a la humedad.
+Como se ha mencionado anteriormente, el caso de la humedad ambiente es análogo al de la temperatura. A continuación se muestran las diferentes figuras relativas a la humedad ambiente. De igual manera, en las figuras se pueden apreciar las fluctuaciones correspondientes al cambio de humedad en la noche respecto al cambio durante el día. Los valores obtenidos por ambos sensores también son similares en sus medidas en cuanto a la humedad.
  
 \begin{figure}[H]
 	\centering
@@ -1410,8 +1438,8 @@ Como se ha mencionado anteriormente el caso de la humedad ambiente es análogo a
 
 \subsection{Temperatura de la tierra}
 \label{subsec: temperatura de la tierra}
-En esta sección se muestra el caso de uso de la aplicación para la recogida y consulta de datos de temperatura de la tierra realiza mediante los sensores \textit{DS18B20} que son subidos a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. Es muy similar al descrito en la sección~\ref{subsec: temperatura y humedad ambiente}.
-La estructura seguida en la recogida de datos es la que se muestra en la figura~\ref{figura:ground_temperature_robo3t}
+En esta sección se muestra el caso de uso de la aplicación para la recogida y consulta de datos de temperatura de la tierra realiza mediante los sensores \textit{DS18B20}, que son subidos a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. Es muy similar al descrito en la sección~\ref{subsec: temperatura y humedad ambiente}.
+La estructura seguida en la recogida de datos es la que se muestra en la figura~\ref{figura:ground_temperature_robo3t}.
 
 \begin{figure}[H]
 	\centering
@@ -1419,7 +1447,7 @@ La estructura seguida en la recogida de datos es la que se muestra en la figura~
     \caption{Arquitectura de los datos almacenados en \textit{sensors\_data} para la temperatura de la tierra.}
     \label{figura:ground_temperature_robo3t}
 \end{figure}
-La gráfica en la aplicación web se puede obtener en \textit{GROUND TEMPERATURE} dentro del desplegable \textit{SENSORS DATA} del menú principal como se muestra en la figura~\ref{figura:ground_temperature_dash}. Por defecto, los datos mostrados son los correspondientes a la última semana.
+La gráfica en la aplicación web se puede obtener en \textit{GROUND TEMPERATURE} dentro del desplegable \textit{SENSORS DATA} del menú principal como se muestra en la figura~\ref{figura:ground_temperature_dash}. Por defecto, los datos mostrados son los correspondientes a la última semana, al igual que ocurre con el resto de magnitudes en la aplicación web.
 
 \begin{figure}[H]
 	\centering
