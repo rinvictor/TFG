@@ -18,16 +18,18 @@ def getdataframe(sensor_type):
     df = pd.DataFrame(list(results))
     return df
 
+
 def getcontrollerdataframe(controller_type):
     client = MongoClient(db_credentials.url, db_credentials.port)
     db = client["greenhouseDB"]
     collection = db['controllers_data']
     results = collection.find({'type': controller_type})
     df = pd.DataFrame(list(results))
-    return df 
+    return df
 
 
 app = dash.Dash(name=__name__, assets_folder='assets', external_stylesheets=[dbc.themes.SANDSTONE])
+server = app.server
 app.title = "Víctor Rincón: My TFG"
 
 sidebar = html.Div(
@@ -96,17 +98,18 @@ def render_page_content(pathname):
                 html.P("This is a data visualization web app developed as a part of the system that has been built as "
                        "a final project degree for the Telematics Engineering degree. The project consists of an "
                        "autonomous distributed system for monitoring and care of a greenhouse."),
-                html.P(children=["This app is based on python, dash and plotly for the data visualization. All data is "
+                html.P(children=["This app is based on Python, Dash and Plotly for the data visualization. All data is "
                                  "retrieved from the different sensors and processed using a Raspberry Pi 3B+ and an "
                                  "Arduino and sended to a MongoDB database hosted in a Docker container in the ETSIT "
                                  "labs from Universidad Rey Juan Carlos. You can have a look to their webpage ",
                                  html.A("here", href="https://labs.etsit.urjc.es/", target="_blank")]),
                 html.P("The project has four clearly differentiated main parts, this visualization web application "
-                       "deployed using Heroku, the aforementioned data collection system, a python app for the "
+                       "deployed using Heroku, the aforementioned data collection system, a Python app for the "
                        "autonomous control of the greenhouse and a Telegram bot that is used not only for monitoring "
                        "the whole system but also to obtain real-time data as well as getting it from the database, "
                        "this bot is deployed in the Raspberry Pi 3B+."),
-                html.P("If you are interested you can have a look to the documentation section to learn more about it."),
+                html.P(
+                    "If you are interested you can have a look to the documentation section to learn more about it."),
                 html.Hr(),
                 html.H5(children=["Developed by: ",
                                   html.A(
@@ -125,6 +128,11 @@ def render_page_content(pathname):
 
     elif pathname == "/amb_temp_fig":
         df = getdataframe("ambient temperature")
+        # By defect values
+        yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
+
         options = []
         for c in df["sensorID"].unique():
             options.append({"label": c, "value": c})
@@ -153,6 +161,10 @@ def render_page_content(pathname):
     elif pathname == "/amb_hum_fig":
 
         df = getdataframe("ambient humidity")
+        yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
+
         options = []
         for c in df["sensorID"].unique():
             options.append({"label": c, "value": c})
@@ -180,6 +192,9 @@ def render_page_content(pathname):
 
     elif pathname == "/ground_temp_fig":
         df = getdataframe("ground temperature")
+        yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         options = []
         for c in df["sensorID"].unique():
             options.append({"label": c, "value": c})
@@ -207,6 +222,9 @@ def render_page_content(pathname):
 
     elif pathname == "/ground_hum_fig":
         df = getdataframe("ground humidity")
+        yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         options = []
         for c in df["sensorID"].unique():
             options.append({"label": c, "value": c})
@@ -231,9 +249,12 @@ def render_page_content(pathname):
             ),
             html.H5("Ground humidity graph.")
         ])
-    
+
     elif pathname == "/irr_data_fig":
         df = getcontrollerdataframe("irrigation")
+        yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         options = []
         for c in df["controllerID"].unique():
             options.append({"label": c, "value": c})
@@ -258,11 +279,33 @@ def render_page_content(pathname):
             ),
             html.H5("Irrigation data graph.")
         ])
-        
+
     elif pathname == "/documentation":
-        html_plot = html.Div(
-            html.H1('Documentation')
+        return html.Div(
+            children=[
+                html.H1(children='Documentation',
+                        className="header-title"),
+                html.H3(children='In this page you can have a look to the documentation section...',
+                        className="header-description"),
+                html.Hr()
+            ],
+            className='header'
+        ), html.Div(
+            children=[
+                html.P(children=["Any information you need to know or any relevant updates will be published in the "
+                                 "Github repository. You can check out this repository ",
+                                 html.A("here", href="https://github.com/rinvictor/TFG", target="_blank")]),
+                html.P(children=["The Telegram bot developed as a part of this project is available in ",
+                                 html.A("t.me/greenhouseTFGBot")]),
+                html.P(children=["This is an open-source project developed under the GNU General Public License v3.0, "
+                                 "for further information you can click ",
+                                 html.A("here", href="https://github.com/rinvictor/TFG/blob/main/LICENSE", target="_blank")]),
+
+                html.P(children=["If you have any questions or suggestions, please do not hesitate to contact me. "
+                                 "And remember... All pull requests are very welcome! "])
+                ]
         )
+
 
     else:
         # If the user tries to reach a different page, return a 404 message
@@ -284,14 +327,17 @@ def render_page_content(pathname):
 )
 def update_output(start_date, end_date, value):
     df = getdataframe("ambient temperature")
+    yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+    today = datetime.strftime(datetime.now(), '%Y-%m-%d')
     if not value and not start_date and not end_date:
-        # By defect values
-        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
         df = du.date_filter(df, start_date=yesterday, end_date=today)
     if start_date or end_date:
         df = du.date_filter(df, start_date, end_date)
-    if value and len(value) > 0:
+    if value and len(value) > 0 and start_date and end_date:
+        df = du.date_filter(df, start_date, end_date)
+        df = df[df['sensorID'].isin(value)]
+    if value and not start_date:
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         df = df[df['sensorID'].isin(value)]
 
     fig = figures.create_temperature_fig(df)
@@ -307,15 +353,17 @@ def update_output(start_date, end_date, value):
 def update_output(start_date, end_date, value):
     # If no filter has been selected
     df = getdataframe("ambient humidity")
+    yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+    today = datetime.strftime(datetime.now(), '%Y-%m-%d')
     if not value and not start_date and not end_date:
-        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
         df = du.date_filter(df, start_date=yesterday, end_date=today)
-    # Check if any date has been checked
     if start_date or end_date:
         df = du.date_filter(df, start_date, end_date)
-    # Check if any sensor has been selected
-    if value and len(value) > 0:
+    if value and len(value) > 0 and start_date and end_date:
+        df = du.date_filter(df, start_date, end_date)
+        df = df[df['sensorID'].isin(value)]
+    if value and not start_date:
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         df = df[df['sensorID'].isin(value)]
 
     fig = figures.create_humidity_fig(df)
@@ -330,13 +378,17 @@ def update_output(start_date, end_date, value):
 )
 def update_output(start_date, end_date, value):
     df = getdataframe("ground temperature")
+    yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+    today = datetime.strftime(datetime.now(), '%Y-%m-%d')
     if not value and not start_date and not end_date:
-        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
         df = du.date_filter(df, start_date=yesterday, end_date=today)
     if start_date or end_date:
         df = du.date_filter(df, start_date, end_date)
-    if value and len(value) > 0:
+    if value and len(value) > 0 and start_date and end_date:
+        df = du.date_filter(df, start_date, end_date)
+        df = df[df['sensorID'].isin(value)]
+    if value and not start_date:
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         df = df[df['sensorID'].isin(value)]
 
     fig = figures.create_temperature_fig(df)
@@ -351,13 +403,17 @@ def update_output(start_date, end_date, value):
 )
 def update_output(start_date, end_date, value):
     df = getdataframe("ground humidity")
+    yesterday = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
+    today = datetime.strftime(datetime.now(), '%Y-%m-%d')
     if not value and not start_date and not end_date:
-        yesterday = datetime.strftime(datetime.now() - timedelta(1), '%Y-%m-%d')
-        today = datetime.strftime(datetime.now(), '%Y-%m-%d')
         df = du.date_filter(df, start_date=yesterday, end_date=today)
     if start_date or end_date:
         df = du.date_filter(df, start_date, end_date)
-    if value and len(value) > 0:
+    if value and len(value) > 0 and start_date and end_date:
+        df = du.date_filter(df, start_date, end_date)
+        df = df[df['sensorID'].isin(value)]
+    if value and not start_date:
+        df = du.date_filter(df, start_date=yesterday, end_date=today)
         df = df[df['sensorID'].isin(value)]
 
     fig = figures.create_humidity_fig(df)
@@ -373,7 +429,7 @@ def update_output(start_date, end_date, value):
 def update_output(start_date, end_date, value):
     df = getcontrollerdataframe("irrigation")
     if not value and not start_date and not end_date:
-        start_date = datetime.strftime(datetime.now() - timedelta(4), '%Y-%m-%d')
+        start_date = datetime.strftime(datetime.now() - timedelta(7), '%Y-%m-%d')
         today = datetime.strftime(datetime.now(), '%Y-%m-%d')
         df = du.date_filter(df, start_date=start_date, end_date=today)
     if start_date or end_date:
@@ -383,7 +439,6 @@ def update_output(start_date, end_date, value):
 
     fig = figures.create_irrigation_data_fig(df)
     return fig
-
 
 
 if __name__ == '__main__':
