@@ -130,7 +130,7 @@ Desarrollo de un sistema de automatización y monitorización de un invernadero
 \end{center}
 
 \vspace{1cm}
-La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 202X, siendo calificada por el siguiente tribunal:
+La defensa del presente Proyecto Fin de Carrera se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2022, siendo calificada por el siguiente tribunal:
 
 
 \vspace{0.5cm}
@@ -152,7 +152,7 @@ y habiendo obtenido la siguiente calificación:
 
 \vspace{1cm}
 \begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 202X
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2022
 \end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -176,7 +176,7 @@ y mi hermano.}
 
 Me gustaría agradecer en primer lugar a todos los profesores que han pasado por mi vida. Desde Don Anselmo, todavía me acuerdo de tí, hasta mi tutor en este TFG, David Roldán, gracias por la dedicación y por la pasión que demuestras por la enseñanza.
 
-Gracias a mis amigos Luis, Mariano, Juanma, Aitor, Vesco, Rufino y Blanca. Todo esto se ha hecho más fácil gracias a vosotros.
+Gracias a mis amigos Luis, Mariano, Juanma, Aitor, Vesco, Rufino y Blanca. Todo esto se me ha hecho más fácil gracias a vosotros.
 
 Alicia, gracias por siempre apoyarme y estar ahí cuando más te he necesitado.
 
@@ -192,11 +192,11 @@ Y, por supuesto, gracias papá y mamá, me habéis dado todo el apoyo y cariño 
 \chapter*{Resumen}
 %\addcontentsline{toc}{chapter}{Resumen} % si queremos que aparezca en el índice
 \markboth{RESUMEN}{RESUMEN} % encabezado
-En este \textit{Trabajo de fin de Grado} se ha implementado un sistema distribuido de bajo coste que permite monitorizar y automatizar un invernadero. Una de las motivaciones para la realización de este TFG es contribuir al desarrollo sostenible a través de la agricultura inteligente. En los últimos años se han hecho esfuerzos para digitalizar el sector primario con el propósito de sostenibilizar nuestro sistema de alimentación. El sistema que se ha diseñado en este TFG está orientado a incluir las nuevas tecnologías en la agricultura para poder conseguir una mayor eficiencia en explotaciones urbanas y de autoconsumo.
+En este \textit{Trabajo de fin de Grado} (TFG) se ha implementado un sistema distribuido de bajo coste que permite monitorizar y automatizar un invernadero. Una de las motivaciones para la realización de este TFG es contribuir al desarrollo sostenible a través de la agricultura inteligente. En los últimos años se han hecho esfuerzos para digitalizar el sector primario con el propósito de sostenibilizar nuestro sistema de alimentación. El sistema que se ha diseñado en este TFG está orientado a incluir las nuevas tecnologías en la agricultura para poder conseguir una mayor eficiencia en explotaciones urbanas y de autoconsumo.
 
 Los objetivos de este TFG son la creación de herramientas para la monitorización y automatización de un invernadero y su implementación física. Se quiere crear un sistema con un precio asequible y que permita realizar la recolección de datos mediante sensores de humedad y temperatura en el ambiente y en la tierra. Este sistema se complementará con herramientas para la visualización de los datos de manera gráfica y textual y que proporcionen los mecanismos correspondientes para poder tomar acciones en base a la información tomada por los sensores.
 
-Para alcanzar estos objetivos se han desarrollado scripts que recogen los datos de los sensores implantados en el sistema y los almacenan en una base de datos. Se han desarrollado una aplicación web y un bot de Telegram que permiten visualizar los datos anteriores. Por último también se han desarrollado una serie de scripts para realizar el riego en base a la información suministrada por los sensores de humedad de la tierra.
+Para alcanzar estos objetivos, se han desarrollado scripts que recogen los datos de los sensores implantados en el sistema y los almacenan en una base de datos. Se han desarrollado una aplicación web y un bot de Telegram que permiten visualizar los datos anteriores. Por último también se han desarrollado una serie de scripts para realizar el riego en base a la información suministrada por los sensores de humedad de la tierra.
 
 Se han combinado diferentes tecnologías como son una base de datos de \textit{MongoDB}, para el almacenamiento de datos o el framework \textit{Dash}, para desarrollar la aplicación web.
 El lenguaje de programación utilizado ha sido \textit{Python}, aunque en menor medida se ha utilizado también \textit{Bash Scripting}. El software utilizado es libre y gratuito. Para el hardware se ha utilizado un invernadero de bajo coste, se han elegido diferentes sensores y actuadores que se indican a lo largo de la memoria, además de una \textit{Raspberry Pi 3B+} y un \textit{Arduino UNO rev3}.
@@ -254,9 +254,9 @@ En este capítulo se realiza una introducción sobre los conceptos con mayor rel
 \label{sec:Internet de las Cosas}
 El Internet de las cosas, \textit{Internet Of Things} (IoT), en inglés es un concepto que se refiere a la conexión vía Internet de elementos y objetos físicos de la vida cotidiana de manera que se permita el envío y la recepción de diferentes datos.
 
-Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París\cite{iot_origen}.
+Uno de los primeros hitos que marcan el nacimiento de este concepto data de 1874. Con el objetivo de realizar estudios de meteorológicos, un grupo de científicos franceses instalaron en la cima del Mont-Blanc una serie de sensores para medir temperaturas, vientos y humedades, entre otros. Dicha información sería enviada por radio a París\cite{iot_origen}.
 
-Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que el denominaba un \textit{gran cerebro} \cite{gran_cerebro_tesla}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT.  Turing afirmaba que existiría una necesidad de aportar capacidades de comunicación a sensores \cite{alan_turing_iot}.
+Nikola Tesla, en 1926 llegó a hablar de una interconexión de todo en un ámbito global, lo que él denominaba un \textit{gran cerebro} \cite{gran_cerebro_tesla}. Esto ocurrió mucho antes de la llegada de Internet tal y como lo conocemos hoy en día. Cabe destacar también a Alan Turing, ya que muchas de sus publicaciones se consideran base del IoT.  Turing afirmaba que existiría una necesidad de aportar capacidades de comunicación a sensores \cite{alan_turing_iot}.
 
 Otro de los puntos históricos claves para la llegada del IoT es el nacimiento de Internet. En el año 1969 nacería ARPANET, como continuación del proyecto ARPA (Advanced Research Projects Agency), que nacería en 1957 y  pretendía proponer avances tecnológicos y militares. ARPA consiguió múltiples avances como un sistema de comunicaciones en el que si una máquina caía, el resto podía seguir conectadas. 
 En 1965 se consiguió comunicar en Estados Unidos un ordenador \textit{TX2} en Massachusetts con un \textit{Q-32} en California mediante una línea telefónica conmutada.
@@ -272,7 +272,7 @@ El IoT está en continuo crecimiento. Según Cisco Internet Solutions Group (IBS
 
 \section{Tecnologías web}
 \label{sec:tecnologías web}
-La llegada de Internet a la vida de las personas es uno de los hitos más importantes y con mayor impacto de la historia. En nuestro día a día utilizamos multitud de aplicaciones web con diferentes usos, desde leer el periódico, hasta realizar compras o trabajar.
+La llegada de Internet a la vida de las personas es uno de los hitos más importantes y con uno de los mayores impacto de la historia. En nuestro día a día utilizamos multitud de aplicaciones web con diferentes usos, desde leer el periódico, hasta realizar compras o trabajar.
 Las aplicaciones web se pueden dividir en dos partes claramente diferenciadas, el \textit{back-end} (lado del servidor) y el \textit{frond-end} (lado del cliente).
 
 \subsection{Tecnologías en el lado del servidor}
@@ -284,11 +284,11 @@ El desarrollo web es muy amplio y existen multitud de posibilidades y tecnologí
 Existen diferentes frameworks que encapsulan las funcionalidades de los lenguajes para facilitar el desarrollo de aplicaciones web. Algunos ejemplos son:
 
 \begin{itemize}
-\item \textbf{Sprint Boot}\footnote{\url{https://spring.io/projects/spring-boot}}: Es una tecnología que nos permite crear apicaciones autocontenidas. Está basada en Java y simplifica el despliegue y el empaquetado. Esto permite que el usuario se centre en la parte del desarrollo de la aplicación. Con Spring Boot es posible compilar las aplicaciones Web como un archivo \textit{.jar} que podemos ejecutar como una aplicación Java normal. 
+\item \textbf{Sprint Boot}\footnote{\url{https://spring.io/projects/spring-boot}}: Es una tecnología que nos permite crear aplicaciones autocontenidas. Está basada en Java y simplifica el despliegue y el empaquetado. Esto permite que el usuario se centre en la parte del desarrollo de la aplicación. Con Spring Boot es posible compilar las aplicaciones Web como un archivo \textit{.jar} que podemos ejecutar como una aplicación Java normal. 
 
-\item \textbf{Django}\footnote{\url{https://www.djangoproject.com}}: Este framework de código abierto escrito en Python permite desarrollar aplicaciones web de manera rápida y sencilla. Django es muy versátil, escalable, rápido y seguro, además, viene muy bien equipado, de manera que ya están resueltos la mayoría de los problemas más recurrentes, acceso a bases de datos, inicios de sesión, etc. 
+\item \textbf{Django}\footnote{\url{https://www.djangoproject.com}}: Este framework de código abierto escrito en Python permite desarrollar aplicaciones web de manera rápida y sencilla. Django es muy versátil, escalable, rápido y seguro, además, viene muy bien equipado, de manera que ya están resueltos la mayoría de los problemas más habituales, acceso a bases de datos, inicios de sesión, etc. 
 
-\item \textbf{Flask}\footnote{\url{https://flask.palletsprojects.com/en/2.1.x/}}: Es un micro framework escrito en Python concebido para desarrollar servicios web de manera rápida y sencilla. Utiliza plugins para dotar al framework de distintas funcionalidades. Usa el patrón MVC, es decir, separa el modelo de datos, de la vista y del controlador (peticiones a la web).  
+\item \textbf{Flask}\footnote{\url{https://flask.palletsprojects.com/en/2.1.x/}}: Es un microframework escrito en Python concebido para desarrollar servicios web de manera rápida y sencilla. Utiliza plugins para dotar al framework de distintas funcionalidades. Usa el patrón MVC, es decir, separa el modelo de datos, de la vista y del controlador (peticiones a la web).  
 
 \item \textbf{Crow}\footnote{\url{https://crowcpp.org}}: Es un framework para C++ que permite crear servicios web mediante HTTP o Websockets. Es muy rápido y tiene una filosofía similar a Flask. 
 
@@ -336,7 +336,7 @@ Existen diferentes sistemas de bases de datos en función de las necesidades del
 \label{subsec: tendencias del desarrollo web}
 Como se ha mencionado anteriormente, la explotación masiva de Internet y los datos provoca que las tecnologías web estén en constante movimiento y evolución. Algunas de las tendencias del desarrollo web son las \textit{Progressive Web Apps} (PWA), una tecnología que permite mezclar las ventajas de las páginas web al uso y las aplicaciones móviles, la mejora de la privacidad y seguridad en la red o el análisis de datos usando técnicas de Big Data y Machine learning \cite{pwa}. 
 
-Otras dos tecnologías que son presente y futuro del Internet son los sistemas de computación en la nube y el Internet de las cosas. La computación en la nube ya está muy extendida hoy en día pero aún no ha alcanzado su máximo potencial y es una tecnología relativamente nueva. La computación en la nube permite almacenar y procesar grandes cantidades de datos, servidores, redes o software. Se prevé que a lo largo del año 2022 la inversión total en infraestructura se alcancen los 300.000 millones de euros. En el año 2021 este mercado tuvo un crecimiento del 37\% con respecto al año 2020, alcanzando los 155.000 millones de euros \cite{nube}.
+Otras dos tecnologías que son presente y futuro del Internet son los sistemas de computación en la nube y el Internet de las cosas. La computación en la nube ya está muy extendida hoy en día, pero aún no ha alcanzado su máximo potencial y es una tecnología relativamente nueva. La computación en la nube permite almacenar y procesar grandes cantidades de datos, servidores, redes o software. Se prevé que a lo largo del año 2022 la inversión total en infraestructura se alcancen los 300.000 millones de euros. En el año 2021 este mercado tuvo un crecimiento del 37\% con respecto al año 2020, alcanzando los 155.000 millones de euros \cite{nube}.
 El Internet de las cosas está íntimamente relacionado con el desarrollo web ya que, como se ha mencionado en el apartado~\ref{sec:Internet de las Cosas} permite analizar grandes cantidades de datos y promover cambios para mejorar la interacción con los usuarios.
 
 
@@ -344,14 +344,14 @@ El Internet de las cosas está íntimamente relacionado con el desarrollo web ya
 \label{sec:agricultura autonoma}
 En el año 2015, tuvo lugar la Cumbre del Desarrollo Sostenible entre más de 150 jefes de Estado y de Gobierno, aprobando  la Agenda 2030. La Agenda contiene 17 objetivos que pretenden lograr un mundo sostenible para el año 2030 \cite{agenda}. En este escenario, la agricultura juega un papel clave, especialmente en el segundo de los objetivos, acabar con el hambre en el mundo. Este es uno de los mayores retos a los que la agricultura se ha enfrentado, ya que en la actualidad unas 820 millones de personas se encuentran en hambruna, esto supone un 10\% de la población mundial. Otro problema añadido es la fragmentación de las tierras agrícolas, ya que un 85\% de las explotaciones tienen menos de dos hectáreas, lo que dificulta la creación de explotaciones agrarias masivas. Para solucionar este problema, es importante desarrollar tecnologías accesibles y potenciar la digitalización en este tipo de cultivos \cite{papel_agricultura}. Por otro lado, esta potenciación de la tecnología en agricultura a pequeña escala puede mejorar la sostenibilidad, ya que promueve el consumo local de alimentos, otro de los Objetivos de Desarrollo de la Agenda 2030. Este tipo de consumo es más respetuoso con el medio ambiente y ayuda a las economías locales.
 
-En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura \cite{connected_greenhouses}. La tendencia actual es la toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
+En 2017 se invirtieron 10.000 millones de dólares en la digitalización de la agricultura \cite{connected_greenhouses}. La tendencia actual, es la toma de decisiones basada en los datos tomados por los diferentes tipos de sensores en la agricultura, un invernadero conectado y con estas capacidades permite una producción más ecológica y sostenible, reduce el consumo de agua necesaria para los cultivos así como la necesidad del uso de productos químicos.
 Según la Organización de las Naciones Unidas para la Alimentación y la Agricultura (FAO), el sector agrícola debería producir un 50\% más para poder cubrir la demanda para el año 2050, la falta de inversión y digitalización de este sector podría poner en riesgo nuestro sistema de alimentación \cite{alimentos_2050}. Se estima que para el año 2030 la población mundial pase de 7600 millones a 8600 millones, esto junto a la falta de innovación en el campo puede suponer que el porcentaje de personas en situación de hambruna se dispare \cite{poblacion_mundial}. La inversión y la investigación en IoT puede aportar una mejora importante en la digitalización y ayudar así a combatir este problema.
 
 La solución planteada es la mejora de la inversión tecnológica en la agricultura, maximizando la eficiencia, es decir, maximizar la producción empleando menos recursos. Disminuyendo además el coste climático y energético. Hay que tener en cuenta que esta mejora no es homogénea en todos los puntos de la tierra, el avance del sector primario es menor en países menos desarrollados, de hecho en muchos puntos es posible hablar únicamente de una producción de subsistencia. En estos lugares el acceso a medios tecnológicos y formación por parte de los agricultores es limitado, con lo que la producción disminuye drásticamente en comparación a países industrializados.
 
-La afección al medio ambiente de las explotaciones agrarias es otro factor a tener en cuenta, ya que el 70\% del consumo del agua es provocado por la agricultura, además de la contaminación de aguas y tierras por nitratos, fosfatos y pesticidas \cite{agricultura_agua}. Es aquí donde la optimización y el aprovechamiento de recursos toma gran relevancia.
+La afectación al medio ambiente de las explotaciones agrarias es otro factor a tener en cuenta, ya que el 70\% del consumo del agua es provocado por la agricultura, además de la contaminación de aguas y tierras por nitratos, fosfatos y pesticidas \cite{agricultura_agua}. Es aquí donde la optimización y el aprovechamiento de recursos toma gran relevancia.
 
-Los avances en tecnologías aplicadas a la agricultura pretenden mejorar la productividad y el rendimiento de los cultivos, simplificando su gestión. La llamada \textit{agricultura de precisión} es consecuencia de la mejora de inversión tecnológica en este sector \cite{agricultura_precision}. El objetivo de esta es mejorar la productividad agrícola mediante el análisis de datos y la toma de decisiones. Mediante el uso de Internet de las cosas se pueden interconectar sistemas que envíen datos en tiempo real. Mediante el uso de explotaciones e invernaderos inteligentes es posible controlar parámetros climáticos y optimizar la producción.
+Los avances en tecnologías aplicadas a la agricultura pretenden mejorar la productividad y el rendimiento de los cultivos, simplificando su gestión. La llamada \textit{agricultura de precisión} es consecuencia de la mejora de inversión tecnológica en este sector \cite{agricultura_precision}. El objetivo de esta es mejorar la productividad agrícola mediante el análisis de datos y la toma de decisiones. Usando el Internet de las cosas se pueden interconectar sistemas que envíen datos en tiempo real. Con explotaciones e invernaderos inteligentes es posible controlar parámetros climáticos y optimizar la producción.
 
 \section{Estructura de la memoria}
 \label{sec:estructura}
@@ -449,7 +449,7 @@ Las etapas en las que se ha dividido el desarrollo del proyecto para así conseg
 
 \item \textbf{Iniciación e investigación sobre las tecnologías utilizadas}, por ejemplo, para la aplicación web. Se crearon diferentes programas de prueba para comprender los conceptos básicos del framework utilizado, \textit{Dash}.
 
-\item \textbf{Implementación electrónica de los sensores y desarrollo de los scripts de testeo para estos, recolección de datos y subida a la base de datos de MongoDB}. En primer lugar se implementaron los sensores de humedad y temperatura ambiente y una vez se probó el correcto funcionamiento del sistema, se añadieron los de humedad y temperatura de la tierra.
+\item \textbf{Implementación electrónica de los sensores y desarrollo de los scripts de testeo para estos, recolección de datos y subida a la base de datos de MongoDB}. En primer lugar se implementaron los sensores de humedad y temperatura ambiente y una vez se comprobó el correcto funcionamiento del sistema, se añadieron los de humedad y temperatura de la tierra.
 
 \item \textbf{Desarrollo de la aplicación web}. Permite visualizar la información recogida por los sensores y crear figuras a partir de esta.
 
@@ -476,7 +476,7 @@ En este capítulo se  describen de las distintas herramientas utilizadas para es
 \section{Hardware}
 \label{sec:hardware}
 
-A continuación se presenta el hardware utilizado, todas estas tecnologías utilizadas son de bajo coste, y entre las múltiples posibilidades existentes en el mercado se han elegido las siguientes para abaratar el presupuesto necesario para realizar este TFG.
+A continuación se presenta el hardware utilizado, todas estas tecnologías son de bajo coste, y entre las múltiples posibilidades existentes en el mercado se han elegido las siguientes para abaratar el presupuesto necesario para realizar este TFG.
 
 \subsection{Raspberry Pi}
 \label{subsec:raspberry pi}
@@ -532,7 +532,7 @@ La Raspberry Pi posee una serie de entradas y salidas, como se muestra en la fig
 \subsection{Arduino}
 \label{subsec:arduino}
 
-Arduino es un proyecto de software libre que, así como el de Raspberry Pi, también fue desarrollado con fines educativos. Está basado en diferentes placas con un microcontrolador. Para trabajar con Arduino se suele trabajar utilizar un entorno de programación específico para dichas placas. El lenguaje de programación que se suele utilizar es una adaptación de C++, un lenguaje orientado a objetos, de alto nivel y multiparadigma, pero en este caso se ha utilizado la librería Pyfirmata2, que implementa el protocolo para microcontroladores Firmata. Dicha librería permite interactuar con la placa Arduino usando Python, lenguaje de programación con el que se ha desarrollado la mayoría de este TFG y que se indica en la sección software.
+Arduino es un proyecto de software libre que, así como el de Raspberry Pi, también fue desarrollado con fines educativos. Está basado en diferentes placas con un microcontrolador. Para trabajar con Arduino se suele utilizar un entorno de programación específico para dichas placas. El lenguaje de programación que se suele utilizar es una adaptación de C++, un lenguaje orientado a objetos, de alto nivel y multiparadigma, pero en este caso se ha utilizado la librería Pyfirmata2, que implementa el protocolo para microcontroladores Firmata. Dicha librería permite interactuar con la placa Arduino usando Python, lenguaje de programación con el que se ha desarrollado la mayoría de este TFG y que se indica en la sección software.
 
 Se ha utilizado la placa Arduino UNO rev3 (ver figura~\ref{figura:arduino}), cuyas principales características son:
 
@@ -650,7 +650,7 @@ Se ha añadido al sistema electrónico un módulo de 8 relés, cuyo propósito e
 
 \section{Software}
 \label{software}
-En esta sección se presentan las diferentes herramientas software utilizadas para el desarrollo del proyecto. Todas las herramientas utilizadas son gratuitas.
+En esta sección se presentan las diferentes herramientas software utilizadas para el desarrollo del proyecto. Todas estas son gratuitas.
 
 \subsection{Raspbian}
 \label{subsec:raspbian}
@@ -675,11 +675,11 @@ Bash scripting consiste en utilizar Bash como un lenguaje de programación usand
 \label{subsec:dash}
 
 Dash es un framework de código abierto utilizado para desarrollar aplicaciones de visualización de datos interactivas usando Python, R, Julia o F\#. Está escrito sobre Plotly.js y React.js. Las aplicaciones web creadas con Dash son servidores web Flask, un framework escrito en Python para crear aplicaciones web, que se comunican usando JSON, un formato ligero para intercambiar datos, sobre HTTP (Hypertext Transfer Protocol).
-El front-end Dash está implementado con React.js, una librería de JavaScript para la interfaz de usuario escrita y mantenida por Facebook. Dash además de las diferentes tecnologías citadas anteriormente tiene intergrados HTML y CSS. En este TFG se ha usado, además, Bootstrap, que se explica a continuación y Plotly, una librería de Python utilizada para crear gráficos interactivos. Dash ha sido utilizado para desarrollar una aplicación web que permite visualizar gráficas de los datos almacenados en la base de datos de MongoDB.
+El front-end Dash está implementado con React.js, una librería de JavaScript para la interfaz de usuario escrita y mantenida por Facebook. Dash, además de las diferentes tecnologías citadas anteriormente, tiene integrados HTML y CSS. En este TFG se ha usado, también, Bootstrap, que se explica a continuación y Plotly, una librería de Python utilizada para crear gráficos interactivos. Dash ha sido utilizado para desarrollar una aplicación web que permite visualizar gráficas de los datos almacenados en la base de datos de MongoDB.
 
 \subsubsection{HTML en Dash}
 \label{subsubsec:html}
-HTML (HyperText Markup Language), es un lenguaje de marcado para la elaboración de páginas web. Actualmente es un estándar en Internet a cargo de W3C (World Wide Web Consortium).
+HTML (HyperText Markup Language), es un lenguaje de marcado para la elaboración de páginas web. Actualmente, es un estándar en Internet a cargo de W3C (World Wide Web Consortium).
 El origen de HTML data de principios de la década de los 80, fue creado por Tim-Berners Lee, físico en el CERN (European Organization for Nuclear Research), como un sistema para poder compartir documentos de manera más sencilla a la utilizada hasta el momento. A lo largo de los años se ha ido actualizando e incluyendo multitud de mejoras, actualmente se utiliza HTML5, lanzado en el año 2005.
 El uso de HTML en Dash se realiza mediante la librería Dash.html, que incluye todos los elementos de HTML, a continuación podemos ver un breve ejemplo de uso extraído de su documentación oficial y de su equivalencia en HTML clásico:
 
@@ -727,24 +727,24 @@ Las hojas de estilo en cascada, CSS(Cascading Style Sheets), son empleadas para 
 
 \subsubsection{Bootstrap en Dash}
 \label{subsubsec:boostrap}
-Este framework de software libre, muy utilizado en programación web, se utiliza como una abstracción de HTML, CSS y JavaScript. Su propósito es facilitar la creación de sitios web para múltiples dispositivos (\textit{responsive design}). Fue desarrollado inicialmente en el año 2011 por ingenieros de la compañía estadounidense Twitter, Inc. Su versión más reciente es Bootstrap 5, lanzada en el año 2021, cuya principal diferencia respecto a sus anteriores versiones es que utiliza Vanilla JavaScript (JavaScript puro), en lugar de JQuery, una librería de JavaScript muy utilizada para agregar interactividad a los sitios web.
-Como se ha mencionado anteriormente, se ha utilizado una plantilla libre de Bootstrap 5 a la que se le han hecho ligeras modificaciones de estilo, se puede usar este framework en Dash usando la librería Dash\_bootstrap\_components.
+Este framework de software libre, muy utilizado en programación web, se utiliza como una abstracción de HTML, CSS y JavaScript. Su propósito es facilitar la creación de sitios web para múltiples dispositivos (\textit{responsive design}). Fue desarrollado inicialmente en el año 2011 por ingenieros de la compañía estadounidense Twitter, Inc. Su versión más reciente es Bootstrap 5, lanzada en el año 2021, cuya principal diferencia respecto a sus anteriores versiones es que se basa en Vanilla JavaScript (JavaScript puro), en lugar de JQuery, una librería de JavaScript muy utilizada para agregar interactividad a los sitios web.
+Como se ha mencionado anteriormente, se ha usado una plantilla libre de Bootstrap 5 a la que se le han hecho ligeras modificaciones de estilo, se puede trabajar con este framework en Dash mediante la librería Dash\_bootstrap\_components.
 
 \subsection{API de telegram}
 \label{subsec:api telegram}
 
-Una API (Application Programming Interfaces) o interfaz de programación de aplicaciones en español, es un conjunto de protocolos y definiciones que se utilizan para desarrollar software y que permite la comunicación entre dos aplicaciones. Telegram es una aplicación de mensajería instantánea desarrollada por los hermanos Nikilái y Pável Dúrov, lanzada el 14 de agosto de 2013. Telegram permite multitud de servicios, entre ellos la posibilidad de utilizar bots. Los bots de telegram tienen una gran popularidad y muy diferentes usos, con ellos se puede desde obtener información hasta realizar descargas o traducir textos.
+Una API (Application Programming Interfaces) o interfaz de programación de aplicaciones en español, es un conjunto de protocolos y definiciones que se utilizan para desarrollar software y con las que se pueden comunicar dos aplicaciones. Telegram es una aplicación de mensajería instantánea desarrollada por los hermanos Nikilái y Pável Dúrov, lanzada el 14 de agosto de 2013. Telegram permite multitud de servicios, entre ellos la posibilidad de utilizar bots. Los bots de telegram tienen una gran popularidad y con muy diferentes usos, con ellos se puede desde obtener información hasta realizar descargas o traducir textos.
 
-Telegram ofrece una API para el desarrollo de bots, que es la que se ha utilizado en este TFG junto al módulo Telepot para Python para desarrollar un bot que permite visualizar datos de manera gráfica y textual.
+Telegram ofrece una API para la creación de bots, que es la que se ha utilizado en este TFG junto al módulo Telepot para Python para desarrollar un bot que permite visualizar datos de manera gráfica y textual.
 
 \subsection{MongoDB}
 \label{subsec:mongodb}
 
 MongoDB es un sistema de bases de datos de código abierto, no relacional y orientado a documentos. Utiliza estructuras BSON (Binary JSON) para guardar los datos. Una de las principales ventajas de MongoDB es su velocidad y aprovechamiento de los recursos.
 
-Las bases de datos no relacionales son muy utilizadas en proyectos de IoT y, en general, en proyectos para los que no sea necesario guardar relaciones entre tablas al estilo SQL (Structured Query Language). MongoDB permite acceder a una gran cantidad de datos en poco tiempo, permite realizar multitud de consultas, expresiones regulares, etc.
+Las bases de datos no relacionales son elegidas para muchos proyectos de IoT y, en general, en proyectos para los que no sea necesario guardar relaciones entre tablas al estilo SQL (Structured Query Language). MongoDB permite acceder a una gran cantidad de datos en poco tiempo, realizar multitud de consultas, expresiones regulares, etc.
 
-Es habitual trabajar con Python y MongoDB, para ello se ha utilizado la librería Pymongo, es una de las más extendidas para este propósito y está en continuo desarrollo. Se ha utilizado para almacenar información recogida por los sensores e información sobre las acciones tomadas por los actuadores.
+Es habitual trabajar con Python y MongoDB, para ello se ha usado la librería Pymongo, es una de las más extendidas para este propósito y está en continuo desarrollo. El propósito en este TFG de MongoDB ha sido almacenar información recogida por los sensores e información sobre las acciones tomadas por los actuadores.
 
 \subsection{Cron}
 \label{subsec: cron}
@@ -794,28 +794,6 @@ Github es una plataforma diseñada para alojar código, comprada por Microsoft e
     \caption{Esquema de concepto básico de Git.}
     \label{figura:esquema_git}
 \end{figure}
-
-
-%ctrl + t para comentar, ctrl + u para descomentar
-%\subsection{Entornos virtuales}
-%\label{subsec: software}
-%En general, y en el caso particular de Python, las aplicaciones hacen uso de diferentes paquetes y módulos, en muchas ocasiones se necesita una versión concreta de estas, para poder cumplir con estos requerimientos en todas las aplicaciones es común el uso de entornos virtuales, es decir, se crea un directorio con todos los requisitos de la aplicación. Esta manera de trabajar permite evitar conflictos entre distintos proyectos.
-%
-%Es muy sencillo crear entornos virtuales y existen diferentes métodos, para este TFG se ha usado \textit{virtualenv}, una de las herramientas más recomendadas para trabajar con entornos virtuales en Python.
-%
-%
-%\subsection{Herramientas de desarrollo}
-%\label{subsec: software}
-%
-%Se ha usado, principalmente, \textit{Pycharm}, en concreto su versión \textit{Pycharm Community Edition} como herramienta para escribir el código, se trata de un entorno de desarrollo integrado, popularmente conocido por sus siglas en inglés IDE, (\textit{Integrated Development Environment}). Pycharm está orientado al desarrollo de aplicaciones en Python, desarrollado por la compañía checa \textit{JetBrains S.R.O} proporciona múltiples ventajas como su \textit{debugger}, su autocompletado, su facilidad para la refactorización, su navegación inteligente, su sistema de entornos virtuales integrado...
-%Trabajar con un IDE facilita el desarrollo tanto en Python como en cualquier otro lenguaje de programación.
-%En menor medida se ha utilizado también \textit{Nano}, un editor de texto en línea de comandos, se ha usado para hacer modificaciones breves en la propia Raspberry Pi. 
-%
-%\subsection{Latex}
-%\label{subsec: software}
-%Esta memoria se ha escrito usando \textit{Latex}, un sistema de composición de textos basado en instrucciones y de software libre, está basado en una serie de macros pertenecientes a \textit{TeX}, otro sistema de composición de textos anterior.
-%Latex fue desarrollado por \textit{Leslie Lamport} en 1984 para facilitar la creación de textos de alta calidad tipográfica, actualmente, está muy extendido en el ámbito académico.
-%Para usar Latex, se ha usado la herramienta \textit{Texmaker}, un editor de software libre para Latex. 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -879,14 +857,6 @@ Los sensores que miden humedad y temperatura ambiente se han colocado por pareja
 El montaje de la electrónica que se presenta en este apartado incluye, como se especifica en el apartado~\ref{sec:hardware}, un microcomputador Raspberry Pi Model 3B+, conectado por su puerto USB a una placa Arduino y varios sensores y actuadores conectados a ambos dispositivos.
 
 La Raspberry Pi está conectada al Arduino usando los puertos USB de ambos dispositivos.
-%%Al igual que para la Raspberry Pi, el Arduino también cuenta con una serie de conexiones que son especialmente relevantes para la implementación que se ha llevado a cabo en este TFG que se muestra en la figura~\ref{figura:conexiones_arduino}
-%
-%%\begin{figure}[H]
-%%	\centering
-%%    \includegraphics[width=8cm, keepaspectratio]{img/conexiones_arduino}
-%%    \caption{Diagrama de conexiones y pines de Arduino UNO rev3.}
-%%    \label{figura:conexiones_arduino}
-%%\end{figure}
 
 La placa Arduino cuenta con pines analógicos, que no se encuentran en la Raspberry Pi. Estos pines permiten utilizar sensores analógicos que abaratan significativamente los costes del proyecto. Un ejemplo de este tipo de sensor son los higrómetros que han sido utilizados en este TFG. Una solución alternativa a este problema sería utilizar un conversor analógico-digital, aunque el coste total ascendería. La elección de la primera opción se debe principalmente a dos motivos, primero, como se ha mencionado anteriormente, es más barato un Arduino que un conversor de este tipo y segundo, nos proporciona una mayor cantidad de pines analógicos, digitales y de salida de voltaje para poder extender el modelo implementado o añadir nuevos sensores en proyectos futuros.
 
@@ -912,7 +882,7 @@ Tal y como se ha comentado anteriormente, además de la entrada de datos es fund
     \label{figura:conexiones_protoborad}
 \end{figure}
 
-El conexionado de de todos los sensores es equivalente. En la figura~\ref{figura:conexion_sensor} se muestra un esquema del conexionado para un sensor.
+El conexionado de todos los sensores es equivalente. En la figura~\ref{figura:conexion_sensor} se muestra un esquema del conexionado para un sensor.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=8cm, keepaspectratio]{img/conexion_sensor}
@@ -988,8 +958,6 @@ En la figura~\ref{figura:controllers data collection} se puede observar la arqui
     \label{figura:controllers data collection}
 \end{figure}
 
-%Estos valores permiten alojar esta base de datos en los laboratorios docentes de la ETSIT, ya que su capacidad es suficiente.
-
 Se realiza una copia de seguridad de cada una de las colecciones de la base de datos una vez al día, dejándola en dos archivos \textit{.csv}. De esta manera el sistema puede sobreponerse al borrado no intencionado de la información como por ejemplo, si el contenedor Docker en el que está desplegada la base de datos es borrado.
 El código para realizar este backup se localiza en \textit{code/backup}. La lógica del proceso se encuentra en \textit{backup.py} mientras que el proceso que lanza la lógica se encuentra en \textit{execute\_backup.sh}. 
 Al ejecutar el proceso anterior se almacenan los mensajes en \textit{code/backup/logs/success.log} si todo funciona correctamente, en \textit{code/backup/logs/error.log} si falla y en \textit{code/backup/logs/cronerror.log} si es cron el que encuentra problemas para ejecutar el proceso.
@@ -1008,11 +976,6 @@ Los scripts de recogida de datos, creación del backup de la base de datos, comp
 Se pueden observar los diferentes \textit{.sh} que se han desarrollado para ejecutar las aplicaciones y como, en caso de fallo, se escribe el fichero \textit{cronerror.log}.
 En \textit{execute.sh} se lanza el software para la recogida de datos, \textit{execute\_monitoring.sh} es el encargado de lanzar el software para comprobar la calidad de los datos y el correcto funcionamiento de los sensores, \textit{execute\_backup.sh} lanza el backup de la base de datos y \textit{execute\_actions.sh} lanza el software para controlar los actuadores y realizar acciones. La funcionalidad de estos scripts es comentada en las siguientes secciones.
 
-
-
-%La estructuctura que se ha descrito, un script de Python con la lógica del proceso, un ejecutable de Bash y los ficheros de log \textit{success.log}, \textit{error.log} y \textit{cronerror.log}, es la arquitectura que se ha seguido en la mayoría de las partes que forman la aplicación. Por ejemplo, esta misma arquitectura se sigue en la aplicación de riego, en el bot de Telegram o en la recogida de datos.%
- 
-
 \subsection{Recogida de datos}
 \label{subsec:recogida de datos}
 La recogida de datos, como se ha mencionado anteriormente, se realiza en la propia Raspberry. Para implementar esta funcionalidad se han creado varios ficheros y el código está disponible en \textit{code/datacollecting}. En primer lugar, se ha creado el fichero de configuración \textit{config.py} en el cual se implementa la clase Sensor, que facilita la gestión de la localización de los sensores y de los pines a los que están conectados.
@@ -1026,7 +989,7 @@ class Sensor:
 
 Todos los sensores en este TFG se representan en el código con instancias de la clase \textit{Sensor}. El pin al que está conectado se utiliza a modo de identificador único ya que varios sensores no pueden estar conectados al mismo pin. El caso de los sensores DS18B20 es diferente, ya que como se explica en el apartado~\ref{sec:Arquitectura e implementación hardware} estos sensores si pueden estar conectados a un mismo pin, por lo que se utiliza su identificador hardware como identificador único. La localización indica si el sensor se encuentra dentro o fuera del invernadero.
 
-Los scripts para la recogida de datos se han implementado en los ficheros \textit{sensors.py} y \textit{db\_conn.py}. En \textit{sensors.py} se definen las diferentes funciones que que permiten leer la información de los sensores, habiendo implementado una función para cada tipo de sensor. Para este propósito se han utilizado distintas librerías que permiten controlar los sensores: \textit{pyfirmata2} para los sensores YL-69, \textit{Adafruit\_DHT} para los sensores DHT22 y \textit{w1thermsensor} para los DS18B20.
+Los scripts para la recogida de datos se han implementado en los ficheros \textit{sensors.py} y \textit{db\_conn.py}. En \textit{sensors.py} se definen las diferentes funciones que permiten leer la información de los sensores, habiendo implementado una función para cada tipo de sensor. Para este propósito se han utilizado distintas librerías que permiten controlar los sensores: \textit{pyfirmata2} para los sensores YL-69, \textit{Adafruit\_DHT} para los sensores DHT22 y \textit{w1thermsensor} para los DS18B20.
 Existen las funciones \textit{get} y las funciones \textit{read}. Las primeras sirven para manejar los datos recogidos por las funciones \textit{read} de tal manera que las funciones \textit{read} se encargan de leer los datos mediante los sensores y las funciones \textit{get} de obtenerlos para manejarlos desde distintos puntos en el software.
 
 En el fichero \textit{db\_conn.py} se implementa la funcionalidad relativa a la inserción de los datos en la base de datos \textit{greenhouseDB} de MongoDB, en concreto en la colección \textit{sensors\_data}. Antes de insertar la información en la base de datos, se valida para detectar inconsistencias. En el caso de caso de que la lectura sea nula (en Python \textit{None}) o que sea un valor fuera de un rango establecido (por ejemplo, 120 ºC de temperatura es un error) se almacena un -1. Puede interesar conocer, por ejemplo, la tasa de fallo de un sensor. Es por este motivo por el que no se reintenta la lectura de los datos en caso de error. Un fallo en una lectura queda escrito en los ficheros de \textit{log} y, además, se le comunica al usuario vía Telegram tal y como se detallará en el próximo capítulo de esta memoria.
@@ -1055,7 +1018,7 @@ Este tipo de información es útil para poder encontrar fallos en el sistema. Ad
 \label{aplicacion de dash}
 En este TFG se ha desarrollado una aplicación que permite visualizar de forma gráfica la información recogida por los sensores y las acciones tomadas por los actuadores. Esta aplicación se ha implementado usando el framework Dash, descrito en la sección~\ref{subsec:dash}.
 Todo el código que usa la aplicación se encuentra dentro de \textit{code/apps/dashapp}.
-Para el desarrollo de la aplicación se han utilizado los componentes html y CSS integrados en Dash además de una plantilla libre de Bootstrap para componer el estilo de la página.
+Para el desarrollo de la aplicación se han utilizado los componentes html y CSS integrados en Dash además de una plantilla libre de Bootstrap para componer el estilo de la página \footnote{\url{https://bootswatch.com/sandstone}}.
 
 La aplicación tiene varios componentes, \textit{app.py}, programa principal, \textit{dash\_utils.py},  donde se han implementado funciones de filtrado y \textit{create\_figures.py}, donde se implementa la generación de las visualizaciones utilizando la librería \textit{Plotly}.
 
@@ -1135,26 +1098,8 @@ La gestión de la información dentro de la aplicación se realiza utilizando el
 Es muy común trabajar utilizando Pandas y MongoDB. 
 
 A través de la aplicación Dash se hace una llamada a la base de datos, se guarda la información en un DataFrame de Pandas, que  consiste en una tabla con columnas y filas. A este DataFrame se le pueden aplicar filtros para obtener solo una parte de la información y finalmente se utiliza para crear, junto con Plotly, la gráfica que se solicite.
-%
-%El próposito principal de la aplicación es el de poder visualizar datos y monitorizar de esta manera el sistema. Un caso de uso de esto podría ser detectar un sensor con problemas, como se muestra a continuación:
-%
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
-%    \caption{Gráfica que muestra un comportamiento anormal de uno de los sensores.}
-%    \label{figura:sensor_problemas}
-%\end{figure}
-%
-%Se encontró que durante varios dias todas las medidas eran cercanas a 1, esto hizo que se comprobara que uno de los sensores de humedad de suelo estaba fallando.
 
 Esta misma funcionalidad es equivalente para mostrar los datos relativos a los actuadores, en concreto, se muestran los litros utilizados al día por la aplicación de riego, cuyo funcionamiento concreto se mostrará en la sección~\ref{subsec:riego}.
-
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/figura_riego_dash}
-%    \caption{Gráfica obtenida del apartado \textit{CONTROLLERS} de la aplicación web.}
-%    \label{figura:sensor_problemas}
-%\end{figure}
 
 Entre las funcionalidades ofrecidas por Plotly, cabe destacar que es posible descargar las imágenes directamente y hacer zoom sobre una zona en concreto de la gráfica. 
  
@@ -1181,25 +1126,10 @@ Las funcionalidades que se han incluido en este bot son:
 \item Enviar mensajes informativos sobre la ejecución de los actuadores.
 \end{itemize}
 
-%El caso de uso de este bot no es el de realizar un análisis pormenorizado del estado del sistema, sino el de poder tener acceso a datos concretos de una manera rápida y recibir mensajes que puedan resultar de interés para el usuario y para la monitorización del sistema completo.
-
 Cuando el bot es lanzado con el comando \textit{/start}, el usuario recibe un mensaje con los comandos disponibles. El usuario puede volver a pedir esta información con el comando \textit{/help}.
 Cuando se introduce un comando erróneo o inexistente se recibe un mensaje indicando que el comando introducido es incorrecto concatenado con la lista de comandos disponibles.
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/comandos}
-%    \caption{Mensaje con los comandos disponibles.}
-%    \label{figura:comandos}
-%\end{figure}
-
 
 Escribiendo \textit{/sensorsinfo} se recibe una lista con información sobre cada uno de los sensores que están implementados en el sistema, indicando su id (GPIO, pin Arduino o su id de hardware). La información sobre los actuadores se recibe usando el comando \textit{/controllersinfo}.
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/mensajes_info}
-%    \caption{Resultado de las peticiones \textit{/sensorsinfo} y \textit{/controllersinfo}.}
-%    \label{figura:mensajes info}
-%\end{figure}
 
 Para obtener información en tiempo real de las medidas tomadas por los sensores se hace uso de los comandos \textit{/sensorsdata}, \textit{/groundhumidity}, \textit{/groundtemperature}, \textit{/ambienthumidity} y \textit{/ambienttemperature}. Estas llamadas devuelven dos mensajes, el primero en el que se indica que se está obteniendo la información solicitada y que va a tardar unos segundos en completarse la acción, y el segundo que devuelve la información solicitada, el id del sensor, su localización y el valor medido. En el caso de hacer \textit{/sensorsdata} devuelve esta misma información pero para todos los sensores del sistema en un mismo mensaje.
 
@@ -1228,7 +1158,7 @@ A través de los comandos disponibles en el Bot también se pueden obtener gráf
 Existen otros mensajes para indicar que el usuario está haciendo un mal uso del comando, como cuando, por ejemplo, se solicita una fecha posterior a la del día en que se realiza la petición o si se escribe mal un parámetro.
 Las gráficas se obtienen haciendo uso de los comandos \textit{/getallfigures}, \textit{/groundhumidityfig}, \textit{/groundtemperaturefig}, \textit{/ambienthumidityfig}, \textit{/ambienttemperaturefig} e \textit{/irrigationfig}, pudiendo añadir los parámetros opcionales \textit{--startdate} y \textit{--enddate}. Cualquiera de estos comandos devuelve tres mensajes, el primero indica que se está construyendo la figura, el segundo mensaje incluye la propia figura y el tercero indica la localización de los sensores a los que se está haciendo referencia. En el caso de \textit{/getallfigures}, se devuelven todas las figuras, además de un mensaje indicando que el proceso ha terminado.
 
-Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en el script \textit{code/apps/dashapp/dash\_utils.py} y \textit{code/apps/dashapp/create\_figures.py}. Las imágenes son enviadas en formato png, convirtiéndolas previamente a bytes. Si existiera algún error durante el procesamiento del comando se enviaría un mensaje de error al usuario como se muestra en la figura~\ref{figura:error send photo}.
+Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en el script \textit{code/apps/dashapp/dash\_utils.py} y \textit{code/apps/dashapp/create\_figures.py}. Las imágenes son enviadas en formato \textit{png}, convirtiéndolas previamente a bytes. Si existiera algún error durante el procesamiento del comando se enviaría un mensaje de error al usuario como se muestra en la figura~\ref{figura:error send photo}.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/error_send_photo}
@@ -1237,23 +1167,8 @@ Esta funcionalidad se ha realizado haciendo uso las funciones desarrolladas en e
 \end{figure}
 
 Existe, además, el archivo \textit{monitoring.py}, también relativo a este bot de Telegram. Este script se ejecuta en cron tras cada lectura de \textit{datacollecting}. Pretende asegurar que los datos recogidos son coherentes, en caso contrario, envía un mensaje al chat del usuario con el bot indicando el posible error. En \textit{monitoring.py}, solo se contempla que el valor obtenido sea -1, ya que la comprobación de si el dato está en un rango de valores posibles, se realiza a la hora de la recogida. Aunque se podría haber ignorado los datos erróneos, se ha optado por no hacerlo para poder encontrar fácilmente un fallo recurrente de un sensor e incluso poder sacar estadísticas de fallo de dispositivos como se ha especificado en el apartado~\ref{subsec:recogida de datos}.
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_mensaje}
-%    \caption{Mensaje de error enviado cuando el sensor con ID 22 falla en su lectura.}
-%    \label{figura:error send sensor mensaje}
-%\end{figure}
 
 Como se ha comentado anteriormente, el usuario también recibe mensajes automáticos mediante el bot con información de los actuadores, en concreto, recibe el número de litros usado en la aplicación de riego. Esto se realiza desde la propia aplicación como se comenta posteriormente.
-
-%\begin{figure}[H]
-%	\centering
-%    \includegraphics[width=12cm, keepaspectratio]{img/mensaje_riego}
-%    \caption{Mensaje informativo recibido tras la activación del riego.}
-%    \label{figura:mensaje riego}
-%\end{figure} 
-
-
 
 \subsection{Aplicación de riego}
 \label{subsec:riego}
@@ -1319,7 +1234,7 @@ Como norma general que se repite para cada uno de los sensores disponibles, en p
 
 \subsection{Temperatura y humedad ambiente}
 \label{subsec: temperatura y humedad ambiente}
-El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se realiza la recogida de datos usando los sensores \textit{DHT22}. Los datos recogidos se suben a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. En las figuras~\ref{figura:robo3t_ambient_temperature} y ~\ref{figura:robo3t_ambient_humidity} se muestran los datos almacenados de humedad y temperatura ambiente correspondientes al 6 de Junio de 2022, para la lectura realizada a las 4 de la mañana. En estas figuras se puede observar la estructura de los documentos que representan la información sobre humedad y temperatura ambiente, que son similares al resto de datos que se manejan en este TFG. El detalle sobre lo que representa cada campo se puede encontrar en la sección~\ref{subsec:arquitectura general}.
+El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se realiza la recogida de datos usando los sensores \textit{DHT22}. Los datos recogidos se suben a la colección \textit{sensors\_data} de la base de datos \textit{greenhouseDB}. En las figuras~\ref{figura:robo3t_ambient_temperature} y ~\ref{figura:robo3t_ambient_humidity} se muestran los datos almacenados de humedad y temperatura ambiente correspondientes al 6 de junio de 2022, para la lectura realizada a las 4 de la mañana. En estas figuras se puede observar la estructura de los documentos que representan la información sobre humedad y temperatura ambiente, que son similares al resto de datos que se manejan en este TFG. El detalle sobre lo que representa cada campo se puede encontrar en la sección~\ref{subsec:arquitectura general}.
 
 \begin{figure}[H]
 	\centering
@@ -1335,14 +1250,14 @@ El caso de la temperatura y la humedad ambiente es análogo. En primer lugar se 
 \end{figure} 
 
 Una vez la información es almacenada en la base de datos puede ser consultada desde las diferentes aplicaciones que se han desarrollado.
-En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de Junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible utilizar los filtros como se explica en la sección~\ref{aplicacion de dash}.
+En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa la gráfica obtenida en la aplicación web de Dash que muestra los datos relativos a la temperatura ambiente recogidos desde el 1 hasta el 8 de junio de 2022. Para obtener esta gráfica es necesario acceder al apartado \textit{AMBIENT TEMPERATURE} dentro de \textit{SENSORS DATA} del menú de la aplicación y seleccionar las fechas deseadas en el desplegable de la parte superior derecha diseñado para este uso (ver figura~\ref{figura:desplegable_fecha}). También es posible utilizar los filtros como se explica en la sección~\ref{aplicacion de dash}.
 
 En la figura~\ref{figura:ambient_temperature_01_08_junio} se observa como las lecturas de ambos sensores miden aproximadamente lo mismo, esto confirma el correcto funcionamiento del sistema. En la época del año en la que se realizaron las lecturas el invernadero se encontraba abierto, de manera que la temperatura interior y exterior debe ser similar. Las fluctuaciones que se muestran en la figura se corresponden con las altas temperaturas durante el día y la bajada de estas durante la noche.
 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_01_08_junio}
-    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de junio de 2022.}
     \label{figura:ambient_temperature_01_08_junio}
 \end{figure}
 
@@ -1350,7 +1265,7 @@ También es posible obtener esta gráfica haciendo uso del bot de Telegram media
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/telegram_ambient_temperature_01_08_junio}
-    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de junio de 2022.}
     \label{figura:telegram_ambient_temperature_01_08_junio}
 \end{figure}
 
@@ -1359,7 +1274,7 @@ Si se ejecuta el comando \textit{/ambienttemperaturefig} sin ningún argumento s
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ambienttemperaturefig}
-    \caption{Gráfica obtenida mediante el comando \textit{/ambienttemperaturefig} realizado el día 12 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante el comando \textit{/ambienttemperaturefig} realizado el día 12 de junio de 2022.}
     \label{figura:ambienttemperaturefig}
 \end{figure}
 
@@ -1377,12 +1292,12 @@ Si se ejecuta el comando \textit{/ambienttemperaturefig} sin ningún argumento s
     \label{figura:ambienttemperaturefig_enddate}
 \end{figure}
 
-Como se muestra en las figuras anteriores se puede observar de manera rápida y sencilla un error en la lectura de un sensor, el día 11 de Junio de 2022 el sensor 27 de temperatura falló en su lectura. 
+Como se muestra en las figuras anteriores se puede observar de manera rápida y sencilla un error en la lectura de un sensor, el día 11 de junio de 2022 el sensor 27 de temperatura falló en su lectura. 
 Este tipo de errores, tal y como se indica en la sección~\ref{bot de telegram}, también se notifican al usuario de manera que no sea necesario estar consultando el bot para confirmar su correcto funcionamiento. En la siguiente figura se muestra el mensaje recibido tras el error de lectura.
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/error_sensor_11_junio}
-    \caption{Mensaje de error obtenido el 11 de Junio de 2022 tras error de lectura de temperatura ambiente del sensor 27.}
+    \caption{Mensaje de error obtenido el 11 de junio de 2022 tras error de lectura de temperatura ambiente del sensor 27.}
     \label{figura:error_sensor_11_junio}
 \end{figure}
 
@@ -1414,13 +1329,13 @@ Como se ha mencionado anteriormente, el caso de la humedad ambiente es análogo 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ambient_humidity_01_08_junio}
-    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante la aplicación web con datos de temperatura ambiente desde 1 al 8 de junio de 2022.}
     \label{figura:ambient_humidity_01_08_junio}
 \end{figure}
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/telegram_ambient_humidity_01_08_junio}
-    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de junio de 2022.}
     \label{figura:telegram_ambient_humidity_01_08_junio}
 \end{figure}
 \begin{figure}[H]
@@ -1461,7 +1376,7 @@ En la figura~\ref{figura:ground_temperature_01_08_junio} se puede observar una d
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_01_08_junio}
-    \caption{Gráfica obtenida mediante la aplicación web de Dash con datos de temperatura de la tierra desde 1 al 8 de Junio de 2022}
+    \caption{Gráfica obtenida mediante la aplicación web de Dash con datos de temperatura de la tierra desde 1 al 8 de junio de 2022}
     \label{figura:ground_temperature_01_08_junio}
 \end{figure}
 
@@ -1487,7 +1402,7 @@ Tal y como se puede observar en la figura~\ref{figura:ground_temperature_diferen
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ground_temperature_diferencias}
-    \caption{Diferencia entre lecturas de ambos sensores. Medidas tomadas entre las 20 del día 11 de Junio de 2022 y las 14 del día 12 de Junio de 2022}
+    \caption{Diferencia entre lecturas de ambos sensores. Medidas tomadas entre las 20 del día 11 de junio de 2022 y las 14 del día 12 de junio de 2022}
     \label{figura:ground_temperature_diferencias}
 \end{figure}
 
@@ -1496,14 +1411,14 @@ Igual que para el resto de magnitudes, es posible utilizar el bot de Telegram pa
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/groundtemperaturefig_telegram}
-    \caption{Gráfica obtenida mediante el comando \textit{/groundtemperaturefig} realizado el día 12 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante el comando \textit{/groundtemperaturefig} realizado el día 12 de junio de 2022.}
     \label{figura:groundtemperaturefig_telegram}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/groundtemperaturefig_telegram_options}
-    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de Junio de 2022.}
+    \caption{Gráfica obtenida mediante el bot de Telegram con datos de temperatura ambiente desde 1 al 8 de junio de 2022.}
     \label{figura:groundtemperaturefig_telegram_options}
 \end{figure}
 
@@ -1522,7 +1437,7 @@ En esta sección se presenta el tratamiento de la información de la humedad de 
 Estos datos al igual que en los casos anteriores pueden ser consultados o bien desde la aplicación web, obteniéndola en \textit{GROUND HUMIDITY} dentro del desplegable \textit{SENSORS DATA} del menú principal, o bien desde el bot de Telegram. Todas las figuras, comandos y datos disponibles para la humedad de la tierra son análogos a los casos descritos en las secciones~\ref{subsec: temperatura y humedad ambiente} y~\ref{subsec: temperatura de la tierra}.
 
 La humedad de la tierra está relacionada con la aplicación de riego que se ha desarrollado. Como se expone en la sección~\ref{subsec:riego}. En las figuras sucesivas se muestra como la relación entre los datos de humedad de la tierra y los datos almacenados en la colección \textit{controllers\_data} conservan una estrecha relación.
-En las figuras~\ref{figura:figura riego} y~\ref{figura:humedad tierra} se muestra como a mayor sequedad de la tierra el sistema riega con una mayor cantidad de agua. El terreno está más seco cuando la lectura de los sensores es más cercana a uno, es por este motivo que el día 4 de Junio se regó con una mayor cantidad de agua que el día 6.
+En las figuras~\ref{figura:figura riego} y~\ref{figura:humedad tierra} se muestra como a mayor sequedad de la tierra el sistema riega con una mayor cantidad de agua. El terreno está más seco cuando la lectura de los sensores es más cercana a uno, es por este motivo que el día 4 de junio se regó con una mayor cantidad de agua que el día 6.
 
 \begin{figure}[H]
 	\centering
@@ -1568,12 +1483,12 @@ Como se muestra en las figuras~\ref{figura:grafica_irrigation_data_04_07_junio} 
 \section{Detección de errores e inconsistencias}
 \label{sec:detección de errorese inconsistencias}
 Como se menciona en el apartado~\ref{aplicacion de dash}, uno de los objetivos de la aplicación web es el de poder realizar un análisis concreto del estado del sistema y encontrar así errores.
-La aplicación es útil para detectar comportamientos anormales en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
+La aplicación es útil para detectar comportamientos anómalos en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
 
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
-    \caption{Gráfica que muestra un comportamiento anormal de uno de los higrómetros.}
+    \caption{Gráfica que muestra un comportamiento anómalo de uno de los higrómetros.}
     \label{figura:sensor_problemas_higro}
 \end{figure}
 
@@ -1582,11 +1497,11 @@ Otro caso de error se muestra en la figura~\ref{figura:error temperatura ambient
 \begin{figure}[H]
 	\centering
     \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_error}
-    \caption{Gráfica que muestra un comportamiento anormal de uno de los sensores de temperatura ambiente.}
+    \caption{Gráfica que muestra un comportamiento anómalo de uno de los sensores de temperatura ambiente.}
     \label{figura:error temperatura ambiente}
 \end{figure}
 
-Otros de los objetivos del control de errores es el de notificar al usuario al momento de su detección. Para ello se envían mensajes cuando esta clase de errores es detectada, como se muestra en los apartados anteriores.
+Otros de los objetivos del control de errores es el de notificar al usuario al momento de su detección. Para ello se envían mensajes cuando esta clase de errores son detectados, como se muestra en los apartados anteriores.
 
 En las secciones~\ref{subsec: temperatura y humedad ambiente}, \ref{subsec: temperatura de la tierra} y \ref{subsec: humedad de la tierra} se muestran las distintas posibilidades que existen para la obtención de información para ese tipo de datos en concreto, pero también es posible realizar este análisis usando los comandos \textit{/sensorsdata}, \textit{/sensorsdatadb} y \textit{/getallfigures}. Con estos comandos se puede obtener datos de todos los tipos de sensores a la vez, en lugar de obtenerlos para cada tipo de sensor individualmente. Sirven para realizar un análisis del estado del sistema más general.
 
@@ -1646,7 +1561,7 @@ En este capítulo se presentan las conclusiones tras el desarrollo de este TFG. 
 
 \section{Consecución de objetivos}
 \label{sec:consecución de objetivos}
-El objetivo principal propuesto para este TFG era crear un sistema distribuido de monitorización y automatización de un invernadero de bajo coste. Este objetivo, como se indica en el capítulo~\ref{chap:objetivos}, se divide en diversos subobjetivos: Montaje del hardware, scripts de recogida y almacenamiento de la información, herramientas de monitorización y visualización y scripts de automatización.
+El objetivo principal propuesto para este TFG era crear un sistema distribuido de monitorización y automatización de un invernadero de bajo coste. Este objetivo, como se indica en el capítulo~\ref{chap:objetivos}, se divide en diversos subobjetivos: montaje del hardware, scripts de recogida y almacenamiento de la información, herramientas de monitorización y visualización y scripts de automatización.
 
 El primer hito consistía en realizar un montaje hardware, montando el invernadero al completo y la electrónica utilizada, en concreto los sensores. Este hito está concretado en las secciones~\ref{sec: montaje físico del invernadero} y~\ref{sec:Arquitectura e implementación hardware}.
 
@@ -1716,7 +1631,7 @@ Con el desarrollo de este TFG se han ampliado y asentado los conocimientos menci
 
 \item \textbf{Bots de Telegram}: a pesar de que en la asignatura \textit{Laboratorio de Administración y Gestión de Redes y Sistemas} se realiza una pequeña introducción, se ha alcanzado un conocimiento mucho mayor sobre el desarrollo de estos para la monitorización y administración de sistemas.
 
-\item \textbf{MongoDB}: en la asignatura \textit{Laboratorio de Bases de Bases de Datos} únicamente se utilizan bases de datos relacionales. Aunque muchos de los conceptos son aplicables a una base de datos orientada a documentos otra de las competencias adquiridas es el uso de MongoDB.
+\item \textbf{MongoDB}: en la asignatura \textit{Laboratorio de Bases de Bases de Datos} únicamente se utilizan bases de datos relacionales. Aunque muchos de los conceptos son aplicables a una base de datos orientada a documentos, otra de las competencias adquiridas es el uso de MongoDB.
 
 \item \textbf{Módulos de Python}: la mayoría de los módulos que se han utilizado para el desarrollo de la plataforma no se han enseñado en ninguna de las asignaturas. 
 
@@ -1728,18 +1643,18 @@ Con el desarrollo de este TFG se han ampliado y asentado los conocimientos menci
 \section{Trabajos futuros}
 \label{sec:trabajos futuros}
 
-Este trabajo a sido desarrollado desde cero y algunas de las posibles mejoras de cara a futuro que se podrían implementar son:
+Este trabajo ha sido desarrollado desde cero y algunas de las posibles mejoras de cara a futuro que se podrían implementar son:
 
 \begin{itemize}
 \item \textbf{Soporte para nuevos tipos de sensores}. Una de las posibles mejoras sería aumentar el tamaño del sistema añadiendo nuevos tipos de sensores como de CO2 del ambiente o de PH de la tierra.
 
 \item \textbf{Añadir nuevos actuadores al sistema}. Para poder así automatizar otras tareas como abrir y cerrar el invernadero en función de la temperatura y la humedad ambiente.
 
-\item \textbf{Actualización de los componentes}. Al ser un proyecto de bajo coste los componentes son más propensos a errores y tienen una precisión menor.
+\item \textbf{Mejora de los componentes}. Al ser un proyecto de bajo coste los componentes son más propensos a errores y tienen una precisión menor.
 
 \item \textbf{Extensión de la aplicación de Dash y del bot de Telegram}. Mejora de estas dos aplicaciones y soporte para los puntos anteriormente descritos. Por ejemplo, que el bot de Telegram notifique cuando hay un error en la ejecución de una de las aplicaciones (\textit{cronerrorlog}), y no únicamente errores de medidas.
 
-\item \textbf{Hacer el sistema completamente autónomo}. Añadiendo una placa solar se puede hacer el sistema autónomo independiente de la corriente eléctrica, de manera que únicamente dependería de la conexión a Internet para la visualización y almacenamiento de datos. 
+\item \textbf{Hacer el sistema completamente autónomo}. Añadiendo una placa solar se puede hacer el sistema autónomo independiente de la corriente eléctrica, de manera que únicamente dependería de la conexión a Internet para la visualización y almacenamiento de datos. La parte de la autonomía del invernadero, dada por los actuadores seguiría funcionando sin disponer de esta conectividad.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
