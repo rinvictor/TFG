@@ -1479,30 +1479,6 @@ Como se muestra en las figuras~\ref{figura:grafica_irrigation_data_04_07_junio} 
     \label{figura:comando controllers info}
 \end{figure}
 
-
-\section{Detección de errores e inconsistencias}
-\label{sec:detección de errorese inconsistencias}
-Como se menciona en el apartado~\ref{aplicacion de dash}, uno de los objetivos de la aplicación web es el de poder realizar un análisis concreto del estado del sistema y encontrar así errores.
-La aplicación es útil para detectar comportamientos anómalos en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
-    \caption{Gráfica que muestra un comportamiento anómalo de uno de los higrómetros.}
-    \label{figura:sensor_problemas_higro}
-\end{figure}
-
-Otro caso de error se muestra en la figura~\ref{figura:error temperatura ambiente}, donde se muestra que el sensor con ID 22 no estaba funcionando correctamente.
-
-\begin{figure}[H]
-	\centering
-    \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_error}
-    \caption{Gráfica que muestra un comportamiento anómalo de uno de los sensores de temperatura ambiente.}
-    \label{figura:error temperatura ambiente}
-\end{figure}
-
-Otros de los objetivos del control de errores es el de notificar al usuario al momento de su detección. Para ello se envían mensajes cuando esta clase de errores son detectados, como se muestra en los apartados anteriores.
-
 En las secciones~\ref{subsec: temperatura y humedad ambiente}, \ref{subsec: temperatura de la tierra} y \ref{subsec: humedad de la tierra} se muestran las distintas posibilidades que existen para la obtención de información para ese tipo de datos en concreto, pero también es posible realizar este análisis usando los comandos \textit{/sensorsdata}, \textit{/sensorsdatadb} y \textit{/getallfigures}. Con estos comandos se puede obtener datos de todos los tipos de sensores a la vez, en lugar de obtenerlos para cada tipo de sensor individualmente. Sirven para realizar un análisis del estado del sistema más general.
 
 Cuando el bot recibe el comando \textit{/getallfigures} se envían todas las figuras disponibles y un mensaje adicional indicando que ya se ha terminado el proceso (ver figuras~\ref{figura:getallfiguresp1},~\ref{figura:getallfiguresp2} y~\ref{figura:getallfiguresp3}).
@@ -1510,7 +1486,7 @@ Cuando el bot recibe el comando \textit{/getallfigures} se envían todas las fig
  
 Las gráficas se generan siguiendo el mismo proceso que el explicado en la sección~\ref{sec:aplicación de dash ejemplos}, sólo que en lugar de ser sobre un grupo de sensores, se generan las gráficas de todos los sensores disponibles.
  
-La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se muestran en las figuras~\ref{figura:sensorsdata} y~\ref{figura:sensorsdatadb} también es coherente.
+La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se muestran en las figuras~\ref{figura:sensorsdata} y~\ref{figura:sensorsdatadb} también son coherentes.
 
 \begin{figure}[H]
 	\centering
@@ -1547,6 +1523,30 @@ La salida de los comandos \textit{/sensorsdata} y \textit{/sensorsdatadb} que se
   \end{minipage}
 \end{figure}
 
+
+
+\section{Detección de errores e inconsistencias}
+\label{sec:detección de errorese inconsistencias}
+Como se menciona en el apartado~\ref{aplicacion de dash}, uno de los objetivos de la aplicación web es el de poder realizar un análisis concreto del estado del sistema y encontrar así errores.
+La aplicación es útil para detectar comportamientos anómalos en los sensores o actuadores. Por ejemplo, en la figura~\ref{figura:sensor_problemas_higro} se observa que durante varios días el sensor tomaba medidas muy cercanas a 1, esto permitió comprobar que uno de los sensores de humedad del suelo estaba fallando.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/problemas_sensor}
+    \caption{Gráfica que muestra un comportamiento anómalo de uno de los higrómetros.}
+    \label{figura:sensor_problemas_higro}
+\end{figure}
+
+Otro caso de error se muestra en la figura~\ref{figura:error temperatura ambiente}, donde se muestra que el sensor con ID 22 no estaba funcionando correctamente.
+
+\begin{figure}[H]
+	\centering
+    \includegraphics[width=12cm, keepaspectratio]{img/ambient_temperature_error}
+    \caption{Gráfica que muestra un comportamiento anómalo de uno de los sensores de temperatura ambiente.}
+    \label{figura:error temperatura ambiente}
+\end{figure}
+
+Otros de los objetivos del control de errores es el de notificar al usuario al momento de su detección. Para ello se envían mensajes cuando esta clase de errores son detectados, como se muestra en los apartados anteriores.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
